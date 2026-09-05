@@ -1,0 +1,1797 @@
+[
+  {
+    "case": "04bba97e3eacc771",
+    "family": "CEBPA,REST,RXRA",
+    "background": 1,
+    "source_id": "seq_129441",
+    "direction": 1,
+    "clause_number": 0,
+    "scope_factors_in_order": "CEBPA,RXRA,REST",
+    "scope_positions": [
+      65,
+      100,
+      117
+    ],
+    "literals": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        0
+      ]
+    ],
+    "new_states_covered": 1,
+    "full_support": 1,
+    "assay_mean_precision": 1.0,
+    "assay_strict_precision": 0.0,
+    "all_support_assay_mean_pass": true,
+    "all_support_assay_strict_pass": false,
+    "minimum_measured_gain": 0.5165887268176039,
+    "minimum_paired_replicate_gain": 0.21970604605630661,
+    "assayed_support_ids": [
+      "seq_129445"
+    ],
+    "status": "finite-model sufficient clause; experimentally audited, not global ILP"
+  },
+  {
+    "case": "067037ea532fbcdb",
+    "family": "FOXA1,ONECUT1,PPARA",
+    "background": 1,
+    "source_id": "seq_183713",
+    "direction": -1,
+    "clause_number": 0,
+    "scope_factors_in_order": "PPARA,FOXA1,ONECUT1",
+    "scope_positions": [
+      58,
+      100,
+      134
+    ],
+    "literals": [
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        0
+      ]
+    ],
+    "new_states_covered": 2,
+    "full_support": 2,
+    "assay_mean_precision": 1.0,
+    "assay_strict_precision": 0.0,
+    "all_support_assay_mean_pass": true,
+    "all_support_assay_strict_pass": false,
+    "minimum_measured_gain": 0.39916712838191126,
+    "minimum_paired_replicate_gain": -0.0486023737047756,
+    "assayed_support_ids": [
+      "seq_183715",
+      "seq_183709"
+    ],
+    "status": "finite-model sufficient clause; experimentally audited, not global ILP"
+  },
+  {
+    "case": "067037ea532fbcdb",
+    "family": "FOXA1,ONECUT1,PPARA",
+    "background": 1,
+    "source_id": "seq_183713",
+    "direction": -1,
+    "clause_number": 1,
+    "scope_factors_in_order": "PPARA,FOXA1,ONECUT1",
+    "scope_positions": [
+      58,
+      100,
+      134
+    ],
+    "literals": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "new_states_covered": 1,
+    "full_support": 2,
+    "assay_mean_precision": 1.0,
+    "assay_strict_precision": 0.0,
+    "all_support_assay_mean_pass": true,
+    "all_support_assay_strict_pass": false,
+    "minimum_measured_gain": 0.48127553990271454,
+    "minimum_paired_replicate_gain": 0.25951992165755755,
+    "assayed_support_ids": [
+      "seq_183715",
+      "seq_183705"
+    ],
+    "status": "finite-model sufficient clause; experimentally audited, not global ILP"
+  },
+  {
+    "case": "06ad376329652954",
+    "family": "FOXA1,ONECUT1,ONECUT1",
+    "background": 1,
+    "source_id": "seq_123585",
+    "direction": 1,
+    "clause_number": 0,
+    "scope_factors_in_order": "FOXA1,ONECUT1,ONECUT1",
+    "scope_positions": [
+      66,
+      100,
+      127
+    ],
+    "literals": [
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        1
+      ]
+    ],
+    "new_states_covered": 2,
+    "full_support": 2,
+    "assay_mean_precision": 1.0,
+    "assay_strict_precision": 1.0,
+    "all_support_assay_mean_pass": true,
+    "all_support_assay_strict_pass": true,
+    "minimum_measured_gain": 0.8396868763453298,
+    "minimum_paired_replicate_gain": 0.5123816418547138,
+    "assayed_support_ids": [
+      "seq_123583",
+      "seq_123573"
+    ],
+    "status": "finite-model sufficient clause; experimentally audited, not global ILP"
+  },
+  {
+    "case": "06ad376329652954",
+    "family": "FOXA1,ONECUT1,ONECUT1",
+    "background": 1,
+    "source_id": "seq_123585",
+    "direction": 1,
+    "clause_number": 1,
+    "scope_factors_in_order": "FOXA1,ONECUT1,ONECUT1",
+    "scope_positions": [
+      66,
+      100,
+      127
+    ],
+    "literals": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "new_states_covered": 1,
+    "full_support": 2,
+    "assay_mean_precision": 1.0,
+    "assay_strict_precision": 0.5,
+    "all_support_assay_mean_pass": true,
+    "all_support_assay_strict_pass": false,
+    "minimum_measured_gain": 0.646292104720155,
+    "minimum_paired_replicate_gain": 0.20567293458479233,
+    "assayed_support_ids": [
+      "seq_123577",
+      "seq_123583"
+    ],
+    "status": "finite-model sufficient clause; experimentally audited, not global ILP"
+  },
+  {
+    "case": "0ae0e84cef990cde",
+    "family": "AHR,REST,SP1",
+    "background": 1,
+    "source_id": "seq_179737",
+    "direction": -1,
+    "clause_number": 0,
+    "scope_factors_in_order": "REST,SP1,AHR",
+    "scope_positions": [
+      80,
+      100,
+      121
+    ],
+    "literals": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "new_states_covered": 2,
+    "full_support": 2,
+    "assay_mean_precision": 0.5,
+    "assay_strict_precision": 0.0,
+    "all_support_assay_mean_pass": false,
+    "all_support_assay_strict_pass": false,
+    "minimum_measured_gain": 0.29051380452705794,
+    "minimum_paired_replicate_gain": 0.11181071006521098,
+    "assayed_support_ids": [
+      "seq_179743",
+      "seq_179733"
+    ],
+    "status": "finite-model sufficient clause; experimentally audited, not global ILP"
+  },
+  {
+    "case": "0aebd2aedc38f3a0",
+    "family": "PPARA,SP1,TFAP2C",
+    "background": 1,
+    "source_id": "seq_187745",
+    "direction": 1,
+    "clause_number": 0,
+    "scope_factors_in_order": "PPARA,TFAP2C,SP1",
+    "scope_positions": [
+      67,
+      100,
+      112
+    ],
+    "literals": [
+      [
+        0,
+        0
+      ],
+      [
+        2,
+        1
+      ]
+    ],
+    "new_states_covered": 2,
+    "full_support": 2,
+    "assay_mean_precision": 1.0,
+    "assay_strict_precision": 0.0,
+    "all_support_assay_mean_pass": true,
+    "all_support_assay_strict_pass": false,
+    "minimum_measured_gain": 0.5099006495848976,
+    "minimum_paired_replicate_gain": 0.3178963408683156,
+    "assayed_support_ids": [
+      "seq_187755",
+      "seq_187757"
+    ],
+    "status": "finite-model sufficient clause; experimentally audited, not global ILP"
+  },
+  {
+    "case": "0bb818d9aabfa0b5",
+    "family": "AP1,RXRA,YY1",
+    "background": 1,
+    "source_id": "seq_157331",
+    "direction": 1,
+    "clause_number": 0,
+    "scope_factors_in_order": "RXRA,YY1,AP1",
+    "scope_positions": [
+      70,
+      100,
+      136
+    ],
+    "literals": [
+      [
+        0,
+        0
+      ],
+      [
+        2,
+        1
+      ]
+    ],
+    "new_states_covered": 2,
+    "full_support": 2,
+    "assay_mean_precision": 0.0,
+    "assay_strict_precision": 0.0,
+    "all_support_assay_mean_pass": false,
+    "all_support_assay_strict_pass": false,
+    "minimum_measured_gain": 0.08537893520265244,
+    "minimum_paired_replicate_gain": -0.4804135081308674,
+    "assayed_support_ids": [
+      "seq_157337",
+      "seq_157339"
+    ],
+    "status": "finite-model sufficient clause; experimentally audited, not global ILP"
+  },
+  {
+    "case": "0bb818d9aabfa0b5",
+    "family": "AP1,RXRA,YY1",
+    "background": 1,
+    "source_id": "seq_157331",
+    "direction": 1,
+    "clause_number": 1,
+    "scope_factors_in_order": "RXRA,YY1,AP1",
+    "scope_positions": [
+      70,
+      100,
+      136
+    ],
+    "literals": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "new_states_covered": 1,
+    "full_support": 2,
+    "assay_mean_precision": 0.0,
+    "assay_strict_precision": 0.0,
+    "all_support_assay_mean_pass": false,
+    "all_support_assay_strict_pass": false,
+    "minimum_measured_gain": 0.15562300491257575,
+    "minimum_paired_replicate_gain": -0.15283885010236442,
+    "assayed_support_ids": [
+      "seq_157333",
+      "seq_157339"
+    ],
+    "status": "finite-model sufficient clause; experimentally audited, not global ILP"
+  },
+  {
+    "case": "0bd0b983194ccd12",
+    "family": "FOXA1,GABPA,ONECUT1",
+    "background": 1,
+    "source_id": "seq_142209",
+    "direction": 1,
+    "clause_number": 0,
+    "scope_factors_in_order": "ONECUT1,FOXA1,GABPA",
+    "scope_positions": [
+      65,
+      100,
+      121
+    ],
+    "literals": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "new_states_covered": 2,
+    "full_support": 2,
+    "assay_mean_precision": 1.0,
+    "assay_strict_precision": 0.5,
+    "all_support_assay_mean_pass": true,
+    "all_support_assay_strict_pass": false,
+    "minimum_measured_gain": 0.5334533580950191,
+    "minimum_paired_replicate_gain": 0.33884514440448726,
+    "assayed_support_ids": [
+      "seq_142217",
+      "seq_142207"
+    ],
+    "status": "finite-model sufficient clause; experimentally audited, not global ILP"
+  },
+  {
+    "case": "0c631ee9b77c485f",
+    "family": "ONECUT1,ONECUT1,TFAP2C",
+    "background": 1,
+    "source_id": "seq_146113",
+    "direction": -1,
+    "clause_number": 0,
+    "scope_factors_in_order": "ONECUT1,TFAP2C,ONECUT1",
+    "scope_positions": [
+      69,
+      100,
+      131
+    ],
+    "literals": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        0
+      ]
+    ],
+    "new_states_covered": 1,
+    "full_support": 1,
+    "assay_mean_precision": 1.0,
+    "assay_strict_precision": 1.0,
+    "all_support_assay_mean_pass": true,
+    "all_support_assay_strict_pass": true,
+    "minimum_measured_gain": 0.5901134049047524,
+    "minimum_paired_replicate_gain": 0.3899465183160069,
+    "assayed_support_ids": [
+      "seq_146111"
+    ],
+    "status": "finite-model sufficient clause; experimentally audited, not global ILP"
+  },
+  {
+    "case": "14f23345986e0e39",
+    "family": "FOXA1,FOXA1,NR2F2",
+    "background": 1,
+    "source_id": "seq_122533",
+    "direction": -1,
+    "clause_number": 0,
+    "scope_factors_in_order": "FOXA1,FOXA1,NR2F2",
+    "scope_positions": [
+      68,
+      100,
+      113
+    ],
+    "literals": [
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        0
+      ]
+    ],
+    "new_states_covered": 2,
+    "full_support": 2,
+    "assay_mean_precision": 1.0,
+    "assay_strict_precision": 1.0,
+    "all_support_assay_mean_pass": true,
+    "all_support_assay_strict_pass": true,
+    "minimum_measured_gain": 0.6538291830233872,
+    "minimum_paired_replicate_gain": 0.3866640204214152,
+    "assayed_support_ids": [
+      "seq_122529",
+      "seq_122531"
+    ],
+    "status": "finite-model sufficient clause; experimentally audited, not global ILP"
+  },
+  {
+    "case": "14f23345986e0e39",
+    "family": "FOXA1,FOXA1,NR2F2",
+    "background": 1,
+    "source_id": "seq_122533",
+    "direction": -1,
+    "clause_number": 1,
+    "scope_factors_in_order": "FOXA1,FOXA1,NR2F2",
+    "scope_positions": [
+      68,
+      100,
+      113
+    ],
+    "literals": [
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        0
+      ]
+    ],
+    "new_states_covered": 1,
+    "full_support": 2,
+    "assay_mean_precision": 1.0,
+    "assay_strict_precision": 1.0,
+    "all_support_assay_mean_pass": true,
+    "all_support_assay_strict_pass": true,
+    "minimum_measured_gain": 0.4725284885609119,
+    "minimum_paired_replicate_gain": 0.3866640204214152,
+    "assayed_support_ids": [
+      "seq_122537",
+      "seq_122531"
+    ],
+    "status": "finite-model sufficient clause; experimentally audited, not global ILP"
+  },
+  {
+    "case": "168f5fa65e4874f8",
+    "family": "AP1,AP1,PPARA",
+    "background": 1,
+    "source_id": "seq_185117",
+    "direction": -1,
+    "clause_number": 0,
+    "scope_factors_in_order": "PPARA,AP1,AP1",
+    "scope_positions": [
+      74,
+      100,
+      110
+    ],
+    "literals": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "new_states_covered": 2,
+    "full_support": 2,
+    "assay_mean_precision": 1.0,
+    "assay_strict_precision": 1.0,
+    "all_support_assay_mean_pass": true,
+    "all_support_assay_strict_pass": true,
+    "minimum_measured_gain": 0.45802930816260606,
+    "minimum_paired_replicate_gain": 0.4068169924738737,
+    "assayed_support_ids": [
+      "seq_185131",
+      "seq_185121"
+    ],
+    "status": "finite-model sufficient clause; experimentally audited, not global ILP"
+  },
+  {
+    "case": "168f5fa65e4874f8",
+    "family": "AP1,AP1,PPARA",
+    "background": 1,
+    "source_id": "seq_185117",
+    "direction": -1,
+    "clause_number": 1,
+    "scope_factors_in_order": "PPARA,AP1,AP1",
+    "scope_positions": [
+      74,
+      100,
+      110
+    ],
+    "literals": [
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        0
+      ]
+    ],
+    "new_states_covered": 1,
+    "full_support": 2,
+    "assay_mean_precision": 1.0,
+    "assay_strict_precision": 0.5,
+    "all_support_assay_mean_pass": true,
+    "all_support_assay_strict_pass": false,
+    "minimum_measured_gain": 0.36669807251083925,
+    "minimum_paired_replicate_gain": 0.19751133377727514,
+    "assayed_support_ids": [
+      "seq_185131",
+      "seq_185125"
+    ],
+    "status": "finite-model sufficient clause; experimentally audited, not global ILP"
+  },
+  {
+    "case": "170ad93c4b76a5fc",
+    "family": "CEBPA,CTCF,SP1",
+    "background": 1,
+    "source_id": "seq_137629",
+    "direction": -1,
+    "clause_number": 0,
+    "scope_factors_in_order": "SP1,CEBPA,CTCF",
+    "scope_positions": [
+      90,
+      100,
+      119
+    ],
+    "literals": [
+      [
+        0,
+        0
+      ]
+    ],
+    "new_states_covered": 4,
+    "full_support": 4,
+    "assay_mean_precision": 0.75,
+    "assay_strict_precision": 0.25,
+    "all_support_assay_mean_pass": false,
+    "all_support_assay_strict_pass": false,
+    "minimum_measured_gain": 0.3046578557547927,
+    "minimum_paired_replicate_gain": 0.1723787079384031,
+    "assayed_support_ids": [
+      "seq_137615",
+      "seq_137625",
+      "seq_137621",
+      "seq_137627"
+    ],
+    "status": "finite-model sufficient clause; experimentally audited, not global ILP"
+  },
+  {
+    "case": "17516d517bbe79f1",
+    "family": "GABPA,HNF4A,REST",
+    "background": 1,
+    "source_id": "seq_182623",
+    "direction": 1,
+    "clause_number": 0,
+    "scope_factors_in_order": "REST,GABPA,HNF4A",
+    "scope_positions": [
+      65,
+      100,
+      112
+    ],
+    "literals": [
+      [
+        0,
+        0
+      ],
+      [
+        2,
+        0
+      ]
+    ],
+    "new_states_covered": 2,
+    "full_support": 2,
+    "assay_mean_precision": 0.5,
+    "assay_strict_precision": 0.0,
+    "all_support_assay_mean_pass": false,
+    "all_support_assay_strict_pass": false,
+    "minimum_measured_gain": 0.3414452863230496,
+    "minimum_paired_replicate_gain": -0.26608901473767355,
+    "assayed_support_ids": [
+      "seq_182613",
+      "seq_182619"
+    ],
+    "status": "finite-model sufficient clause; experimentally audited, not global ILP"
+  },
+  {
+    "case": "18ac2c202d132687",
+    "family": "AHR,CEBPA,PPARA",
+    "background": 1,
+    "source_id": "seq_130149",
+    "direction": 1,
+    "clause_number": 0,
+    "scope_factors_in_order": "CEBPA,AHR,PPARA",
+    "scope_positions": [
+      86,
+      100,
+      124
+    ],
+    "literals": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        0
+      ]
+    ],
+    "new_states_covered": 1,
+    "full_support": 1,
+    "assay_mean_precision": 0.0,
+    "assay_strict_precision": 0.0,
+    "all_support_assay_mean_pass": false,
+    "all_support_assay_strict_pass": false,
+    "minimum_measured_gain": 0.26381634500865225,
+    "minimum_paired_replicate_gain": 0.14426881183723406,
+    "assayed_support_ids": [
+      "seq_130153"
+    ],
+    "status": "finite-model sufficient clause; experimentally audited, not global ILP"
+  },
+  {
+    "case": "19b2a4b1dd314e69",
+    "family": "RXRA,SP1,YY1",
+    "background": 1,
+    "source_id": "seq_157305",
+    "direction": -1,
+    "clause_number": 0,
+    "scope_factors_in_order": "RXRA,YY1,SP1",
+    "scope_positions": [
+      70,
+      100,
+      117
+    ],
+    "literals": [
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        0
+      ]
+    ],
+    "new_states_covered": 2,
+    "full_support": 2,
+    "assay_mean_precision": 1.0,
+    "assay_strict_precision": 1.0,
+    "all_support_assay_mean_pass": true,
+    "all_support_assay_strict_pass": true,
+    "minimum_measured_gain": 0.5924320137978374,
+    "minimum_paired_replicate_gain": 0.49962070875299636,
+    "assayed_support_ids": [
+      "seq_157309",
+      "seq_157303"
+    ],
+    "status": "finite-model sufficient clause; experimentally audited, not global ILP"
+  },
+  {
+    "case": "1bc104a4872a336e",
+    "family": "AP1,YY1,YY1",
+    "background": 1,
+    "source_id": "seq_147487",
+    "direction": -1,
+    "clause_number": 0,
+    "scope_factors_in_order": "AP1,YY1,YY1",
+    "scope_positions": [
+      91,
+      100,
+      119
+    ],
+    "literals": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        0
+      ]
+    ],
+    "new_states_covered": 1,
+    "full_support": 1,
+    "assay_mean_precision": 0.0,
+    "assay_strict_precision": 0.0,
+    "all_support_assay_mean_pass": false,
+    "all_support_assay_strict_pass": false,
+    "minimum_measured_gain": 0.3462914228466696,
+    "minimum_paired_replicate_gain": -0.23614671657898267,
+    "assayed_support_ids": [
+      "seq_147479"
+    ],
+    "status": "finite-model sufficient clause; experimentally audited, not global ILP"
+  },
+  {
+    "case": "1e50fb4632cf10df",
+    "family": "CEBPA,SP1,TFAP2C",
+    "background": 1,
+    "source_id": "seq_137601",
+    "direction": -1,
+    "clause_number": 0,
+    "scope_factors_in_order": "SP1,CEBPA,TFAP2C",
+    "scope_positions": [
+      90,
+      100,
+      133
+    ],
+    "literals": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        1
+      ]
+    ],
+    "new_states_covered": 1,
+    "full_support": 1,
+    "assay_mean_precision": 1.0,
+    "assay_strict_precision": 1.0,
+    "all_support_assay_mean_pass": true,
+    "all_support_assay_strict_pass": true,
+    "minimum_measured_gain": 0.3831171157127518,
+    "minimum_paired_replicate_gain": 0.35033180989103413,
+    "assayed_support_ids": [
+      "seq_137609"
+    ],
+    "status": "finite-model sufficient clause; experimentally audited, not global ILP"
+  },
+  {
+    "case": "224669bf77379a5e",
+    "family": "CEBPA,RXRA,SP1",
+    "background": 1,
+    "source_id": "seq_128247",
+    "direction": -1,
+    "clause_number": 0,
+    "scope_factors_in_order": "CEBPA,SP1,RXRA",
+    "scope_positions": [
+      89,
+      100,
+      115
+    ],
+    "literals": [
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        1
+      ]
+    ],
+    "new_states_covered": 2,
+    "full_support": 2,
+    "assay_mean_precision": 0.0,
+    "assay_strict_precision": 0.0,
+    "all_support_assay_mean_pass": false,
+    "all_support_assay_strict_pass": false,
+    "minimum_measured_gain": 0.07434485924790458,
+    "minimum_paired_replicate_gain": -0.6366397766810867,
+    "assayed_support_ids": [
+      "seq_128249",
+      "seq_128243"
+    ],
+    "status": "finite-model sufficient clause; experimentally audited, not global ILP"
+  },
+  {
+    "case": "22797165288cdc12",
+    "family": "ONECUT1,PPARA,TFAP2C",
+    "background": 1,
+    "source_id": "seq_197007",
+    "direction": 1,
+    "clause_number": 0,
+    "scope_factors_in_order": "TFAP2C,PPARA,ONECUT1",
+    "scope_positions": [
+      74,
+      100,
+      128
+    ],
+    "literals": [
+      [
+        1,
+        0
+      ]
+    ],
+    "new_states_covered": 4,
+    "full_support": 4,
+    "assay_mean_precision": 0.75,
+    "assay_strict_precision": 0.5,
+    "all_support_assay_mean_pass": false,
+    "all_support_assay_strict_pass": false,
+    "minimum_measured_gain": 0.22813716025082237,
+    "minimum_paired_replicate_gain": 0.0888820886290752,
+    "assayed_support_ids": [
+      "seq_197001",
+      "seq_197011",
+      "seq_197015",
+      "seq_197005"
+    ],
+    "status": "finite-model sufficient clause; experimentally audited, not global ILP"
+  },
+  {
+    "case": "23aec43b15dd512b",
+    "family": "AP1,YY1,YY1",
+    "background": 1,
+    "source_id": "seq_132839",
+    "direction": -1,
+    "clause_number": 0,
+    "scope_factors_in_order": "YY1,YY1,AP1",
+    "scope_positions": [
+      81,
+      100,
+      136
+    ],
+    "literals": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "new_states_covered": 2,
+    "full_support": 2,
+    "assay_mean_precision": 1.0,
+    "assay_strict_precision": 0.5,
+    "all_support_assay_mean_pass": true,
+    "all_support_assay_strict_pass": false,
+    "minimum_measured_gain": 0.6427761662847593,
+    "minimum_paired_replicate_gain": 0.2393208600267685,
+    "assayed_support_ids": [
+      "seq_132827",
+      "seq_132837"
+    ],
+    "status": "finite-model sufficient clause; experimentally audited, not global ILP"
+  },
+  {
+    "case": "2699c20dfe47b3cd",
+    "family": "REST,SP1,XBP1",
+    "background": 1,
+    "source_id": "seq_141895",
+    "direction": -1,
+    "clause_number": 0,
+    "scope_factors_in_order": "SP1,XBP1,REST",
+    "scope_positions": [
+      90,
+      100,
+      126
+    ],
+    "literals": [
+      [
+        0,
+        0
+      ]
+    ],
+    "new_states_covered": 4,
+    "full_support": 4,
+    "assay_mean_precision": 1.0,
+    "assay_strict_precision": 0.5,
+    "all_support_assay_mean_pass": true,
+    "all_support_assay_strict_pass": false,
+    "minimum_measured_gain": 0.4138650626571809,
+    "minimum_paired_replicate_gain": 0.20077834958946716,
+    "assayed_support_ids": [
+      "seq_141891",
+      "seq_141901",
+      "seq_141897",
+      "seq_141903"
+    ],
+    "status": "finite-model sufficient clause; experimentally audited, not global ILP"
+  },
+  {
+    "case": "28afc28829ed2146",
+    "family": "PPARA,RXRA,RXRA",
+    "background": 1,
+    "source_id": "seq_160307",
+    "direction": 1,
+    "clause_number": 0,
+    "scope_factors_in_order": "RXRA,PPARA,RXRA",
+    "scope_positions": [
+      84,
+      100,
+      124
+    ],
+    "literals": [
+      [
+        1,
+        0
+      ]
+    ],
+    "new_states_covered": 4,
+    "full_support": 4,
+    "assay_mean_precision": 0.25,
+    "assay_strict_precision": 0.0,
+    "all_support_assay_mean_pass": false,
+    "all_support_assay_strict_pass": false,
+    "minimum_measured_gain": 0.200115453179697,
+    "minimum_paired_replicate_gain": -0.14175994356080873,
+    "assayed_support_ids": [
+      "seq_160299",
+      "seq_160309",
+      "seq_160313",
+      "seq_160303"
+    ],
+    "status": "finite-model sufficient clause; experimentally audited, not global ILP"
+  },
+  {
+    "case": "2d38a4ee1e6a42b8",
+    "family": "AHR,CTCF,HNF4A",
+    "background": 1,
+    "source_id": "seq_200169",
+    "direction": -1,
+    "clause_number": 0,
+    "scope_factors_in_order": "CTCF,HNF4A,AHR",
+    "scope_positions": [
+      78,
+      100,
+      120
+    ],
+    "literals": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        1
+      ]
+    ],
+    "new_states_covered": 1,
+    "full_support": 1,
+    "assay_mean_precision": 1.0,
+    "assay_strict_precision": 1.0,
+    "all_support_assay_mean_pass": true,
+    "all_support_assay_strict_pass": true,
+    "minimum_measured_gain": 0.6121877857371002,
+    "minimum_paired_replicate_gain": 0.388833377579145,
+    "assayed_support_ids": [
+      "seq_200181"
+    ],
+    "status": "finite-model sufficient clause; experimentally audited, not global ILP"
+  },
+  {
+    "case": "300db2287a7687b1",
+    "family": "ONECUT1,ONECUT1,RXRA",
+    "background": 1,
+    "source_id": "seq_144021",
+    "direction": 1,
+    "clause_number": 0,
+    "scope_factors_in_order": "ONECUT1,RXRA,ONECUT1",
+    "scope_positions": [
+      74,
+      100,
+      125
+    ],
+    "literals": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        1
+      ]
+    ],
+    "new_states_covered": 1,
+    "full_support": 1,
+    "assay_mean_precision": 1.0,
+    "assay_strict_precision": 1.0,
+    "all_support_assay_mean_pass": true,
+    "all_support_assay_strict_pass": true,
+    "minimum_measured_gain": 0.7911819571249847,
+    "minimum_paired_replicate_gain": 0.5852870300310127,
+    "assayed_support_ids": [
+      "seq_144013"
+    ],
+    "status": "finite-model sufficient clause; experimentally audited, not global ILP"
+  },
+  {
+    "case": "31d9e455f9b03cf8",
+    "family": "AP1,PPARA,TFAP2C",
+    "background": 1,
+    "source_id": "seq_187777",
+    "direction": -1,
+    "clause_number": 0,
+    "scope_factors_in_order": "PPARA,TFAP2C,AP1",
+    "scope_positions": [
+      67,
+      100,
+      134
+    ],
+    "literals": [
+      [
+        0,
+        1
+      ]
+    ],
+    "new_states_covered": 4,
+    "full_support": 4,
+    "assay_mean_precision": 1.0,
+    "assay_strict_precision": 1.0,
+    "all_support_assay_mean_pass": true,
+    "all_support_assay_strict_pass": true,
+    "minimum_measured_gain": 0.6263513435955684,
+    "minimum_paired_replicate_gain": 0.4100169298142843,
+    "assayed_support_ids": [
+      "seq_187791",
+      "seq_187781",
+      "seq_187785",
+      "seq_187779"
+    ],
+    "status": "finite-model sufficient clause; experimentally audited, not global ILP"
+  },
+  {
+    "case": "328ebed71cb1da0c",
+    "family": "GABPA,HNF4A,PPARA",
+    "background": 1,
+    "source_id": "seq_190431",
+    "direction": -1,
+    "clause_number": 0,
+    "scope_factors_in_order": "GABPA,HNF4A,PPARA",
+    "scope_positions": [
+      88,
+      100,
+      114
+    ],
+    "literals": [
+      [
+        1,
+        1
+      ]
+    ],
+    "new_states_covered": 4,
+    "full_support": 4,
+    "assay_mean_precision": 0.5,
+    "assay_strict_precision": 0.5,
+    "all_support_assay_mean_pass": false,
+    "all_support_assay_strict_pass": false,
+    "minimum_measured_gain": 0.19319479308135667,
+    "minimum_paired_replicate_gain": 0.05832556324201554,
+    "assayed_support_ids": [
+      "seq_190423",
+      "seq_190429",
+      "seq_190425",
+      "seq_190419"
+    ],
+    "status": "finite-model sufficient clause; experimentally audited, not global ILP"
+  },
+  {
+    "case": "328ebed71cb1da0c",
+    "family": "GABPA,HNF4A,PPARA",
+    "background": 1,
+    "source_id": "seq_190431",
+    "direction": -1,
+    "clause_number": 1,
+    "scope_factors_in_order": "GABPA,HNF4A,PPARA",
+    "scope_positions": [
+      88,
+      100,
+      114
+    ],
+    "literals": [
+      [
+        2,
+        1
+      ]
+    ],
+    "new_states_covered": 2,
+    "full_support": 4,
+    "assay_mean_precision": 0.75,
+    "assay_strict_precision": 0.5,
+    "all_support_assay_mean_pass": false,
+    "all_support_assay_strict_pass": false,
+    "minimum_measured_gain": 0.23414609742149825,
+    "minimum_paired_replicate_gain": 0.15509977349662163,
+    "assayed_support_ids": [
+      "seq_190427",
+      "seq_190429",
+      "seq_190421",
+      "seq_190419"
+    ],
+    "status": "finite-model sufficient clause; experimentally audited, not global ILP"
+  },
+  {
+    "case": "3456e31ee7dfb744",
+    "family": "AP1,RXRA,TFAP2C",
+    "background": 1,
+    "source_id": "seq_160841",
+    "direction": 1,
+    "clause_number": 0,
+    "scope_factors_in_order": "RXRA,TFAP2C,AP1",
+    "scope_positions": [
+      87,
+      100,
+      134
+    ],
+    "literals": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        1
+      ]
+    ],
+    "new_states_covered": 1,
+    "full_support": 1,
+    "assay_mean_precision": 0.0,
+    "assay_strict_precision": 0.0,
+    "all_support_assay_mean_pass": false,
+    "all_support_assay_strict_pass": false,
+    "minimum_measured_gain": 0.2410195206088366,
+    "minimum_paired_replicate_gain": 0.17211659199448687,
+    "assayed_support_ids": [
+      "seq_160839"
+    ],
+    "status": "finite-model sufficient clause; experimentally audited, not global ILP"
+  },
+  {
+    "case": "35a6a8c8d42febdf",
+    "family": "CEBPA,CTCF,SP1",
+    "background": 1,
+    "source_id": "seq_198667",
+    "direction": -1,
+    "clause_number": 0,
+    "scope_factors_in_order": "CTCF,CEBPA,SP1",
+    "scope_positions": [
+      73,
+      100,
+      111
+    ],
+    "literals": [
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        0
+      ]
+    ],
+    "new_states_covered": 2,
+    "full_support": 2,
+    "assay_mean_precision": 1.0,
+    "assay_strict_precision": 0.5,
+    "all_support_assay_mean_pass": true,
+    "all_support_assay_strict_pass": false,
+    "minimum_measured_gain": 0.7509687214639483,
+    "minimum_paired_replicate_gain": 0.19598497888325217,
+    "assayed_support_ids": [
+      "seq_198679",
+      "seq_198673"
+    ],
+    "status": "finite-model sufficient clause; experimentally audited, not global ILP"
+  },
+  {
+    "case": "37b9c38d11661f06",
+    "family": "REST,YY1,YY1",
+    "background": 1,
+    "source_id": "seq_179337",
+    "direction": 1,
+    "clause_number": 0,
+    "scope_factors_in_order": "REST,YY1,YY1",
+    "scope_positions": [
+      61,
+      100,
+      119
+    ],
+    "literals": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        0
+      ]
+    ],
+    "new_states_covered": 1,
+    "full_support": 1,
+    "assay_mean_precision": 1.0,
+    "assay_strict_precision": 0.0,
+    "all_support_assay_mean_pass": true,
+    "all_support_assay_strict_pass": false,
+    "minimum_measured_gain": 0.41904283290829564,
+    "minimum_paired_replicate_gain": 0.004320348924128359,
+    "assayed_support_ids": [
+      "seq_179335"
+    ],
+    "status": "finite-model sufficient clause; experimentally audited, not global ILP"
+  },
+  {
+    "case": "37facc4949e0f0b1",
+    "family": "REST,SP1,XBP1",
+    "background": 1,
+    "source_id": "seq_140581",
+    "direction": 1,
+    "clause_number": 0,
+    "scope_factors_in_order": "SP1,REST,XBP1",
+    "scope_positions": [
+      65,
+      100,
+      128
+    ],
+    "literals": [
+      [
+        0,
+        1
+      ]
+    ],
+    "new_states_covered": 4,
+    "full_support": 4,
+    "assay_mean_precision": 0.75,
+    "assay_strict_precision": 0.75,
+    "all_support_assay_mean_pass": false,
+    "all_support_assay_strict_pass": false,
+    "minimum_measured_gain": 0.3263209105534664,
+    "minimum_paired_replicate_gain": -0.24580364696562718,
+    "assayed_support_ids": [
+      "seq_140585",
+      "seq_140575",
+      "seq_140579",
+      "seq_140573"
+    ],
+    "status": "finite-model sufficient clause; experimentally audited, not global ILP"
+  },
+  {
+    "case": "3c209d88b8d0ddc1",
+    "family": "ONECUT1,RXRA,SP1",
+    "background": 1,
+    "source_id": "seq_139121",
+    "direction": 1,
+    "clause_number": 0,
+    "scope_factors_in_order": "SP1,RXRA,ONECUT1",
+    "scope_positions": [
+      85,
+      100,
+      125
+    ],
+    "literals": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        1
+      ]
+    ],
+    "new_states_covered": 1,
+    "full_support": 1,
+    "assay_mean_precision": 1.0,
+    "assay_strict_precision": 1.0,
+    "all_support_assay_mean_pass": true,
+    "all_support_assay_strict_pass": true,
+    "minimum_measured_gain": 0.5761749997466354,
+    "minimum_paired_replicate_gain": 0.4545658634654848,
+    "assayed_support_ids": [
+      "seq_139113"
+    ],
+    "status": "finite-model sufficient clause; experimentally audited, not global ILP"
+  },
+  {
+    "case": "3dd311db4352c1e1",
+    "family": "FOXA1,ONECUT1,PPARA",
+    "background": 1,
+    "source_id": "seq_142197",
+    "direction": 1,
+    "clause_number": 0,
+    "scope_factors_in_order": "ONECUT1,FOXA1,PPARA",
+    "scope_positions": [
+      65,
+      100,
+      134
+    ],
+    "literals": [
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        0
+      ]
+    ],
+    "new_states_covered": 2,
+    "full_support": 2,
+    "assay_mean_precision": 1.0,
+    "assay_strict_precision": 0.0,
+    "all_support_assay_mean_pass": true,
+    "all_support_assay_strict_pass": false,
+    "minimum_measured_gain": 0.36593593990896084,
+    "minimum_paired_replicate_gain": 0.12069917072426456,
+    "assayed_support_ids": [
+      "seq_142187",
+      "seq_142201"
+    ],
+    "status": "finite-model sufficient clause; experimentally audited, not global ILP"
+  },
+  {
+    "case": "424e496c6c4ff047",
+    "family": "CEBPA,FOXA1,XBP1",
+    "background": 1,
+    "source_id": "seq_127025",
+    "direction": 1,
+    "clause_number": 0,
+    "scope_factors_in_order": "FOXA1,XBP1,CEBPA",
+    "scope_positions": [
+      88,
+      100,
+      140
+    ],
+    "literals": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "new_states_covered": 2,
+    "full_support": 2,
+    "assay_mean_precision": 1.0,
+    "assay_strict_precision": 0.5,
+    "all_support_assay_mean_pass": true,
+    "all_support_assay_strict_pass": false,
+    "minimum_measured_gain": 0.5077354820832995,
+    "minimum_paired_replicate_gain": 0.3080916808191331,
+    "assayed_support_ids": [
+      "seq_127023",
+      "seq_127033"
+    ],
+    "status": "finite-model sufficient clause; experimentally audited, not global ILP"
+  },
+  {
+    "case": "45520d57cee1220d",
+    "family": "CEBPA,SP1,TFAP2C",
+    "background": 1,
+    "source_id": "seq_131399",
+    "direction": -1,
+    "clause_number": 0,
+    "scope_factors_in_order": "CEBPA,TFAP2C,SP1",
+    "scope_positions": [
+      67,
+      100,
+      112
+    ],
+    "literals": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        0
+      ]
+    ],
+    "new_states_covered": 1,
+    "full_support": 1,
+    "assay_mean_precision": 1.0,
+    "assay_strict_precision": 1.0,
+    "all_support_assay_mean_pass": true,
+    "all_support_assay_strict_pass": true,
+    "minimum_measured_gain": 0.928543888825091,
+    "minimum_paired_replicate_gain": 0.45449847629288503,
+    "assayed_support_ids": [
+      "seq_131409"
+    ],
+    "status": "finite-model sufficient clause; experimentally audited, not global ILP"
+  },
+  {
+    "case": "478e27342cd0808e",
+    "family": "ONECUT1,YY1,YY1",
+    "background": 1,
+    "source_id": "seq_133347",
+    "direction": -1,
+    "clause_number": 0,
+    "scope_factors_in_order": "YY1,ONECUT1,YY1",
+    "scope_positions": [
+      71,
+      100,
+      129
+    ],
+    "literals": [
+      [
+        0,
+        0
+      ],
+      [
+        2,
+        0
+      ]
+    ],
+    "new_states_covered": 2,
+    "full_support": 2,
+    "assay_mean_precision": 0.5,
+    "assay_strict_precision": 0.5,
+    "all_support_assay_mean_pass": false,
+    "all_support_assay_strict_pass": false,
+    "minimum_measured_gain": 0.17324120975819052,
+    "minimum_paired_replicate_gain": 0.09531742376100752,
+    "assayed_support_ids": [
+      "seq_133339",
+      "seq_133345"
+    ],
+    "status": "finite-model sufficient clause; experimentally audited, not global ILP"
+  },
+  {
+    "case": "478e27342cd0808e",
+    "family": "ONECUT1,YY1,YY1",
+    "background": 1,
+    "source_id": "seq_133347",
+    "direction": -1,
+    "clause_number": 1,
+    "scope_factors_in_order": "YY1,ONECUT1,YY1",
+    "scope_positions": [
+      71,
+      100,
+      129
+    ],
+    "literals": [
+      [
+        1,
+        0
+      ]
+    ],
+    "new_states_covered": 3,
+    "full_support": 4,
+    "assay_mean_precision": 0.25,
+    "assay_strict_precision": 0.25,
+    "all_support_assay_mean_pass": false,
+    "all_support_assay_strict_pass": false,
+    "minimum_measured_gain": -0.018352940568130333,
+    "minimum_paired_replicate_gain": -0.2269965827331735,
+    "assayed_support_ids": [
+      "seq_133339",
+      "seq_133349",
+      "seq_133353",
+      "seq_133343"
+    ],
+    "status": "finite-model sufficient clause; experimentally audited, not global ILP"
+  },
+  {
+    "case": "47dd02aefc2e917a",
+    "family": "HNF4A,SP1,YY1",
+    "background": 1,
+    "source_id": "seq_152665",
+    "direction": -1,
+    "clause_number": 0,
+    "scope_factors_in_order": "HNF4A,SP1,YY1",
+    "scope_positions": [
+      74,
+      100,
+      115
+    ],
+    "literals": [
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        0
+      ]
+    ],
+    "new_states_covered": 2,
+    "full_support": 2,
+    "assay_mean_precision": 1.0,
+    "assay_strict_precision": 1.0,
+    "all_support_assay_mean_pass": true,
+    "all_support_assay_strict_pass": true,
+    "minimum_measured_gain": 0.8665705803653274,
+    "minimum_paired_replicate_gain": 0.38822845587439975,
+    "assayed_support_ids": [
+      "seq_152659",
+      "seq_152673"
+    ],
+    "status": "finite-model sufficient clause; experimentally audited, not global ILP"
+  },
+  {
+    "case": "48614f386f099977",
+    "family": "FOXA1,ONECUT1,XBP1",
+    "background": 1,
+    "source_id": "seq_146609",
+    "direction": 1,
+    "clause_number": 0,
+    "scope_factors_in_order": "ONECUT1,XBP1,FOXA1",
+    "scope_positions": [
+      88,
+      100,
+      118
+    ],
+    "literals": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        0
+      ]
+    ],
+    "new_states_covered": 1,
+    "full_support": 1,
+    "assay_mean_precision": 0.0,
+    "assay_strict_precision": 0.0,
+    "all_support_assay_mean_pass": false,
+    "all_support_assay_strict_pass": false,
+    "minimum_measured_gain": 0.2791766306527721,
+    "minimum_paired_replicate_gain": 0.040211985857600274,
+    "assayed_support_ids": [
+      "seq_146621"
+    ],
+    "status": "finite-model sufficient clause; experimentally audited, not global ILP"
+  },
+  {
+    "case": "4cec2d85eb63e2d7",
+    "family": "AHR,REST,SP1",
+    "background": 1,
+    "source_id": "seq_172207",
+    "direction": 1,
+    "clause_number": 0,
+    "scope_factors_in_order": "AHR,REST,SP1",
+    "scope_positions": [
+      77,
+      100,
+      120
+    ],
+    "literals": [
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        1
+      ]
+    ],
+    "new_states_covered": 2,
+    "full_support": 2,
+    "assay_mean_precision": 1.0,
+    "assay_strict_precision": 0.0,
+    "all_support_assay_mean_pass": true,
+    "all_support_assay_strict_pass": false,
+    "minimum_measured_gain": 0.5500486519166827,
+    "minimum_paired_replicate_gain": 0.22459822417768766,
+    "assayed_support_ids": [
+      "seq_172215",
+      "seq_172209"
+    ],
+    "status": "finite-model sufficient clause; experimentally audited, not global ILP"
+  },
+  {
+    "case": "4d1a3f7b90df5431",
+    "family": "RXRA,SP1,YY1",
+    "background": 1,
+    "source_id": "seq_133149",
+    "direction": 1,
+    "clause_number": 0,
+    "scope_factors_in_order": "YY1,SP1,RXRA",
+    "scope_positions": [
+      83,
+      100,
+      115
+    ],
+    "literals": [
+      [
+        1,
+        1
+      ]
+    ],
+    "new_states_covered": 4,
+    "full_support": 4,
+    "assay_mean_precision": 1.0,
+    "assay_strict_precision": 1.0,
+    "all_support_assay_mean_pass": true,
+    "all_support_assay_strict_pass": true,
+    "minimum_measured_gain": 0.6828056894158779,
+    "minimum_paired_replicate_gain": 0.44274042806869285,
+    "assayed_support_ids": [
+      "seq_133145",
+      "seq_133151",
+      "seq_133147",
+      "seq_133141"
+    ],
+    "status": "finite-model sufficient clause; experimentally audited, not global ILP"
+  },
+  {
+    "case": "4d1a3f7b90df5431",
+    "family": "RXRA,SP1,YY1",
+    "background": 1,
+    "source_id": "seq_133149",
+    "direction": 1,
+    "clause_number": 1,
+    "scope_factors_in_order": "YY1,SP1,RXRA",
+    "scope_positions": [
+      83,
+      100,
+      115
+    ],
+    "literals": [
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        0
+      ]
+    ],
+    "new_states_covered": 1,
+    "full_support": 2,
+    "assay_mean_precision": 1.0,
+    "assay_strict_precision": 0.5,
+    "all_support_assay_mean_pass": true,
+    "all_support_assay_strict_pass": false,
+    "minimum_measured_gain": 0.5507581869045132,
+    "minimum_paired_replicate_gain": 0.28452884719017074,
+    "assayed_support_ids": [
+      "seq_133153",
+      "seq_133147"
+    ],
+    "status": "finite-model sufficient clause; experimentally audited, not global ILP"
+  },
+  {
+    "case": "4ed1a62304532ee5",
+    "family": "RXRA,RXRA,SP1",
+    "background": 1,
+    "source_id": "seq_157643",
+    "direction": 1,
+    "clause_number": 0,
+    "scope_factors_in_order": "RXRA,SP1,RXRA",
+    "scope_positions": [
+      84,
+      100,
+      115
+    ],
+    "literals": [
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        0
+      ]
+    ],
+    "new_states_covered": 2,
+    "full_support": 2,
+    "assay_mean_precision": 1.0,
+    "assay_strict_precision": 0.5,
+    "all_support_assay_mean_pass": true,
+    "all_support_assay_strict_pass": false,
+    "minimum_measured_gain": 0.710000068259922,
+    "minimum_paired_replicate_gain": 0.34810276612263097,
+    "assayed_support_ids": [
+      "seq_157645",
+      "seq_157647"
+    ],
+    "status": "finite-model sufficient clause; experimentally audited, not global ILP"
+  },
+  {
+    "case": "4f19be063c7bfa32",
+    "family": "CTCF,HNF4A,ONECUT1",
+    "background": 1,
+    "source_id": "seq_146429",
+    "direction": 1,
+    "clause_number": 0,
+    "scope_factors_in_order": "ONECUT1,CTCF,HNF4A",
+    "scope_positions": [
+      67,
+      100,
+      122
+    ],
+    "literals": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        0
+      ]
+    ],
+    "new_states_covered": 1,
+    "full_support": 1,
+    "assay_mean_precision": 0.0,
+    "assay_strict_precision": 0.0,
+    "all_support_assay_mean_pass": false,
+    "all_support_assay_strict_pass": false,
+    "minimum_measured_gain": 0.19815001828639184,
+    "minimum_paired_replicate_gain": 0.0073889792293709705,
+    "assayed_support_ids": [
+      "seq_146437"
+    ],
+    "status": "finite-model sufficient clause; experimentally audited, not global ILP"
+  }
+]

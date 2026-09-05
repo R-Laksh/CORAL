@@ -31,3 +31,7 @@ gc_cf/
 cf/
 runs/
 plots/
+
+# Downloaded assay data and fitted research models
+research_data/
+*.joblib

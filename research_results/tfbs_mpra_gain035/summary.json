@@ -1,0 +1,1139 @@
+{
+  "status": "exploratory finite measured-state prototype; not a Ledidi/CORAL superiority claim",
+  "data": {
+    "doi": "10.1038/s41467-023-37960-5",
+    "repository": "https://github.com/IliasGeoSo/TFBSs_grammar",
+    "commit": "2a65724010cac893e5dd667f198145a7c7c9803f",
+    "sha256": {
+      "Library_MPRA_TFBSs.txt": "3e3325853cafd64b762be7f501a6f661587910234365c238cfd482646db72bf0",
+      "MPRA_TFBSs_1-byInsert.tsv": "f5c4afeea472e168d247b73a4d60500f22061bd806491662db591db4332d7fa9",
+      "MPRA_TFBSs_2-byInsert.tsv": "594ce805fa33362a058f7b95e4ec3f8b26d68eaa962da11b7c8dda4fd45810f7",
+      "MPRA_TFBSs_3-byInsert.tsv": "6e113ebc05d75abbf4cab9fa8057f82f4a3d3a67a1e8150572568383fadb4af3"
+    },
+    "design_records": 209440,
+    "triplet_records": 85750,
+    "design_neighbourhoods": 11664,
+    "incomplete_or_reduced_cubes": 1838,
+    "complete_cubes_failing_quality": 2466,
+    "retained_neighbourhoods": 7360,
+    "retained_sequences": 58880,
+    "min_tags_each_of_three_replicates": 3,
+    "mapping": "one-based FASTA record index; verified against four author plot values",
+    "replicate_pearson_log2": {
+      "1-2": 0.7745635924083797,
+      "1-3": 0.7157122170049689,
+      "2-3": 0.7450191867267895
+    }
+  },
+  "configuration": {
+    "source_dir": "../tmp/tfbs_grammar_source",
+    "download": false,
+    "output": "research_results/tfbs_mpra_gain035",
+    "cases": 300,
+    "h_train_cases": 2000,
+    "repeats": 16,
+    "particles": 16,
+    "rollouts": 16,
+    "steps": 6,
+    "gain": 0.35,
+    "beta": 0.1,
+    "stay": 0.65,
+    "edge_cost": 0.03,
+    "min_tags": 3,
+    "seed": 20260905
+  },
+  "factor_vocabulary": [
+    "AHR",
+    "AP1",
+    "CEBPA",
+    "CTCF",
+    "FOXA1",
+    "GABPA",
+    "HNF1A",
+    "HNF4A",
+    "NR2F2",
+    "ONECUT1",
+    "PPARA",
+    "REST",
+    "RXRA",
+    "SP1",
+    "TFAP2C",
+    "XBP1",
+    "YY1"
+  ],
+  "split_neighbourhood_counts": {
+    "test": 949,
+    "train": 5175,
+    "validation": 1236
+  },
+  "split_family_counts": {
+    "train": 585,
+    "validation": 140,
+    "test": 117
+  },
+  "activity_predictor": {
+    "type": "validation-selected structured screening model",
+    "metrics": {
+      "selected": "pair_ridge_10",
+      "selection": "minimum within-neighbourhood RMSE on validation TF families",
+      "candidates": {
+        "histogram": {
+          "train": {
+            "pearson": 0.8670862347618846,
+            "spearman": 0.8291969226476945,
+            "r2": 0.7490935176770517,
+            "rmse_log2": 0.18258773302119763,
+            "within_neighbourhood_pearson": 0.5934228776991142,
+            "within_neighbourhood_rmse": 0.1631430283331708
+          },
+          "validation": {
+            "pearson": 0.840346181832523,
+            "spearman": 0.793330662584986,
+            "r2": 0.7052098930507873,
+            "rmse_log2": 0.18688625272847112,
+            "within_neighbourhood_pearson": 0.5676736360155415,
+            "within_neighbourhood_rmse": 0.16321459569454574
+          },
+          "test": {
+            "pearson": 0.8185652266902073,
+            "spearman": 0.7649982836596321,
+            "r2": 0.6696045672558191,
+            "rmse_log2": 0.18515695207194724,
+            "within_neighbourhood_pearson": 0.5457480874844435,
+            "within_neighbourhood_rmse": 0.16370050675347408
+          }
+        },
+        "pair_ridge_10": {
+          "train": {
+            "pearson": 0.9250357572242035,
+            "spearman": 0.9004757001319499,
+            "r2": 0.8546903450008227,
+            "rmse_log2": 0.13895138868562787,
+            "within_neighbourhood_pearson": 0.7660628456214298,
+            "within_neighbourhood_rmse": 0.12506575473785397
+          },
+          "validation": {
+            "pearson": 0.8876934882488883,
+            "spearman": 0.8466942403435764,
+            "r2": 0.7879973874018958,
+            "rmse_log2": 0.15848622104524765,
+            "within_neighbourhood_pearson": 0.681349631083612,
+            "within_neighbourhood_rmse": 0.13934881026672855
+          },
+          "test": {
+            "pearson": 0.8722799383179948,
+            "spearman": 0.8245319762074582,
+            "r2": 0.7608668200000066,
+            "rmse_log2": 0.1575226194518485,
+            "within_neighbourhood_pearson": 0.6752726886065716,
+            "within_neighbourhood_rmse": 0.13870594249747992
+          }
+        },
+        "pair_ridge_100": {
+          "train": {
+            "pearson": 0.8893375341578421,
+            "spearman": 0.862803148401933,
+            "r2": 0.7845904661842599,
+            "rmse_log2": 0.1691796476356199,
+            "within_neighbourhood_pearson": 0.6973143073192305,
+            "within_neighbourhood_rmse": 0.14118663535732734
+          },
+          "validation": {
+            "pearson": 0.8620761470413136,
+            "spearman": 0.8225724877050328,
+            "r2": 0.7398715006198686,
+            "rmse_log2": 0.17555567439865466,
+            "within_neighbourhood_pearson": 0.6481490234587025,
+            "within_neighbourhood_rmse": 0.1461214067267721
+          },
+          "test": {
+            "pearson": 0.8404900357980383,
+            "spearman": 0.7961770402915312,
+            "r2": 0.7035808190433117,
+            "rmse_log2": 0.17537842154518474,
+            "within_neighbourhood_pearson": 0.6417114555536626,
+            "within_neighbourhood_rmse": 0.14562609640309973
+          }
+        }
+      },
+      "selected_metrics": {
+        "train": {
+          "pearson": 0.9250357572242035,
+          "spearman": 0.9004757001319499,
+          "r2": 0.8546903450008227,
+          "rmse_log2": 0.13895138868562787,
+          "within_neighbourhood_pearson": 0.7660628456214298,
+          "within_neighbourhood_rmse": 0.12506575473785397
+        },
+        "validation": {
+          "pearson": 0.8876934882488883,
+          "spearman": 0.8466942403435764,
+          "r2": 0.7879973874018958,
+          "rmse_log2": 0.15848622104524765,
+          "within_neighbourhood_pearson": 0.681349631083612,
+          "within_neighbourhood_rmse": 0.13934881026672855
+        },
+        "test": {
+          "pearson": 0.8722799383179948,
+          "spearman": 0.8245319762074582,
+          "r2": 0.7608668200000066,
+          "rmse_log2": 0.1575226194518485,
+          "within_neighbourhood_pearson": 0.6752726886065716,
+          "within_neighbourhood_rmse": 0.13870594249747992
+        }
+      }
+    }
+  },
+  "learned_h_training": {
+    "candidate_training_neighbourhoods": 2000,
+    "feasible_training_neighbourhoods": 269,
+    "training_state_time_examples": 12912
+  },
+  "test": {
+    "neighbourhoods_selected_without_assay_selection": 300,
+    "model_infeasible": 260,
+    "model_feasible": 40,
+    "mean_factorized_invalid_mass": 0.0322059397524632,
+    "mean_exact_target_assay_mean": 0.7275040893273641,
+    "mean_exact_target_assay_strict": 0.4136474318147717,
+    "mean_local_clauses": 1.2,
+    "blocking_run_completeness": 1.0,
+    "expected_regions_3_independent_draws": 1.1214401630621187,
+    "regions_3_exact_blocking_rounds": 1.2,
+    "model_infeasible_but_assay_mean_feasible": 56,
+    "model_infeasible_but_assay_strict_feasible": 11
+  },
+  "methods": {
+    "reference": {
+      "smc_survived": {
+        "mean": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "found_cf": {
+        "mean": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "terminal_tv": {
+        "mean": 0.10667485335966531,
+        "ci95": [
+          0.07944227850793388,
+          0.1339960501033338
+        ]
+      },
+      "ess_fraction": {
+        "mean": 0.38893856175725205,
+        "ci95": [
+          0.35490005064636654,
+          0.4286465535893552
+        ]
+      },
+      "unique_cf": {
+        "mean": 2.2984375,
+        "ci95": [
+          1.8930209001925546,
+          2.7371712347729784
+        ]
+      },
+      "best_base_edit_regret": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "endpoint_mean_meets_gain": {
+        "mean": 0.7263152857333095,
+        "ci95": [
+          0.5943670328310245,
+          0.8424532008864832
+        ]
+      },
+      "endpoint_all_replicates_positive": {
+        "mean": 0.894463571328966,
+        "ci95": [
+          0.8026007678475976,
+          0.9617590128894956
+        ]
+      },
+      "endpoint_all_replicates_meet_gain": {
+        "mean": 0.41785864315638754,
+        "ci95": [
+          0.2689450920150018,
+          0.567425728826163
+        ]
+      },
+      "endpoint_base_edits": {
+        "mean": 15.99805177937509,
+        "ci95": [
+          14.41371216516924,
+          17.87173812461496
+        ]
+      },
+      "normalizer_relative_estimate": {
+        "mean": 1.010670777823808,
+        "ci95": [
+          0.9866772536045945,
+          1.0366357967767563
+        ]
+      },
+      "seconds": {
+        "mean": 0.00026747496093619815,
+        "ci95": [
+          0.0002534936702928702,
+          0.0002837526445309691
+        ]
+      }
+    },
+    "myopic": {
+      "smc_survived": {
+        "mean": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "found_cf": {
+        "mean": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "terminal_tv": {
+        "mean": 0.11551370705382631,
+        "ci95": [
+          0.085315201976588,
+          0.14550764888638143
+        ]
+      },
+      "ess_fraction": {
+        "mean": 0.4599443017933872,
+        "ci95": [
+          0.3959967198499777,
+          0.5229355921266944
+        ]
+      },
+      "unique_cf": {
+        "mean": 2.1234375,
+        "ci95": [
+          1.7745610330725463,
+          2.497098214285714
+        ]
+      },
+      "best_base_edit_regret": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "endpoint_mean_meets_gain": {
+        "mean": 0.7295990307625345,
+        "ci95": [
+          0.5958494128810372,
+          0.8446526743104363
+        ]
+      },
+      "endpoint_all_replicates_positive": {
+        "mean": 0.8956116468873512,
+        "ci95": [
+          0.8051590775714829,
+          0.9629778039558772
+        ]
+      },
+      "endpoint_all_replicates_meet_gain": {
+        "mean": 0.42640639383088585,
+        "ci95": [
+          0.27765678405508426,
+          0.5756613250077112
+        ]
+      },
+      "endpoint_base_edits": {
+        "mean": 15.911515234585135,
+        "ci95": [
+          14.28071868555991,
+          17.804286159730378
+        ]
+      },
+      "normalizer_relative_estimate": {
+        "mean": 0.9902541552118729,
+        "ci95": [
+          0.9482857549546215,
+          1.0346979217759402
+        ]
+      },
+      "seconds": {
+        "mean": 0.0002736663593744026,
+        "ci95": [
+          0.00025903753255694764,
+          0.00029114295567614546
+        ]
+      }
+    },
+    "rollout": {
+      "smc_survived": {
+        "mean": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "found_cf": {
+        "mean": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "terminal_tv": {
+        "mean": 0.09082166983214951,
+        "ci95": [
+          0.06686436253214893,
+          0.1156192344357692
+        ]
+      },
+      "ess_fraction": {
+        "mean": 0.7496879094772422,
+        "ci95": [
+          0.734419054452075,
+          0.7663606954351088
+        ]
+      },
+      "unique_cf": {
+        "mean": 2.234375,
+        "ci95": [
+          1.8502878289473683,
+          2.6406684027777776
+        ]
+      },
+      "best_base_edit_regret": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "endpoint_mean_meets_gain": {
+        "mean": 0.7261744251772339,
+        "ci95": [
+          0.5915497769114199,
+          0.8411514551697005
+        ]
+      },
+      "endpoint_all_replicates_positive": {
+        "mean": 0.8916892471623254,
+        "ci95": [
+          0.7986411962716874,
+          0.9609405588085498
+        ]
+      },
+      "endpoint_all_replicates_meet_gain": {
+        "mean": 0.4111824708622846,
+        "ci95": [
+          0.2663804970150262,
+          0.5602048958240079
+        ]
+      },
+      "endpoint_base_edits": {
+        "mean": 16.02313547500333,
+        "ci95": [
+          14.434732333061804,
+          17.86975255925089
+        ]
+      },
+      "normalizer_relative_estimate": {
+        "mean": 0.7605130556774886,
+        "ci95": [
+          0.6940778941389815,
+          0.8243046905639555
+        ]
+      },
+      "seconds": {
+        "mean": 0.0005779661484385911,
+        "ci95": [
+          0.0005307195091293583,
+          0.0006450917015103999
+        ]
+      }
+    },
+    "learned": {
+      "smc_survived": {
+        "mean": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "found_cf": {
+        "mean": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "terminal_tv": {
+        "mean": 0.08268260154330143,
+        "ci95": [
+          0.060682948648378435,
+          0.10499455523508963
+        ]
+      },
+      "ess_fraction": {
+        "mean": 0.845989007181387,
+        "ci95": [
+          0.821597424326806,
+          0.869911318157383
+        ]
+      },
+      "unique_cf": {
+        "mean": 2.275,
+        "ci95": [
+          1.8765625,
+          2.691012105855856
+        ]
+      },
+      "best_base_edit_regret": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "endpoint_mean_meets_gain": {
+        "mean": 0.7268341158764842,
+        "ci95": [
+          0.5924388542410889,
+          0.8405654161287764
+        ]
+      },
+      "endpoint_all_replicates_positive": {
+        "mean": 0.890771659657946,
+        "ci95": [
+          0.799480128695376,
+          0.9600145444166283
+        ]
+      },
+      "endpoint_all_replicates_meet_gain": {
+        "mean": 0.40939902975560727,
+        "ci95": [
+          0.26712357505551493,
+          0.556890244588154
+        ]
+      },
+      "endpoint_base_edits": {
+        "mean": 16.000000913507023,
+        "ci95": [
+          14.435857305831576,
+          17.82579966799949
+        ]
+      },
+      "normalizer_relative_estimate": {
+        "mean": 0.9980159713876811,
+        "ci95": [
+          0.975759979792209,
+          1.0203256784403445
+        ]
+      },
+      "seconds": {
+        "mean": 0.0024661802718821237,
+        "ci95": [
+          0.002384861412508885,
+          0.0025713109663639266
+        ]
+      }
+    },
+    "exact": {
+      "smc_survived": {
+        "mean": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "found_cf": {
+        "mean": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "terminal_tv": {
+        "mean": 0.0804147280682201,
+        "ci95": [
+          0.059186518281247526,
+          0.10182956539388462
+        ]
+      },
+      "ess_fraction": {
+        "mean": 1.0,
+        "ci95": [
+          0.9999999999999998,
+          1.0
+        ]
+      },
+      "unique_cf": {
+        "mean": 2.25625,
+        "ci95": [
+          1.8779235197368422,
+          2.671103238866397
+        ]
+      },
+      "best_base_edit_regret": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "endpoint_mean_meets_gain": {
+        "mean": 0.72744140625,
+        "ci95": [
+          0.5944191432643582,
+          0.8426859637004573
+        ]
+      },
+      "endpoint_all_replicates_positive": {
+        "mean": 0.89619140625,
+        "ci95": [
+          0.8044748168408233,
+          0.9637235066537081
+        ]
+      },
+      "endpoint_all_replicates_meet_gain": {
+        "mean": 0.41328125,
+        "ci95": [
+          0.2685498046875,
+          0.5601753615889953
+        ]
+      },
+      "endpoint_base_edits": {
+        "mean": 15.95380859375,
+        "ci95": [
+          14.29950191435054,
+          17.854944003934033
+        ]
+      },
+      "normalizer_relative_estimate": {
+        "mean": 1.0,
+        "ci95": [
+          0.9999999999999998,
+          1.0
+        ]
+      },
+      "seconds": {
+        "mean": 0.00028742390624678647,
+        "ci95": [
+          0.0002733691949299184,
+          0.0003073395692744725
+        ]
+      }
+    },
+    "defensive_rollout": {
+      "smc_survived": {
+        "mean": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "found_cf": {
+        "mean": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "terminal_tv": {
+        "mean": 0.08800475451478282,
+        "ci95": [
+          0.06506424078135906,
+          0.11229883571352346
+        ]
+      },
+      "ess_fraction": {
+        "mean": 0.6248590217298375,
+        "ci95": [
+          0.568455046755118,
+          0.6785223181714052
+        ]
+      },
+      "unique_cf": {
+        "mean": 2.2671875,
+        "ci95": [
+          1.873436498397436,
+          2.6861253720238096
+        ]
+      },
+      "best_base_edit_regret": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "endpoint_mean_meets_gain": {
+        "mean": 0.7255645527809603,
+        "ci95": [
+          0.5911467489996043,
+          0.8414311816971395
+        ]
+      },
+      "endpoint_all_replicates_positive": {
+        "mean": 0.8931482870418875,
+        "ci95": [
+          0.801386556218677,
+          0.9622608245724996
+        ]
+      },
+      "endpoint_all_replicates_meet_gain": {
+        "mean": 0.4145508740755277,
+        "ci95": [
+          0.2704816012359426,
+          0.5648615037896046
+        ]
+      },
+      "endpoint_base_edits": {
+        "mean": 15.976597203098521,
+        "ci95": [
+          14.348346153576284,
+          17.85122637642152
+        ]
+      },
+      "normalizer_relative_estimate": {
+        "mean": 1.0097460096034483,
+        "ci95": [
+          0.992897217954251,
+          1.0286285696729622
+        ]
+      },
+      "seconds": {
+        "mean": 0.0005581619125017312,
+        "ci95": [
+          0.0005297388363282767,
+          0.0005949834957624979
+        ]
+      }
+    }
+  },
+  "total_seconds": 14.698520219000102,
+  "python": "3.12.13",
+  "interpretation": [
+    "Exact h and direct enumeration are finite-state references, not scalable optimiser baselines.",
+    "All methods receive the same eight cached activity predictions; timing excludes scoring and training.",
+    "SMC survival and model-valid endpoints do not imply experimental validity.",
+    "Assay audit metrics are conditional on SMC survival; failures are reported separately.",
+    "Intervals resample TF-multiset families after averaging repeats; they are exploratory.",
+    "The reference is an edit-distance kernel, not a learned biological prior.",
+    "Only orientation interventions in fixed experimental contexts are validated.",
+    "Local clauses are scoped finite-model summaries, not causal TF mechanisms or trained ILP outputs."
+  ],
+  "paired_differences_vs_reference": {
+    "myopic": {
+      "smc_survived": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "found_cf": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "terminal_tv": {
+        "mean": 0.00883885369416098,
+        "ci95": [
+          -0.0013601926351254298,
+          0.01807957032813279
+        ]
+      },
+      "ess_fraction": {
+        "mean": 0.0710057400361352,
+        "ci95": [
+          0.02818853797889688,
+          0.11016130286631337
+        ]
+      },
+      "unique_cf": {
+        "mean": -0.175,
+        "ci95": [
+          -0.2958779761904762,
+          -0.08386787280701756
+        ]
+      },
+      "best_base_edit_regret": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "endpoint_mean_meets_gain": {
+        "mean": 0.003283745029225063,
+        "ci95": [
+          -0.0024858194281435486,
+          0.00940399940179748
+        ]
+      },
+      "endpoint_all_replicates_positive": {
+        "mean": 0.0011480755583852433,
+        "ci95": [
+          -0.005100015160812318,
+          0.008724515123536841
+        ]
+      },
+      "endpoint_all_replicates_meet_gain": {
+        "mean": 0.008547750674498377,
+        "ci95": [
+          -0.0016383643919828967,
+          0.020837441208871474
+        ]
+      },
+      "endpoint_base_edits": {
+        "mean": -0.08653654478995625,
+        "ci95": [
+          -0.22557756703905543,
+          0.04750101886021429
+        ]
+      },
+      "normalizer_relative_estimate": {
+        "mean": -0.0204166226119352,
+        "ci95": [
+          -0.06554872613295984,
+          0.025391215120803525
+        ]
+      }
+    },
+    "rollout": {
+      "smc_survived": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "found_cf": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "terminal_tv": {
+        "mean": -0.015853183527515805,
+        "ci95": [
+          -0.023308626862846633,
+          -0.009611058438979171
+        ]
+      },
+      "ess_fraction": {
+        "mean": 0.3607493477199901,
+        "ci95": [
+          0.3279658935977637,
+          0.393410110965127
+        ]
+      },
+      "unique_cf": {
+        "mean": -0.0640625,
+        "ci95": [
+          -0.12664062499999998,
+          -0.012812500000000006
+        ]
+      },
+      "best_base_edit_regret": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "endpoint_mean_meets_gain": {
+        "mean": -0.000140860556075691,
+        "ci95": [
+          -0.008862976904095526,
+          0.007894131759248276
+        ]
+      },
+      "endpoint_all_replicates_positive": {
+        "mean": -0.0027743241666404192,
+        "ci95": [
+          -0.009764761876738822,
+          0.002839077624873114
+        ]
+      },
+      "endpoint_all_replicates_meet_gain": {
+        "mean": -0.006676172294102873,
+        "ci95": [
+          -0.018309081929313804,
+          0.0072038231293330745
+        ]
+      },
+      "endpoint_base_edits": {
+        "mean": 0.025083695628241597,
+        "ci95": [
+          -0.11205290696019739,
+          0.1385170902842993
+        ]
+      },
+      "normalizer_relative_estimate": {
+        "mean": -0.25015772214631943,
+        "ci95": [
+          -0.33082754285764276,
+          -0.1746076427819335
+        ]
+      }
+    },
+    "learned": {
+      "smc_survived": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "found_cf": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "terminal_tv": {
+        "mean": -0.023992251816363892,
+        "ci95": [
+          -0.035314022497615095,
+          -0.013873941818239394
+        ]
+      },
+      "ess_fraction": {
+        "mean": 0.4570504454241348,
+        "ci95": [
+          0.41851814251645014,
+          0.4883581611369589
+        ]
+      },
+      "unique_cf": {
+        "mean": -0.0234375,
+        "ci95": [
+          -0.06845982142857143,
+          0.014066051136363633
+        ]
+      },
+      "best_base_edit_regret": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "endpoint_mean_meets_gain": {
+        "mean": 0.0005188301431746402,
+        "ci95": [
+          -0.010021015063265358,
+          0.011182273740985335
+        ]
+      },
+      "endpoint_all_replicates_positive": {
+        "mean": -0.0036919116710198594,
+        "ci95": [
+          -0.010820520399577663,
+          0.0008355978231293165
+        ]
+      },
+      "endpoint_all_replicates_meet_gain": {
+        "mean": -0.008459613400780231,
+        "ci95": [
+          -0.0228977924650889,
+          0.005006065049595143
+        ]
+      },
+      "endpoint_base_edits": {
+        "mean": 0.0019491341319336718,
+        "ci95": [
+          -0.12717933120789085,
+          0.1283692746564882
+        ]
+      },
+      "normalizer_relative_estimate": {
+        "mean": -0.012654806436127097,
+        "ci95": [
+          -0.047345003394776194,
+          0.022634131628701364
+        ]
+      }
+    },
+    "exact": {
+      "smc_survived": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "found_cf": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "terminal_tv": {
+        "mean": -0.026260125291445217,
+        "ci95": [
+          -0.03646391379104189,
+          -0.017074776015498026
+        ]
+      },
+      "ess_fraction": {
+        "mean": 0.6110614382427478,
+        "ci95": [
+          0.5713534464106447,
+          0.6450999493536331
+        ]
+      },
+      "unique_cf": {
+        "mean": -0.0421875,
+        "ci95": [
+          -0.10520596993760635,
+          0.006766409266409258
+        ]
+      },
+      "best_base_edit_regret": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "endpoint_mean_meets_gain": {
+        "mean": 0.0011261205166905254,
+        "ci95": [
+          -0.003369292594152815,
+          0.006577335540232251
+        ]
+      },
+      "endpoint_all_replicates_positive": {
+        "mean": 0.0017278349210340862,
+        "ci95": [
+          -0.0026386742086202722,
+          0.007405014106446759
+        ]
+      },
+      "endpoint_all_replicates_meet_gain": {
+        "mean": -0.004577393156387515,
+        "ci95": [
+          -0.015100474246326153,
+          0.005607707211097165
+        ]
+      },
+      "endpoint_base_edits": {
+        "mean": -0.044243185625089464,
+        "ci95": [
+          -0.1971994801498137,
+          0.09961693317766004
+        ]
+      },
+      "normalizer_relative_estimate": {
+        "mean": -0.010670777823808172,
+        "ci95": [
+          -0.03663579677675653,
+          0.013322746395405132
+        ]
+      }
+    },
+    "defensive_rollout": {
+      "smc_survived": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "found_cf": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "terminal_tv": {
+        "mean": -0.018670098844882493,
+        "ci95": [
+          -0.027346272102962945,
+          -0.00970512262400537
+        ]
+      },
+      "ess_fraction": {
+        "mean": 0.23592045997258548,
+        "ci95": [
+          0.20403509354092295,
+          0.2646794992915854
+        ]
+      },
+      "unique_cf": {
+        "mean": -0.03125,
+        "ci95": [
+          -0.0625,
+          -0.0031195494186046563
+        ]
+      },
+      "best_base_edit_regret": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "endpoint_mean_meets_gain": {
+        "mean": -0.0007507329523491785,
+        "ci95": [
+          -0.011028467887240444,
+          0.007226108118325896
+        ]
+      },
+      "endpoint_all_replicates_positive": {
+        "mean": -0.0013152842870784586,
+        "ci95": [
+          -0.010324949215448166,
+          0.005059758535426012
+        ]
+      },
+      "endpoint_all_replicates_meet_gain": {
+        "mean": -0.003307769080859793,
+        "ci95": [
+          -0.015418011551225031,
+          0.008665878739417638
+        ]
+      },
+      "endpoint_base_edits": {
+        "mean": -0.02145457627657126,
+        "ci95": [
+          -0.16440076114651897,
+          0.11830438393522096
+        ]
+      },
+      "normalizer_relative_estimate": {
+        "mean": -0.0009247682203597063,
+        "ci95": [
+          -0.031669601763312,
+          0.027203961201881947
+        ]
+      }
+    }
+  },
+  "clause_audit": {
+    "clauses": 48,
+    "all_support_assay_mean_pass": 30,
+    "all_support_assay_strict_pass": 14,
+    "interpretation": "Observed support checks within fixed contexts; not confidence intervals or transferable causal mechanisms."
+  }
+}

@@ -1,3 +1,19 @@
-from .coral import CORALOptimizer
-from .gc import LearnedGCOptimizer, GCOracleOneHot, LedidiGCOptimizer
-from .seqgra import SeqgraCORALOptimizer, SeqgraOracleOneHot, LedidiSeqgraCFOptimizer
+"""Optimisers with optional deep-learning dependencies loaded lazily."""
+from importlib import import_module
+
+_EXPORTS = {
+    "CORALOptimizer": ".coral",
+    "LearnedGCOptimizer": ".gc", "GCOracleOneHot": ".gc", "LedidiGCOptimizer": ".gc",
+    "SeqgraCORALOptimizer": ".seqgra", "SeqgraOracleOneHot": ".seqgra",
+    "LedidiSeqgraCFOptimizer": ".seqgra",
+    "FiniteEditGraph": ".distributional", "DistributionalCFOptimizer": ".distributional",
+}
+__all__ = list(_EXPORTS)
+
+
+def __getattr__(name):
+    if name not in _EXPORTS:
+        raise AttributeError(name)
+    value = getattr(import_module(_EXPORTS[name], __name__), name)
+    globals()[name] = value
+    return value
