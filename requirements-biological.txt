@@ -1,0 +1,28 @@
+# Install an appropriate CPU/CUDA PyTorch build first (ESMC pilot: 2.11.0+cpu).
+# Install the three pinned model/editor packages with --no-deps as described
+# in docs/biological_optimizer.md; ESM's full extras include CUDA-only folding.
+-r requirements-research.txt
+torch>=2.11,<2.12
+transformers==4.57.6
+safetensors==0.6.2
+huggingface-hub==0.36.2
+h5py>=3.7
+accelerate==1.14.0
+einops==0.8.2
+attrs>=25
+biotite==1.7.1
+biopython>=1.85
+brotli>=1.1
+msgpack-numpy==0.4.8
+cloudpathlib>=0.20
+zstd>=1.5
+httpx>=0.28
+tenacity>=9
+boto3>=1.40
+pygtrie>=2.5
+pydssp>=0.9
+py3dmol>=2.5
+dna_features_viewer>=3.1
+tangermeme==1.4.1
+logomaker>=0.8
+pyBigWig>=0.3

@@ -1,0 +1,236 @@
+{
+  "dataset_url": "https://huggingface.co/datasets/SaProtHub/Dataset-GB1-fitness/resolve/29bd1ffac5427d9fe8862f48f1f24b9fa18dff8c/dataset.csv",
+  "dataset_sha256": "2f115d4eaf03b6083dcc22f7451b3ddfad41c9d8e519286c4e69b6d06db78f1c",
+  "measured_n": 149361,
+  "missing_of_20pow4": 10639,
+  "model_id": "biohub/ESMC-300M",
+  "family": "esmc",
+  "code_revision": "bf343ba264b650dff7a073643725f9aaa1fdbe8d",
+  "model_revision": "a59b831785f907e96e6a246b1d142bfb76df31ee",
+  "checkpoint_sha256": "0772d8fe64bb25e14fe6f23b80e3c9a7d215d0da3c6cba5bd356d7c0e0bb22cc",
+  "encoder_parameters": 332011200,
+  "target": "log1p(WT-normalised selection fitness)",
+  "split": {
+    "train_order_0_to_2": 2168,
+    "train_order_3": 4096,
+    "train_total": 6264,
+    "validation_order_3": 512,
+    "test_order_4": 512,
+    "hash_salt": "coral-gb1-v1"
+  },
+  "selected": [
+    {
+      "features": "esm_mean_and_sites",
+      "alpha": 100.0,
+      "validation": {
+        "n": 512,
+        "r2": 0.672154245282178,
+        "spearman": 0.6030630299760243,
+        "rmse_log1p": 0.13517148333114787
+      },
+      "test": {
+        "n": 512,
+        "r2": 0.12143034943655695,
+        "spearman": 0.3265543123008001,
+        "rmse_log1p": 0.1524642205350628
+      },
+      "train": {
+        "n": 6264,
+        "r2": 0.8944351044645039,
+        "spearman": 0.6970028993969586,
+        "rmse_log1p": 0.09514752969707671
+      }
+    },
+    {
+      "features": "onehot_additive",
+      "alpha": 1000.0,
+      "validation": {
+        "n": 512,
+        "r2": 0.22245192754020193,
+        "spearman": 0.6352295745024752,
+        "rmse_log1p": 0.2081679771440967
+      },
+      "test": {
+        "n": 512,
+        "r2": -0.2511224821263327,
+        "spearman": 0.4341993621537492,
+        "rmse_log1p": 0.1819406548417162
+      },
+      "train": {
+        "n": 6264,
+        "r2": 0.41102545801643686,
+        "spearman": 0.7420515540125949,
+        "rmse_log1p": 0.22474291920880357
+      }
+    }
+  ],
+  "validation_candidates": [
+    {
+      "features": "esm_mean",
+      "alpha": 1.0,
+      "validation": {
+        "n": 512,
+        "r2": 0.5282332839689915,
+        "spearman": 0.5547516283755056,
+        "rmse_log1p": 0.16214887735359246
+      }
+    },
+    {
+      "features": "esm_mean",
+      "alpha": 10.0,
+      "validation": {
+        "n": 512,
+        "r2": 0.5465371429396564,
+        "spearman": 0.5910027160076573,
+        "rmse_log1p": 0.15897219012495156
+      }
+    },
+    {
+      "features": "esm_mean",
+      "alpha": 100.0,
+      "validation": {
+        "n": 512,
+        "r2": 0.5119133218728402,
+        "spearman": 0.6398268761496855,
+        "rmse_log1p": 0.16492966412143678
+      }
+    },
+    {
+      "features": "esm_mean",
+      "alpha": 1000.0,
+      "validation": {
+        "n": 512,
+        "r2": 0.42660825651597933,
+        "spearman": 0.6464596588847951,
+        "rmse_log1p": 0.17876233343461578
+      }
+    },
+    {
+      "features": "esm_mean",
+      "alpha": 10000.0,
+      "validation": {
+        "n": 512,
+        "r2": 0.3374880756069766,
+        "spearman": 0.6449848953977945,
+        "rmse_log1p": 0.19215299021347673
+      }
+    },
+    {
+      "features": "esm_mean_and_sites",
+      "alpha": 1.0,
+      "validation": {
+        "n": 512,
+        "r2": 0.5246585860809381,
+        "spearman": 0.4717876101101301,
+        "rmse_log1p": 0.16276203992156993
+      }
+    },
+    {
+      "features": "esm_mean_and_sites",
+      "alpha": 10.0,
+      "validation": {
+        "n": 512,
+        "r2": 0.6620157071220311,
+        "spearman": 0.5363049605584994,
+        "rmse_log1p": 0.13724563988295987
+      }
+    },
+    {
+      "features": "esm_mean_and_sites",
+      "alpha": 100.0,
+      "validation": {
+        "n": 512,
+        "r2": 0.672154245282178,
+        "spearman": 0.6030630299760243,
+        "rmse_log1p": 0.13517148333114787
+      }
+    },
+    {
+      "features": "esm_mean_and_sites",
+      "alpha": 1000.0,
+      "validation": {
+        "n": 512,
+        "r2": 0.6169324451432306,
+        "spearman": 0.6656438653207295,
+        "rmse_log1p": 0.14611270542965382
+      }
+    },
+    {
+      "features": "esm_mean_and_sites",
+      "alpha": 10000.0,
+      "validation": {
+        "n": 512,
+        "r2": 0.5006533591554476,
+        "spearman": 0.6902509415486349,
+        "rmse_log1p": 0.16682124721124394
+      }
+    },
+    {
+      "features": "onehot_additive",
+      "alpha": 1.0,
+      "validation": {
+        "n": 512,
+        "r2": 0.1863678048901427,
+        "spearman": 0.6340226197816915,
+        "rmse_log1p": 0.2129434862923097
+      }
+    },
+    {
+      "features": "onehot_additive",
+      "alpha": 10.0,
+      "validation": {
+        "n": 512,
+        "r2": 0.18684778504666,
+        "spearman": 0.6339714335706422,
+        "rmse_log1p": 0.2128806669208884
+      }
+    },
+    {
+      "features": "onehot_additive",
+      "alpha": 100.0,
+      "validation": {
+        "n": 512,
+        "r2": 0.19144862761331927,
+        "spearman": 0.6339779775170636,
+        "rmse_log1p": 0.21227756963983685
+      }
+    },
+    {
+      "features": "onehot_additive",
+      "alpha": 1000.0,
+      "validation": {
+        "n": 512,
+        "r2": 0.22245192754020193,
+        "spearman": 0.6352295745024752,
+        "rmse_log1p": 0.2081679771440967
+      }
+    },
+    {
+      "features": "onehot_additive",
+      "alpha": 10000.0,
+      "validation": {
+        "n": 512,
+        "r2": 0.19921266534301296,
+        "spearman": 0.6348022458368502,
+        "rmse_log1p": 0.2112559235623516
+      }
+    }
+  ],
+  "embedding_seconds": 555.0512725819999,
+  "checks": {
+    "native_max_abs_error": 0.0,
+    "runtime_native_max_abs_error": 0.0,
+    "runtime_vs_fp32_feature_max_abs_error": 0.0034220516681671143,
+    "directional_derivative": 4.734453341370681e-06,
+    "finite_difference": 4.7322828322649e-06,
+    "absolute_gradient_error": 2.1705091057810932e-09,
+    "all_encoder_weights_frozen": true
+  },
+  "runtime": {
+    "torch": "2.11.0+cpu",
+    "device": "cpu",
+    "threads": 4,
+    "batch_size": 32,
+    "amp_bf16": true
+  }
+}

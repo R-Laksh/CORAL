@@ -1,0 +1,34 @@
+{
+  "profile_max_abs_error": 4.0531158447265625e-06,
+  "counts_max_abs_error": 2.384185791015625e-07,
+  "gradient_max_abs_error": 0.0001188814640045166,
+  "torch_directions": [
+    -0.0055045392364263535,
+    -0.024572130292654037,
+    -0.024807998910546303,
+    0.03347259387373924,
+    -0.010742368176579475,
+    -0.0055045392364263535,
+    0.004619687795639038,
+    0.024099521338939667
+  ],
+  "tf_finite_differences": [
+    -0.0056028361432254314,
+    -0.024497507140040398,
+    -0.024825332686305046,
+    0.03343820571899414,
+    -0.01084804441779852,
+    -0.0056028361432254314,
+    0.004738569259643555,
+    0.024020669981837273
+  ],
+  "epsilon": 0.001,
+  "sequences_including_perturbations": 26,
+  "model_id": "kundajelab/encode-bpnet-FOXA1-ChIP-seq-HepG2-ENCSR865RXA-ENCSR337KST",
+  "model_revision": "adde8fa27ceb7647e35aebe456620ea6b40d4ec3",
+  "bpnet_lite_revision": "b37e766bd7a2bef1614cf18d8bac38167e6f6ff5",
+  "model_sha256": "c347f6885eec87076df3669dc22a75239f2391982d0ec5dba9f9dd0d48833f3b",
+  "controls": "zero original profile and logcount inputs",
+  "tensorflow_version": "2.20.0",
+  "torch_version": "2.11.0+cpu"
+}
