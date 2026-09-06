@@ -9,6 +9,7 @@ _EXPORTS = {
     "FiniteEditGraph": ".distributional", "DistributionalCFOptimizer": ".distributional",
     "ALMHTwistedSearch": ".alm_h", "ALMState": ".alm_h", "SearchConfig": ".alm_h",
     "SearchResult": ".alm_h", "augmented_penalty": ".alm_h",
+    "STGumbelALMSearch": ".st_alm", "STALMConfig": ".st_alm",
 }
 __all__ = list(_EXPORTS)
 
