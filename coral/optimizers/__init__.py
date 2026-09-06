@@ -7,6 +7,8 @@ _EXPORTS = {
     "SeqgraCORALOptimizer": ".seqgra", "SeqgraOracleOneHot": ".seqgra",
     "LedidiSeqgraCFOptimizer": ".seqgra",
     "FiniteEditGraph": ".distributional", "DistributionalCFOptimizer": ".distributional",
+    "ALMHTwistedSearch": ".alm_h", "ALMState": ".alm_h", "SearchConfig": ".alm_h",
+    "SearchResult": ".alm_h", "augmented_penalty": ".alm_h",
 }
 __all__ = list(_EXPORTS)
 
