@@ -165,6 +165,7 @@ def main():
     else:
         edit_weight = .1
     protocol = {"args": vars(args), "head_sha256": hashlib.sha256((head_dir / "head.npz").read_bytes()).hexdigest(),
+                "guide_defense": "normalised proposal mixture with exact extended-space importance correction",
                 "model_revision": metadata["model_revision"], "test_indices": test.tolist(),
                 "validation_indices": validation.tolist(), "ledidi_edit_weight": edit_weight,
                 "ledidi_commit": "beeee38f81bc00f902d41cc02695cec485b41cb9",

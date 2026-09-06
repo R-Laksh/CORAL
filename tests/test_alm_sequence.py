@@ -47,6 +47,24 @@ class ALMSequenceTests(unittest.TestCase):
         back = reference_step(moved, np.array([1]), 2, np.random.default_rng(2), 0.)
         np.testing.assert_array_equal(back, source)
 
+    def test_defensive_proposal_survives_large_alm_offsets(self):
+        pool = np.tile(np.array([[[0], [1]]]), (10000, 1, 1))
+        message = np.tile([-1., -4.], (len(pool), 1))
+        old = np.zeros(len(pool))
+        a = candidate_pool_select(pool, message, old, np.random.default_rng(8), .02)
+        b = candidate_pool_select(pool, message - 1e6, old - 1e6, np.random.default_rng(8), .02)
+        np.testing.assert_array_equal(a[0], b[0])
+        np.testing.assert_allclose(a[2], b[2], atol=1e-9)
+        self.assertLess(a[0].mean(), .1)
+
+    def test_defensive_mixture_has_correct_importance_weights(self):
+        pool = np.tile(np.array([[[0], [1]]]), (80000, 1, 1))
+        message = np.log(np.tile([1., 3.], (len(pool), 1)))
+        chosen, carried, weights = candidate_pool_select(pool, message, np.zeros(len(pool)),
+                                                         np.random.default_rng(9), .25)
+        f = np.where(chosen[:, 0] == 0, 2., -1.)
+        self.assertAlmostEqual(float((np.exp(weights) * f).mean()), -.5, delta=.025)
+
     def test_independent_reference_can_exceed_one_edit_without_a_cap(self):
         source = np.zeros((5000, 16), dtype=np.int64)
         moved = reference_step(source, np.arange(12), 2, np.random.default_rng(3), kernel="independent")

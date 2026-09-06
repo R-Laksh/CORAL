@@ -46,21 +46,31 @@ def alm_energy(edits, residual, multipliers, rho):
     return edits + np.square(np.maximum(0, multipliers + rho * residual)).sum(axis=-1) / (2 * rho)
 
 
-def candidate_pool_select(candidates, log_psi, previous_log_psi, rng):
+def candidate_pool_select(candidates, log_psi, previous_log_psi, rng, defensive_mix=0.):
     """Extended-space importance step for iid candidate draws from K.
 
-    Pick j proportional to psi_j, then multiply weight by mean(psi_j)/psi_old.
-    No evaluation of all K neighbours is needed. Carry the selected *realised*
-    message into the next step; recomputing a stochastic denominator is wrong.
+    Pick j with r_j = (1-eta) psi_j/sum(psi) + eta/M. Multiply weight by
+    psi_j/(M r_j psi_old). At eta=0 this is mean(psi)/psi_old. No evaluation
+    of all K neighbours is needed. Carry the selected *realised* message into
+    the next step; recomputing a stochastic denominator is wrong.
     """
+    if not 0 <= defensive_mix < 1:
+        raise ValueError("Defensive proposal mixture must be in [0,1)")
     normalizer = logsumexp(log_psi, axis=1)
-    probabilities = np.exp(log_psi - normalizer[:, None])
+    log_probability = log_psi - normalizer[:, None]
+    if defensive_mix:
+        # Mixing normalised proposals is invariant to h rescaling. An absolute
+        # floor on exp(-ALM energy) erases guidance as multipliers grow.
+        log_probability = np.logaddexp(math.log(defensive_mix / candidates.shape[1]),
+                                      math.log1p(-defensive_mix) + log_probability)
+    probabilities = np.exp(log_probability)
     u = rng.random(len(candidates))
     chosen = (u[:, None] > np.cumsum(probabilities, axis=1)).sum(axis=1)
     chosen = np.minimum(chosen, candidates.shape[1] - 1)
     rows = np.arange(len(candidates))
     return (candidates[rows, chosen], log_psi[rows, chosen],
-            normalizer - math.log(candidates.shape[1]) - previous_log_psi)
+            log_psi[rows, chosen] - math.log(candidates.shape[1])
+            - log_probability[rows, chosen] - previous_log_psi)
 
 
 class BudgetExceeded(RuntimeError):
@@ -239,10 +249,8 @@ def run_h_alm(oracle, seed=0, guidance="rollout", particles=8, pool_size=3,
                     message = logsumexp(values, axis=1) - math.log(rollouts)
                     if guidance == "rollout_control":
                         message = np.zeros(len(flat))
-                if step < horizon and defensive_mix:
-                    message = np.logaddexp(math.log(defensive_mix), math.log1p(-defensive_mix) + message)
                 states, previous, increment = candidate_pool_select(
-                    pool, message.reshape(particles, pool_size), previous, rng)
+                    pool, message.reshape(particles, pool_size), previous, rng, defensive_mix)
                 log_weights += increment
                 weights = np.exp(log_weights - logsumexp(log_weights))
                 ess = float(1 / np.square(weights).sum())
