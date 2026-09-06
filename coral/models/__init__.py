@@ -5,11 +5,12 @@ from .biological import (
     ConjunctiveConstraint,
     ESMAlphabet,
     ESMSoftSequenceRegressor,
+    FairESMSoftSequenceRegressor,
     ThresholdConstraint,
 )
 
 __all__ = [
     "GenomicGCModel", "train_head", "CNN1D", "DeepSTARR",
     "BPNetCountScore", "ConjunctiveConstraint", "ESMAlphabet",
-    "ESMSoftSequenceRegressor", "ThresholdConstraint",
+    "ESMSoftSequenceRegressor", "FairESMSoftSequenceRegressor", "ThresholdConstraint",
 ]
