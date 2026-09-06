@@ -1,0 +1,70 @@
+name: research-gb1-esm
+
+on:
+  push:
+    branches:
+      - research/alm-h-biological-models
+  workflow_dispatch:
+
+jobs:
+  gb1-esm-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: Install research dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install --index-url https://download.pytorch.org/whl/cpu torch
+          python -m pip install fair-esm==2.0.0 pandas scipy scikit-learn pytest
+
+      - name: Run focused optimizer and adapter tests
+        env:
+          PYTHONPATH: .
+        run: |
+          pytest -q tests/test_alm_h.py tests/test_biological_models.py tests/test_gb1.py tests/test_distributional.py
+
+      - name: Download measured GB1 landscape
+        run: |
+          mkdir -p research_data
+          curl -L --fail --retry 3 \
+            https://raw.githubusercontent.com/parizkh/rewired_codes_landscapes/main/GB1/00_data/output/GB1_data_processed.csv \
+            -o research_data/GB1_data_processed.csv
+          python - <<'PY'
+          import pandas as pd
+          p='research_data/GB1_data_processed.csv'
+          d=pd.read_csv(p)
+          print('GB1 rows', len(d), 'columns', list(d.columns))
+          assert len(d) >= 149000
+          assert 'LogFitness' in d.columns
+          PY
+
+      - name: Run frozen ESM2 GB1 counterfactual benchmark
+        env:
+          PYTHONPATH: .
+        run: |
+          python -m coral.runners.run_gb1_esm \
+            --data research_data/GB1_data_processed.csv \
+            --output research_results/gb1_esm8m_smoke \
+            --model esm2_t6_8M_UR50D \
+            --embedding-batch-size 128 \
+            --high-order-eval 1000 \
+            --target-quantile 0.80 \
+            --tasks 2 \
+            --candidate-scan 8 \
+            --repeats 1 \
+            --rho 20
+
+      - name: Upload benchmark outputs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gb1-esm8m-smoke
+          path: research_results/gb1_esm8m_smoke
+          if-no-files-found: warn
