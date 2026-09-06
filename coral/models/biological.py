@@ -93,13 +93,7 @@ class ESMAlphabet:
 
 
 class ESMSoftSequenceRegressor(torch.nn.Module):
-    """Frozen ESM backbone plus a differentiable scalar task head.
-
-    ``x`` has shape ``(N, L, 20)``. Amino-acid probabilities mix the backbone's
-    input embedding vectors; ``inputs_embeds`` is then passed through the frozen
-    transformer. This is not discrete token sampling, but it provides the soft/ST
-    path needed by CORAL while preserving the frozen backbone parameters.
-    """
+    """Frozen HuggingFace-style ESM backbone plus a differentiable scalar task head."""
 
     def __init__(
         self,
@@ -135,4 +129,64 @@ class ESMSoftSequenceRegressor(torch.nn.Module):
             return_dict=True,
         )
         pooled = out.last_hidden_state[:, 1:-1].mean(dim=1)
+        return self.head(pooled).reshape(x.shape[0])
+
+
+class FairESMSoftSequenceRegressor(torch.nn.Module):
+    """Frozen fair-esm ESM2 backbone plus a differentiable scalar task head.
+
+    This follows the embedding-to-transformer path used by ``esm.pretrained.esm2_*``
+    directly, allowing relaxed amino-acid probabilities to replace discrete token
+    embeddings while leaving the pretrained backbone frozen.
+    """
+
+    def __init__(
+        self,
+        backbone: torch.nn.Module,
+        aa_token_ids: Sequence[int],
+        head: torch.nn.Module,
+        freeze_backbone: bool = True,
+    ) -> None:
+        super().__init__()
+        self.backbone = backbone
+        self.aa_token_ids = tuple(int(i) for i in aa_token_ids)
+        self.head = head
+        if freeze_backbone:
+            for p in self.backbone.parameters():
+                p.requires_grad_(False)
+
+    @classmethod
+    def from_alphabet(
+        cls,
+        backbone: torch.nn.Module,
+        alphabet,
+        head: torch.nn.Module,
+        amino_acids: Iterable[str] = tuple("ACDEFGHIKLMNPQRSTVWY"),
+        freeze_backbone: bool = True,
+    ) -> "FairESMSoftSequenceRegressor":
+        aa_ids = [int(alphabet.get_idx(aa)) for aa in amino_acids]
+        return cls(backbone, aa_ids, head, freeze_backbone=freeze_backbone)
+
+    def forward(self, x: Tensor) -> Tensor:
+        if x.ndim != 3 or x.shape[-1] != len(self.aa_token_ids):
+            raise ValueError("FairESMSoftSequenceRegressor expects (N, L, alphabet_size)")
+        model = self.backbone
+        weight = model.embed_tokens.weight
+        aa_ids = torch.as_tensor(self.aa_token_ids, dtype=torch.long, device=x.device)
+        aa_weight = weight.index_select(0, aa_ids).to(dtype=x.dtype)
+        residues = x @ aa_weight
+        cls = weight[int(model.cls_idx)].to(dtype=x.dtype)[None, None, :]
+        eos = weight[int(model.eos_idx)].to(dtype=x.dtype)[None, None, :]
+        hidden = torch.cat(
+            [cls.expand(x.shape[0], -1, -1), residues, eos.expand(x.shape[0], -1, -1)],
+            dim=1,
+        )
+        hidden = hidden * float(getattr(model, "embed_scale", 1.0))
+        if bool(getattr(model, "token_dropout", False)):
+            hidden = hidden * (1.0 - 0.15 * 0.8)
+        hidden = hidden.transpose(0, 1)
+        for layer in model.layers:
+            hidden, _ = layer(hidden, self_attn_padding_mask=None, need_head_weights=False)
+        hidden = model.emb_layer_norm_after(hidden).transpose(0, 1)
+        pooled = hidden[:, 1:-1].mean(dim=1)
         return self.head(pooled).reshape(x.shape[0])
