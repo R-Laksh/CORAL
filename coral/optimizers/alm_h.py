@@ -1,12 +1,13 @@
-"""ALM-compatible, h-guided search over discrete sequence edits.
+"""ALM-compatible h-guided search over discrete biological sequences.
 
-This module is deliberately predictor-agnostic. A caller supplies a differentiable
-constraint function ``g(x)`` where ``g <= 0`` means the requested functional target
-is satisfied. Search uses whole discrete sequences, an edit-local reference kernel,
-and an optional approximation to the backward information function h_t.
+A caller provides a differentiable violation function ``g(x)`` with ``g <= 0``
+meaning that the requested functional constraint is satisfied.  Search operates on
+whole discrete sequences and uses an edit-local reference kernel.  The augmented
+Lagrangian state is frozen inside each particle episode and updated between
+episodes, so an episode has a stationary twisted target.
 
-The augmented-Lagrangian state is held fixed while one particle episode runs and is
-updated only between episodes. This keeps the episode's twisted target stationary.
+This module is intentionally model-agnostic: ``g`` can wrap BPNet, a frozen
+protein language model plus a task head, or a synthetic oracle.
 """
 from __future__ import annotations
 
@@ -63,10 +64,10 @@ class SearchResult:
 
 
 def augmented_penalty(g: Tensor, lam: float | Tensor, rho: float | Tensor) -> Tensor:
-    """Rockafellar-style inequality ALM penalty used by CORAL.
+    """Rockafellar inequality ALM penalty used by CORAL.
 
-    ``g <= 0`` is feasible. This is the same functional form as
-    ``CORALOptimizer._alm_penalty`` before reduction over Monte Carlo samples.
+    ``g <= 0`` is feasible. This matches CORAL's existing penalty before Monte
+    Carlo reduction: ``0.5/rho * relu(lambda + rho*g)^2``.
     """
     lam_t = torch.as_tensor(lam, dtype=g.dtype, device=g.device)
     rho_t = torch.as_tensor(rho, dtype=g.dtype, device=g.device)
@@ -74,16 +75,12 @@ def augmented_penalty(g: Tensor, lam: float | Tensor, rho: float | Tensor) -> Te
 
 
 class ALMHTwistedSearch:
-    """Particle search with an ALM terminal energy and optional h-guidance.
+    """Particle search with ALM terminal energy and optional lookahead guidance.
 
-    The state space is categorical sequences. A local transition changes at most one
-    coordinate. The *horizon* is a search-computation horizon, not a hard
-    admissibility constraint: no-op and reversion transitions are allowed, and final
-    candidates are ranked by actual Hamming distance to ``x0``.
-
-    ``constraint_fn`` receives one-hot tensors with shape ``(N, L, V)`` and returns
-    one scalar violation per sequence. It may wrap BPNet, a protein LM + head, or a
-    synthetic oracle, as long as gradients with respect to the one-hot input exist.
+    The search horizon is a computational horizon, not an edit budget.  Each local
+    transition changes at most one categorical coordinate, but no-op and reversion
+    moves are allowed.  Returned solutions are ranked by actual Hamming distance
+    and are admitted to the archive only after a hard discrete constraint check.
     """
 
     def __init__(
@@ -134,14 +131,12 @@ class ALMHTwistedSearch:
         self._backward_evals += int(ids.shape[0])
         return e.detach(), g.detach(), grad.detach()
 
-    def _top_moves(
-        self,
-        ids: Tensor,
-        grad: Tensor,
-        x0: Tensor,
-        width: int,
-    ) -> tuple[Tensor, Tensor, Tensor]:
-        """Return top single-coordinate moves and first-order energy deltas."""
+    def _top_moves(self, ids: Tensor, grad: Tensor, width: int) -> tuple[Tensor, Tensor, Tensor]:
+        """Return gradient-ranked single-coordinate proposals.
+
+        The first-order score is the directional derivative for replacing the
+        current token by another categorical token.
+        """
         n, L = ids.shape
         V = self.vocab_size
         current_grad = grad.gather(-1, ids.unsqueeze(-1)).squeeze(-1)
@@ -149,26 +144,27 @@ class ALMHTwistedSearch:
 
         mask = torch.zeros_like(delta, dtype=torch.bool)
         mask.scatter_(-1, ids.unsqueeze(-1), True)
-        editable = self.editable_mask
-        if editable is not None:
-            em = editable.to(ids.device).bool()
+        if self.editable_mask is not None:
+            em = self.editable_mask.to(ids.device).bool()
             if em.ndim == 1:
                 em = em.unsqueeze(0).expand(n, -1)
             elif em.shape[0] == 1:
                 em = em.expand(n, -1)
+            if em.shape != ids.shape:
+                raise ValueError("editable_mask must broadcast to sequence shape")
             mask |= ~em.unsqueeze(-1)
         delta = delta.masked_fill(mask, float("inf"))
 
-        flat = delta.reshape(n, L * V)
-        k = min(int(width), L * (V - 1))
-        vals, idx = torch.topk(flat, k=k, dim=-1, largest=False)
-        pos = idx // V
-        tok = idx % V
-
+        available = int((~mask[0]).sum().item())
+        k = min(int(width), available)
+        if k <= 0:
+            raise ValueError("No editable categorical moves are available")
+        vals, idx = torch.topk(delta.reshape(n, L * V), k=k, dim=-1, largest=False)
+        pos, tok = idx // V, idx % V
         owner = torch.arange(n, device=ids.device).repeat_interleave(k)
-        next_ids = ids[owner].clone()
-        next_ids[torch.arange(n * k, device=ids.device), pos.reshape(-1)] = tok.reshape(-1)
-        return next_ids, vals.reshape(-1), owner
+        out = ids[owner].clone()
+        out[torch.arange(n * k, device=ids.device), pos.reshape(-1)] = tok.reshape(-1)
+        return out, vals.reshape(-1), owner
 
     def _reference_logits(
         self,
@@ -188,41 +184,41 @@ class ALMHTwistedSearch:
         )
 
     def estimate_log_h_one_step(
-        self,
-        candidate_ids: Tensor,
-        x0: Tensor,
-        state: ALMState,
+        self, candidate_ids: Tensor, x0: Tensor, state: ALMState
     ) -> Tensor:
-        """Expensive teacher approximation to one-step log h_t.
+        """Expensive candidate-specific one-step teacher for ``log h_t``.
 
-        For each candidate y, approximate
-
-            h(y) = E_{Z ~ P0(.|y)} [ exp(-E_ALM(Z) / tau_E) ]
-
-        over a local reference kernel containing a no-op plus top single edits.
-        Candidate-level gradients make this useful for debugging but too expensive
-        for the intended large biological-model implementation.
+        For each candidate ``y`` this computes a local reference expectation of
+        ``exp(-E_ALM(z)/T)`` over no-op plus gradient-ranked one-edit successors.
+        It is suitable as a teacher/diagnostic, not as the scalable final method.
         """
         cfg = self.config
         e_y, _, grad_y = self._energy_and_gradient(candidate_ids, x0, state)
-        moves, dgrad, owner = self._top_moves(
-            candidate_ids, grad_y, x0, width=cfg.lookahead_width
-        )
+        moves, dgrad, owner = self._top_moves(candidate_ids, grad_y, cfg.lookahead_width)
         e_z, _ = self._energy_ids(moves, x0, state)
 
         n = candidate_ids.shape[0]
         k = moves.shape[0] // n
-        move_logits = self._reference_logits(
-            dgrad, moves, owner, candidate_ids, x0
-        ).reshape(n, k)
-        ref_logits = torch.cat(
-            [torch.zeros((n, 1), device=e_y.device), move_logits], dim=1
-        )
+        move_logits = self._reference_logits(dgrad, moves, owner, candidate_ids, x0).reshape(n, k)
+        ref_logits = torch.cat([torch.zeros((n, 1), device=e_y.device), move_logits], dim=1)
         log_p = F.log_softmax(ref_logits, dim=1)
         energies = torch.cat([e_y[:, None], e_z.reshape(n, k)], dim=1)
         return torch.logsumexp(
             log_p - energies / max(cfg.energy_temperature, 1e-6), dim=1
         )
+
+    @staticmethod
+    def _extract_move_operations(parent_ids: Tensor, moves: Tensor, n_parent: int):
+        """Convert concrete proposed sequences into parent-relative edit operations."""
+        k = moves.shape[0] // n_parent
+        pm = moves.reshape(n_parent, k, -1)
+        base = parent_ids[:, None, :].expand_as(pm)
+        diff = pm != base
+        if not torch.all(diff.sum(dim=-1) == 1):
+            raise RuntimeError("Local proposal was expected to contain exactly one edit")
+        pos = diff.to(torch.int64).argmax(dim=-1)
+        tok = pm.gather(-1, pos.unsqueeze(-1)).squeeze(-1)
+        return pos, tok
 
     def estimate_log_h_shared_rollout(
         self,
@@ -231,44 +227,36 @@ class ALMHTwistedSearch:
         parent_ids: Tensor,
         parent_moves: Tensor,
         parent_move_delta: Tensor,
-        parent_move_owner: Tensor,
         x0: Tensor,
         state: ALMState,
     ) -> Tensor:
-        """Cheap one-step lookahead using a proposal shared with each parent.
+        """Cheap one-step lookahead sharing proposals across a parent's children.
 
-        This estimator does not run a backward pass from every candidate. It reuses
-        the parent's gradient-ranked edit operations, applies a small set as possible
-        continuations of each candidate, and evaluates all resulting hard endpoints
-        in one batched forward pass. The approximation can miss a second edit that
-        only becomes attractive after the first edit.
+        It reuses the parent's gradient-ranked edit operations and needs only batched
+        forward evaluations of continuation endpoints.  This removes the expensive
+        backward pass from every child, at the cost of missing edits that only become
+        attractive after the first mutation.
         """
         cfg = self.config
         n_parent = parent_ids.shape[0]
-        moves_per_parent = parent_moves.shape[0] // n_parent
+        all_pos, all_tok = self._extract_move_operations(parent_ids, parent_moves, n_parent)
+        moves_per_parent = all_pos.shape[1]
         k2 = min(cfg.lookahead_width, moves_per_parent)
-
-        pm = parent_moves.reshape(n_parent, moves_per_parent, -1)[:, :k2]
+        pos = all_pos[:, :k2]
+        tok = all_tok[:, :k2]
         pd = parent_move_delta.reshape(n_parent, moves_per_parent)[:, :k2]
-        pbase = parent_ids[:, None, :].expand_as(pm)
-        diff = pm != pbase
-        pos = diff.to(torch.int64).argmax(dim=-1)
-        tok = pm.gather(-1, pos.unsqueeze(-1)).squeeze(-1)
 
+        cp = candidate_owner.long()
+        pos_c, tok_c, dgrad_c = pos[cp], tok[cp], pd[cp]
         n_cand = candidate_ids.shape[0]
-        cand_parent = candidate_owner.long()
-        pos_c = pos[cand_parent]
-        tok_c = tok[cand_parent]
-        dgrad_c = pd[cand_parent]
-
         endpoints = candidate_ids[:, None, :].repeat(1, k2, 1)
         rows = torch.arange(n_cand, device=candidate_ids.device)[:, None].expand(-1, k2)
         cols = torch.arange(k2, device=candidate_ids.device)[None, :].expand(n_cand, -1)
         endpoints[rows, cols, pos_c] = tok_c
-        endpoints_flat = endpoints.reshape(n_cand * k2, -1)
 
         before = self._hamming(candidate_ids, x0)
-        after = self._hamming(endpoints_flat, x0).reshape(n_cand, k2)
+        flat = endpoints.reshape(n_cand * k2, -1)
+        after = self._hamming(flat, x0).reshape(n_cand, k2)
         step_delta_h = after - before[:, None]
         move_logits = (
             -step_delta_h / max(cfg.move_temperature, 1e-6)
@@ -279,37 +267,27 @@ class ALMHTwistedSearch:
         )
         log_p = F.log_softmax(ref_logits, dim=1)
 
-        all_endpoints = torch.cat(
-            [candidate_ids[:, None, :], endpoints], dim=1
-        ).reshape(n_cand * (k2 + 1), -1)
-        e, _ = self._energy_ids(all_endpoints, x0, state)
+        all_endpoints = torch.cat([candidate_ids[:, None, :], endpoints], dim=1)
+        e, _ = self._energy_ids(all_endpoints.reshape(n_cand * (k2 + 1), -1), x0, state)
         energies = e.reshape(n_cand, k2 + 1)
         return torch.logsumexp(
             log_p - energies / max(cfg.energy_temperature, 1e-6), dim=1
         )
 
     @staticmethod
-    def _sample_grouped(
-        logits: Tensor, owner: Tensor, n_owner: int, generator: torch.Generator
-    ) -> Tensor:
-        counts = torch.bincount(owner, minlength=n_owner)
-        if not torch.all(counts == counts[0]):
-            raise ValueError("Grouped proposal currently expects equal candidate counts")
-        k = int(counts[0].item())
+    def _sample_grouped(logits: Tensor, n_owner: int, k: int, generator: torch.Generator) -> Tensor:
         probs = F.softmax(logits.reshape(n_owner, k), dim=1)
         choice = torch.multinomial(probs, 1, generator=generator).squeeze(1)
-        return torch.arange(n_owner, device=owner.device) * k + choice
+        return torch.arange(n_owner, device=logits.device) * k + choice
 
-    def _update_archive(
-        self,
-        ids: Tensor,
-        g: Tensor,
-        x0: Tensor,
-        archive: dict[tuple[int, ...], float],
-    ) -> None:
+    @staticmethod
+    def _archive_key(seq: Tensor) -> tuple[int, ...]:
+        return tuple(int(v) for v in seq.tolist())
+
+    def _update_archive(self, ids: Tensor, g: Tensor, archive: dict[tuple[int, ...], float]) -> None:
         feasible = g <= 0
         for seq, gv in zip(ids[feasible], g[feasible]):
-            key = tuple(int(v) for v in seq.tolist())
+            key = self._archive_key(seq)
             archive[key] = min(float(gv.item()), archive.get(key, float("inf")))
 
     def _dual_update(self, state: ALMState, g_signal: float) -> None:
@@ -322,14 +300,11 @@ class ALMHTwistedSearch:
             state.rho = max(state.rho * cfg.rho_decay, state.rho_min)
 
     def run(self, x0: Tensor, state: ALMState | None = None) -> SearchResult:
-        """Search from one initial categorical sequence ``x0`` of shape ``(L,)``."""
         if x0.ndim != 1:
             raise ValueError("Prototype expects one initial sequence at a time")
         cfg = self.config
         if cfg.guidance_estimator not in {"shared_rollout", "exact_one_step"}:
-            raise ValueError(
-                "guidance_estimator must be 'shared_rollout' or 'exact_one_step'"
-            )
+            raise ValueError("Unknown guidance_estimator")
         self._forward_evals = 0
         self._backward_evals = 0
         device = x0.device
@@ -340,39 +315,30 @@ class ALMHTwistedSearch:
         archive: dict[tuple[int, ...], float] = {}
 
         _, g0 = self._energy_ids(particles[:1], x0, state)
-        self._update_archive(particles[:1], g0, x0, archive)
+        self._update_archive(particles[:1], g0, archive)
 
         for ep in range(cfg.episodes):
-            # Freeze dual state inside an episode so h refers to one objective.
-            for _ in range(cfg.horizon):
+            # lambda/rho intentionally fixed inside this episode.
+            for t in range(cfg.horizon):
                 _, _, grad = self._energy_and_gradient(particles, x0, state)
-                moves, dgrad, owner = self._top_moves(
-                    particles, grad, x0, width=cfg.proposal_width
+                moves, dgrad, owner = self._top_moves(particles, grad, cfg.proposal_width)
+                k_move = moves.shape[0] // cfg.particles
+                move_ref = self._reference_logits(dgrad, moves, owner, particles, x0).reshape(
+                    cfg.particles, k_move
                 )
-                move_ref_logits = self._reference_logits(
-                    dgrad, moves, owner, particles, x0
-                )
-                k = moves.shape[0] // cfg.particles
 
                 candidates = torch.cat(
-                    [particles[:, None, :], moves.reshape(cfg.particles, k, -1)], dim=1
-                ).reshape(cfg.particles * (k + 1), -1)
-                cand_owner = torch.arange(
-                    cfg.particles, device=device
-                ).repeat_interleave(k + 1)
+                    [particles[:, None, :], moves.reshape(cfg.particles, k_move, -1)], dim=1
+                ).reshape(cfg.particles * (k_move + 1), -1)
+                cand_owner = torch.arange(cfg.particles, device=device).repeat_interleave(k_move + 1)
                 ref_logits = torch.cat(
-                    [
-                        torch.zeros((cfg.particles, 1), device=device),
-                        move_ref_logits.reshape(cfg.particles, k),
-                    ],
-                    dim=1,
+                    [torch.zeros((cfg.particles, 1), device=device), move_ref], dim=1
                 ).reshape(-1)
 
                 if cfg.guidance_strength != 0.0:
+                    remaining = cfg.horizon - t - 1
                     if self.log_h_fn is not None:
-                        log_h = self.log_h_fn(
-                            candidates, x0, state, cfg.horizon
-                        ).reshape(-1)
+                        log_h = self.log_h_fn(candidates, x0, state, remaining).reshape(-1)
                     elif cfg.guidance_estimator == "shared_rollout":
                         log_h = self.estimate_log_h_shared_rollout(
                             candidates,
@@ -380,7 +346,6 @@ class ALMHTwistedSearch:
                             particles,
                             moves,
                             dgrad,
-                            owner,
                             x0,
                             state,
                         )
@@ -391,36 +356,28 @@ class ALMHTwistedSearch:
                     proposal_logits = ref_logits
 
                 picked = self._sample_grouped(
-                    proposal_logits, cand_owner, cfg.particles, gen
+                    proposal_logits, cfg.particles, k_move + 1, gen
                 )
                 particles = candidates[picked]
                 _, g_step = self._energy_ids(particles, x0, state)
-                self._update_archive(particles, g_step, x0, archive)
+                self._update_archive(particles, g_step, archive)
 
             _, g_final = self._energy_ids(particles, x0, state)
-            self._update_archive(particles, g_final, x0, archive)
+            self._update_archive(particles, g_final, archive)
             if (ep + 1) % cfg.dual_every == 0:
                 self._dual_update(state, float(g_final.mean().item()))
 
         if archive:
             seqs = [torch.tensor(k, dtype=x0.dtype, device=device) for k in archive]
-            seqs.sort(
-                key=lambda s: (
-                    int((s != x0).sum().item()),
-                    archive[tuple(int(v) for v in s.tolist())],
-                )
-            )
+            seqs.sort(key=lambda s: (int((s != x0).sum().item()), archive[self._archive_key(s)]))
             best = seqs[0]
-            best_key = tuple(int(v) for v in best.tolist())
             return SearchResult(
                 best_ids=best,
                 best_hamming=int((best != x0).sum().item()),
-                best_constraint=float(archive[best_key]),
+                best_constraint=float(archive[self._archive_key(best)]),
                 feasible_found=True,
                 archive_ids=seqs,
-                archive_constraint=[
-                    archive[tuple(int(v) for v in s.tolist())] for s in seqs
-                ],
+                archive_constraint=[archive[self._archive_key(s)] for s in seqs],
                 final_state=state,
                 model_forward_evals=self._forward_evals,
                 model_backward_evals=self._backward_evals,
