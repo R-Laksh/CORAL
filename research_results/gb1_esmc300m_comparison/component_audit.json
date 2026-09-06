@@ -1,0 +1,1056 @@
+{
+  "model_bounds_by_source": {
+    "37973": {
+      "lower": 1,
+      "upper": 1,
+      "certified_optimum": 1,
+      "certification": "source plus all 76 single substitutions; known feasible returned endpoints",
+      "minimum_edits_in_measured_assay": 1,
+      "single_edit_assay_coverage": {
+        "measured": 76,
+        "possible": 76
+      }
+    },
+    "60900": {
+      "lower": 2,
+      "upper": 2,
+      "certified_optimum": 2,
+      "certification": "source plus all 76 single substitutions; known feasible returned endpoints",
+      "minimum_edits_in_measured_assay": 2,
+      "single_edit_assay_coverage": {
+        "measured": 75,
+        "possible": 76
+      }
+    },
+    "98204": {
+      "lower": 1,
+      "upper": 1,
+      "certified_optimum": 1,
+      "certification": "source plus all 76 single substitutions; known feasible returned endpoints",
+      "minimum_edits_in_measured_assay": 2,
+      "single_edit_assay_coverage": {
+        "measured": 73,
+        "possible": 76
+      }
+    },
+    "115108": {
+      "lower": 2,
+      "upper": 2,
+      "certified_optimum": 2,
+      "certification": "source plus all 76 single substitutions; known feasible returned endpoints",
+      "minimum_edits_in_measured_assay": 1,
+      "single_edit_assay_coverage": {
+        "measured": 75,
+        "possible": 76
+      }
+    }
+  },
+  "returned_cf_evidence": [
+    {
+      "method": "alm_st_gumbel",
+      "source_index": 98204,
+      "seed": 0,
+      "edits": 2,
+      "model_optimum": {
+        "lower": 1,
+        "upper": 1,
+        "certified_optimum": 1,
+        "certification": "source plus all 76 single substitutions; known feasible returned endpoints",
+        "minimum_edits_in_measured_assay": 2,
+        "single_edit_assay_coverage": {
+          "measured": 73,
+          "possible": 76
+        }
+      },
+      "model_edit_regret": 1,
+      "model_edit_regret_bounds": [
+        1,
+        1
+      ],
+      "model_all_edits_necessary": true,
+      "assay_all_edits_necessary": false,
+      "highest_order_interaction": {
+        "order": 2,
+        "model_log1p": 0.15118199586868286,
+        "assay_raw_fitness": 0.031325697,
+        "assay_log1p": 0.030947816794248788
+      },
+      "interventions": [
+        {
+          "mask": [
+            0,
+            0
+          ],
+          "sequence": "MTYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNGNFKEWTYDDATKTFTCTE",
+          "prediction_log1p": 0.12268170714378357,
+          "assay_fitness": 0.00571007,
+          "head_training_member": false
+        },
+        {
+          "mask": [
+            0,
+            1
+          ],
+          "sequence": "MTYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNGNFAEWTYDDATKTFTCTE",
+          "prediction_log1p": 0.2146187722682953,
+          "assay_fitness": 0.001566191,
+          "head_training_member": false
+        },
+        {
+          "mask": [
+            1,
+            0
+          ],
+          "sequence": "MTYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNGTFKEWTYDDATKTFTCTE",
+          "prediction_log1p": 0.26441067457199097,
+          "assay_fitness": 0.0,
+          "head_training_member": false
+        },
+        {
+          "mask": [
+            1,
+            1
+          ],
+          "sequence": "MTYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNGTFAEWTYDDATKTFTCTE",
+          "prediction_log1p": 0.5075297355651855,
+          "assay_fitness": 0.027181818,
+          "head_training_member": false
+        }
+      ]
+    },
+    {
+      "method": "ledidi_hinge",
+      "source_index": 98204,
+      "seed": 0,
+      "edits": 1,
+      "model_optimum": {
+        "lower": 1,
+        "upper": 1,
+        "certified_optimum": 1,
+        "certification": "source plus all 76 single substitutions; known feasible returned endpoints",
+        "minimum_edits_in_measured_assay": 2,
+        "single_edit_assay_coverage": {
+          "measured": 73,
+          "possible": 76
+        }
+      },
+      "model_edit_regret": 0,
+      "model_edit_regret_bounds": [
+        0,
+        0
+      ],
+      "model_all_edits_necessary": true,
+      "assay_all_edits_necessary": false,
+      "highest_order_interaction": {
+        "order": 1,
+        "model_log1p": null,
+        "assay_raw_fitness": null,
+        "assay_log1p": null
+      },
+      "interventions": [
+        {
+          "mask": [
+            0
+          ],
+          "sequence": "MTYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNGNFKEWTYDDATKTFTCTE",
+          "prediction_log1p": 0.12268170714378357,
+          "assay_fitness": 0.00571007,
+          "head_training_member": false
+        },
+        {
+          "mask": [
+            1
+          ],
+          "sequence": "MTYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNGNFCEWTYDDATKTFTCTE",
+          "prediction_log1p": 0.45702242851257324,
+          "assay_fitness": 0.245232458,
+          "head_training_member": false
+        }
+      ]
+    },
+    {
+      "method": "alm_st_gumbel",
+      "source_index": 60900,
+      "seed": 0,
+      "edits": 2,
+      "model_optimum": {
+        "lower": 2,
+        "upper": 2,
+        "certified_optimum": 2,
+        "certification": "source plus all 76 single substitutions; known feasible returned endpoints",
+        "minimum_edits_in_measured_assay": 2,
+        "single_edit_assay_coverage": {
+          "measured": 75,
+          "possible": 76
+        }
+      },
+      "model_edit_regret": 0,
+      "model_edit_regret_bounds": [
+        0,
+        0
+      ],
+      "model_all_edits_necessary": true,
+      "assay_all_edits_necessary": true,
+      "highest_order_interaction": {
+        "order": 2,
+        "model_log1p": 0.5424134209752083,
+        "assay_raw_fitness": 1.551441099,
+        "assay_log1p": 0.8242507862727182
+      },
+      "interventions": [
+        {
+          "mask": [
+            0,
+            0
+          ],
+          "sequence": "MTYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNGGMMEWTYDDATKTFTMTE",
+          "prediction_log1p": -0.07634314894676208,
+          "assay_fitness": 0.001631448,
+          "head_training_member": false
+        },
+        {
+          "mask": [
+            0,
+            1
+          ],
+          "sequence": "MTYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNGGMGEWTYDDATKTFTMTE",
+          "prediction_log1p": 0.2547392249107361,
+          "assay_fitness": 0.204597419,
+          "head_training_member": false
+        },
+        {
+          "mask": [
+            1,
+            0
+          ],
+          "sequence": "MTYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNGVMMEWTYDDATKTFTMTE",
+          "prediction_log1p": 0.006847284734249115,
+          "assay_fitness": 0.006997872,
+          "head_training_member": false
+        },
+        {
+          "mask": [
+            1,
+            1
+          ],
+          "sequence": "MTYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNGVMGEWTYDDATKTFTMTE",
+          "prediction_log1p": 0.8803430795669556,
+          "assay_fitness": 1.761404942,
+          "head_training_member": true
+        }
+      ]
+    },
+    {
+      "method": "ledidi_hinge",
+      "source_index": 60900,
+      "seed": 0,
+      "edits": 2,
+      "model_optimum": {
+        "lower": 2,
+        "upper": 2,
+        "certified_optimum": 2,
+        "certification": "source plus all 76 single substitutions; known feasible returned endpoints",
+        "minimum_edits_in_measured_assay": 2,
+        "single_edit_assay_coverage": {
+          "measured": 75,
+          "possible": 76
+        }
+      },
+      "model_edit_regret": 0,
+      "model_edit_regret_bounds": [
+        0,
+        0
+      ],
+      "model_all_edits_necessary": true,
+      "assay_all_edits_necessary": true,
+      "highest_order_interaction": {
+        "order": 2,
+        "model_log1p": 0.34041760861873627,
+        "assay_raw_fitness": 0.48771739599999997,
+        "assay_log1p": 0.3288945849579564
+      },
+      "interventions": [
+        {
+          "mask": [
+            0,
+            0
+          ],
+          "sequence": "MTYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNGGMMEWTYDDATKTFTMTE",
+          "prediction_log1p": -0.07634314894676208,
+          "assay_fitness": 0.001631448,
+          "head_training_member": false
+        },
+        {
+          "mask": [
+            0,
+            1
+          ],
+          "sequence": "MTYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNGGMGEWTYDDATKTFTMTE",
+          "prediction_log1p": 0.2547392249107361,
+          "assay_fitness": 0.204597419,
+          "head_training_member": false
+        },
+        {
+          "mask": [
+            1,
+            0
+          ],
+          "sequence": "MTYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNGFMMEWTYDDATKTFTMTE",
+          "prediction_log1p": 0.00561194121837616,
+          "assay_fitness": 0.029366072,
+          "head_training_member": false
+        },
+        {
+          "mask": [
+            1,
+            1
+          ],
+          "sequence": "MTYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNGFMGEWTYDDATKTFTMTE",
+          "prediction_log1p": 0.6771119236946106,
+          "assay_fitness": 0.720049439,
+          "head_training_member": true
+        }
+      ]
+    },
+    {
+      "method": "alm_h_rollout_control",
+      "source_index": 115108,
+      "seed": 0,
+      "edits": 2,
+      "model_optimum": {
+        "lower": 2,
+        "upper": 2,
+        "certified_optimum": 2,
+        "certification": "source plus all 76 single substitutions; known feasible returned endpoints",
+        "minimum_edits_in_measured_assay": 1,
+        "single_edit_assay_coverage": {
+          "measured": 75,
+          "possible": 76
+        }
+      },
+      "model_edit_regret": 0,
+      "model_edit_regret_bounds": [
+        0,
+        0
+      ],
+      "model_all_edits_necessary": true,
+      "assay_all_edits_necessary": false,
+      "highest_order_interaction": {
+        "order": 2,
+        "model_log1p": 0.14043588936328888,
+        "assay_raw_fitness": 2.1304962979999997,
+        "assay_log1p": 0.8707245126400536
+      },
+      "interventions": [
+        {
+          "mask": [
+            0,
+            0
+          ],
+          "sequence": "MTYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNGQSMEWTYDDATKTFTPTE",
+          "prediction_log1p": 0.038116827607154846,
+          "assay_fitness": 0.002642346,
+          "head_training_member": false
+        },
+        {
+          "mask": [
+            0,
+            1
+          ],
+          "sequence": "MTYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNGQSMEWTYDDATKTFTGTE",
+          "prediction_log1p": 0.34310340881347656,
+          "assay_fitness": 0.505767038,
+          "head_training_member": false
+        },
+        {
+          "mask": [
+            1,
+            0
+          ],
+          "sequence": "MTYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNGWSMEWTYDDATKTFTPTE",
+          "prediction_log1p": 0.32337772846221924,
+          "assay_fitness": 0.0179198,
+          "head_training_member": false
+        },
+        {
+          "mask": [
+            1,
+            1
+          ],
+          "sequence": "MTYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNGWSMEWTYDDATKTFTGTE",
+          "prediction_log1p": 0.7688001990318298,
+          "assay_fitness": 2.65154079,
+          "head_training_member": false
+        }
+      ]
+    },
+    {
+      "method": "alm_h_myopic",
+      "source_index": 115108,
+      "seed": 0,
+      "edits": 2,
+      "model_optimum": {
+        "lower": 2,
+        "upper": 2,
+        "certified_optimum": 2,
+        "certification": "source plus all 76 single substitutions; known feasible returned endpoints",
+        "minimum_edits_in_measured_assay": 1,
+        "single_edit_assay_coverage": {
+          "measured": 75,
+          "possible": 76
+        }
+      },
+      "model_edit_regret": 0,
+      "model_edit_regret_bounds": [
+        0,
+        0
+      ],
+      "model_all_edits_necessary": true,
+      "assay_all_edits_necessary": true,
+      "highest_order_interaction": {
+        "order": 2,
+        "model_log1p": 0.22971273958683014,
+        "assay_raw_fitness": 3.33018736,
+        "assay_log1p": 1.224502729399359
+      },
+      "interventions": [
+        {
+          "mask": [
+            0,
+            0
+          ],
+          "sequence": "MTYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNGQSMEWTYDDATKTFTPTE",
+          "prediction_log1p": 0.038116827607154846,
+          "assay_fitness": 0.002642346,
+          "head_training_member": false
+        },
+        {
+          "mask": [
+            0,
+            1
+          ],
+          "sequence": "MTYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNGQSMEWTYDDATKTFTATE",
+          "prediction_log1p": 0.3578062653541565,
+          "assay_fitness": 0.363093539,
+          "head_training_member": false
+        },
+        {
+          "mask": [
+            1,
+            0
+          ],
+          "sequence": "MTYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNGWSMEWTYDDATKTFTPTE",
+          "prediction_log1p": 0.32337772846221924,
+          "assay_fitness": 0.0179198,
+          "head_training_member": false
+        },
+        {
+          "mask": [
+            1,
+            1
+          ],
+          "sequence": "MTYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNGWSMEWTYDDATKTFTATE",
+          "prediction_log1p": 0.872779905796051,
+          "assay_fitness": 3.708558353,
+          "head_training_member": false
+        }
+      ]
+    },
+    {
+      "method": "alm_h_rollout",
+      "source_index": 115108,
+      "seed": 0,
+      "edits": 2,
+      "model_optimum": {
+        "lower": 2,
+        "upper": 2,
+        "certified_optimum": 2,
+        "certification": "source plus all 76 single substitutions; known feasible returned endpoints",
+        "minimum_edits_in_measured_assay": 1,
+        "single_edit_assay_coverage": {
+          "measured": 75,
+          "possible": 76
+        }
+      },
+      "model_edit_regret": 0,
+      "model_edit_regret_bounds": [
+        0,
+        0
+      ],
+      "model_all_edits_necessary": true,
+      "assay_all_edits_necessary": true,
+      "highest_order_interaction": {
+        "order": 2,
+        "model_log1p": 0.2681058943271637,
+        "assay_raw_fitness": 3.382744385,
+        "assay_log1p": 1.2366883714802082
+      },
+      "interventions": [
+        {
+          "mask": [
+            0,
+            0
+          ],
+          "sequence": "MTYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNGQSMEWTYDDATKTFTPTE",
+          "prediction_log1p": 0.038116827607154846,
+          "assay_fitness": 0.002642346,
+          "head_training_member": false
+        },
+        {
+          "mask": [
+            0,
+            1
+          ],
+          "sequence": "MTYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNGQSMEWTYDDATKTFTATE",
+          "prediction_log1p": 0.3578062653541565,
+          "assay_fitness": 0.363093539,
+          "head_training_member": false
+        },
+        {
+          "mask": [
+            1,
+            0
+          ],
+          "sequence": "MTYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNGLSMEWTYDDATKTFTPTE",
+          "prediction_log1p": 0.1853584498167038,
+          "assay_fitness": 0.016515601,
+          "head_training_member": false
+        },
+        {
+          "mask": [
+            1,
+            1
+          ],
+          "sequence": "MTYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNGLSMEWTYDDATKTFTATE",
+          "prediction_log1p": 0.7731537818908691,
+          "assay_fitness": 3.759711179,
+          "head_training_member": false
+        }
+      ]
+    },
+    {
+      "method": "alm_h_rollout_control",
+      "source_index": 37973,
+      "seed": 0,
+      "edits": 1,
+      "model_optimum": {
+        "lower": 1,
+        "upper": 1,
+        "certified_optimum": 1,
+        "certification": "source plus all 76 single substitutions; known feasible returned endpoints",
+        "minimum_edits_in_measured_assay": 1,
+        "single_edit_assay_coverage": {
+          "measured": 76,
+          "possible": 76
+        }
+      },
+      "model_edit_regret": 0,
+      "model_edit_regret_bounds": [
+        0,
+        0
+      ],
+      "model_all_edits_necessary": true,
+      "assay_all_edits_necessary": true,
+      "highest_order_interaction": {
+        "order": 1,
+        "model_log1p": null,
+        "assay_raw_fitness": null,
+        "assay_log1p": null
+      },
+      "interventions": [
+        {
+          "mask": [
+            0
+          ],
+          "sequence": "MTYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNGCVDEWTYDDATKTFTCTE",
+          "prediction_log1p": 0.10014784336090088,
+          "assay_fitness": 0.008666667,
+          "head_training_member": false
+        },
+        {
+          "mask": [
+            1
+          ],
+          "sequence": "MTYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNGCVGEWTYDDATKTFTCTE",
+          "prediction_log1p": 0.652997612953186,
+          "assay_fitness": 1.325519661,
+          "head_training_member": false
+        }
+      ]
+    },
+    {
+      "method": "alm_h_myopic",
+      "source_index": 37973,
+      "seed": 0,
+      "edits": 1,
+      "model_optimum": {
+        "lower": 1,
+        "upper": 1,
+        "certified_optimum": 1,
+        "certification": "source plus all 76 single substitutions; known feasible returned endpoints",
+        "minimum_edits_in_measured_assay": 1,
+        "single_edit_assay_coverage": {
+          "measured": 76,
+          "possible": 76
+        }
+      },
+      "model_edit_regret": 0,
+      "model_edit_regret_bounds": [
+        0,
+        0
+      ],
+      "model_all_edits_necessary": true,
+      "assay_all_edits_necessary": false,
+      "highest_order_interaction": {
+        "order": 1,
+        "model_log1p": null,
+        "assay_raw_fitness": null,
+        "assay_log1p": null
+      },
+      "interventions": [
+        {
+          "mask": [
+            0
+          ],
+          "sequence": "MTYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNGCVDEWTYDDATKTFTCTE",
+          "prediction_log1p": 0.10014784336090088,
+          "assay_fitness": 0.008666667,
+          "head_training_member": false
+        },
+        {
+          "mask": [
+            1
+          ],
+          "sequence": "MTYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNGCVLEWTYDDATKTFTCTE",
+          "prediction_log1p": 0.49369877576828003,
+          "assay_fitness": 0.156591533,
+          "head_training_member": false
+        }
+      ]
+    },
+    {
+      "method": "alm_h_rollout",
+      "source_index": 37973,
+      "seed": 0,
+      "edits": 1,
+      "model_optimum": {
+        "lower": 1,
+        "upper": 1,
+        "certified_optimum": 1,
+        "certification": "source plus all 76 single substitutions; known feasible returned endpoints",
+        "minimum_edits_in_measured_assay": 1,
+        "single_edit_assay_coverage": {
+          "measured": 76,
+          "possible": 76
+        }
+      },
+      "model_edit_regret": 0,
+      "model_edit_regret_bounds": [
+        0,
+        0
+      ],
+      "model_all_edits_necessary": true,
+      "assay_all_edits_necessary": false,
+      "highest_order_interaction": {
+        "order": 1,
+        "model_log1p": null,
+        "assay_raw_fitness": null,
+        "assay_log1p": null
+      },
+      "interventions": [
+        {
+          "mask": [
+            0
+          ],
+          "sequence": "MTYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNGCVDEWTYDDATKTFTCTE",
+          "prediction_log1p": 0.10014784336090088,
+          "assay_fitness": 0.008666667,
+          "head_training_member": false
+        },
+        {
+          "mask": [
+            1
+          ],
+          "sequence": "MTYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNGCVFEWTYDDATKTFTCTE",
+          "prediction_log1p": 0.4800889492034912,
+          "assay_fitness": 0.460313581,
+          "head_training_member": false
+        }
+      ]
+    },
+    {
+      "method": "alm_h_rollout_control",
+      "source_index": 98204,
+      "seed": 0,
+      "edits": 1,
+      "model_optimum": {
+        "lower": 1,
+        "upper": 1,
+        "certified_optimum": 1,
+        "certification": "source plus all 76 single substitutions; known feasible returned endpoints",
+        "minimum_edits_in_measured_assay": 2,
+        "single_edit_assay_coverage": {
+          "measured": 73,
+          "possible": 76
+        }
+      },
+      "model_edit_regret": 0,
+      "model_edit_regret_bounds": [
+        0,
+        0
+      ],
+      "model_all_edits_necessary": true,
+      "assay_all_edits_necessary": false,
+      "highest_order_interaction": {
+        "order": 1,
+        "model_log1p": null,
+        "assay_raw_fitness": null,
+        "assay_log1p": null
+      },
+      "interventions": [
+        {
+          "mask": [
+            0
+          ],
+          "sequence": "MTYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNGNFKEWTYDDATKTFTCTE",
+          "prediction_log1p": 0.12268170714378357,
+          "assay_fitness": 0.00571007,
+          "head_training_member": false
+        },
+        {
+          "mask": [
+            1
+          ],
+          "sequence": "MTYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNGNFGEWTYDDATKTFTCTE",
+          "prediction_log1p": 0.5390051603317261,
+          "assay_fitness": 0.396872669,
+          "head_training_member": false
+        }
+      ]
+    },
+    {
+      "method": "alm_h_myopic",
+      "source_index": 98204,
+      "seed": 0,
+      "edits": 1,
+      "model_optimum": {
+        "lower": 1,
+        "upper": 1,
+        "certified_optimum": 1,
+        "certification": "source plus all 76 single substitutions; known feasible returned endpoints",
+        "minimum_edits_in_measured_assay": 2,
+        "single_edit_assay_coverage": {
+          "measured": 73,
+          "possible": 76
+        }
+      },
+      "model_edit_regret": 0,
+      "model_edit_regret_bounds": [
+        0,
+        0
+      ],
+      "model_all_edits_necessary": true,
+      "assay_all_edits_necessary": false,
+      "highest_order_interaction": {
+        "order": 1,
+        "model_log1p": null,
+        "assay_raw_fitness": null,
+        "assay_log1p": null
+      },
+      "interventions": [
+        {
+          "mask": [
+            0
+          ],
+          "sequence": "MTYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNGNFKEWTYDDATKTFTCTE",
+          "prediction_log1p": 0.12268170714378357,
+          "assay_fitness": 0.00571007,
+          "head_training_member": false
+        },
+        {
+          "mask": [
+            1
+          ],
+          "sequence": "MTYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNGNFGEWTYDDATKTFTCTE",
+          "prediction_log1p": 0.5390051603317261,
+          "assay_fitness": 0.396872669,
+          "head_training_member": false
+        }
+      ]
+    },
+    {
+      "method": "alm_h_rollout",
+      "source_index": 98204,
+      "seed": 0,
+      "edits": 1,
+      "model_optimum": {
+        "lower": 1,
+        "upper": 1,
+        "certified_optimum": 1,
+        "certification": "source plus all 76 single substitutions; known feasible returned endpoints",
+        "minimum_edits_in_measured_assay": 2,
+        "single_edit_assay_coverage": {
+          "measured": 73,
+          "possible": 76
+        }
+      },
+      "model_edit_regret": 0,
+      "model_edit_regret_bounds": [
+        0,
+        0
+      ],
+      "model_all_edits_necessary": true,
+      "assay_all_edits_necessary": false,
+      "highest_order_interaction": {
+        "order": 1,
+        "model_log1p": null,
+        "assay_raw_fitness": null,
+        "assay_log1p": null
+      },
+      "interventions": [
+        {
+          "mask": [
+            0
+          ],
+          "sequence": "MTYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNGNFKEWTYDDATKTFTCTE",
+          "prediction_log1p": 0.12268170714378357,
+          "assay_fitness": 0.00571007,
+          "head_training_member": false
+        },
+        {
+          "mask": [
+            1
+          ],
+          "sequence": "MTYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNGNFGEWTYDDATKTFTCTE",
+          "prediction_log1p": 0.5390051603317261,
+          "assay_fitness": 0.396872669,
+          "head_training_member": false
+        }
+      ]
+    },
+    {
+      "method": "alm_h_rollout_control",
+      "source_index": 60900,
+      "seed": 0,
+      "edits": 2,
+      "model_optimum": {
+        "lower": 2,
+        "upper": 2,
+        "certified_optimum": 2,
+        "certification": "source plus all 76 single substitutions; known feasible returned endpoints",
+        "minimum_edits_in_measured_assay": 2,
+        "single_edit_assay_coverage": {
+          "measured": 75,
+          "possible": 76
+        }
+      },
+      "model_edit_regret": 0,
+      "model_edit_regret_bounds": [
+        0,
+        0
+      ],
+      "model_all_edits_necessary": true,
+      "assay_all_edits_necessary": true,
+      "highest_order_interaction": {
+        "order": 2,
+        "model_log1p": 0.34041760861873627,
+        "assay_raw_fitness": 0.48771739599999997,
+        "assay_log1p": 0.3288945849579564
+      },
+      "interventions": [
+        {
+          "mask": [
+            0,
+            0
+          ],
+          "sequence": "MTYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNGGMMEWTYDDATKTFTMTE",
+          "prediction_log1p": -0.07634314894676208,
+          "assay_fitness": 0.001631448,
+          "head_training_member": false
+        },
+        {
+          "mask": [
+            0,
+            1
+          ],
+          "sequence": "MTYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNGGMGEWTYDDATKTFTMTE",
+          "prediction_log1p": 0.2547392249107361,
+          "assay_fitness": 0.204597419,
+          "head_training_member": false
+        },
+        {
+          "mask": [
+            1,
+            0
+          ],
+          "sequence": "MTYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNGFMMEWTYDDATKTFTMTE",
+          "prediction_log1p": 0.00561194121837616,
+          "assay_fitness": 0.029366072,
+          "head_training_member": false
+        },
+        {
+          "mask": [
+            1,
+            1
+          ],
+          "sequence": "MTYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNGFMGEWTYDDATKTFTMTE",
+          "prediction_log1p": 0.6771119236946106,
+          "assay_fitness": 0.720049439,
+          "head_training_member": true
+        }
+      ]
+    },
+    {
+      "method": "alm_h_myopic",
+      "source_index": 60900,
+      "seed": 0,
+      "edits": 2,
+      "model_optimum": {
+        "lower": 2,
+        "upper": 2,
+        "certified_optimum": 2,
+        "certification": "source plus all 76 single substitutions; known feasible returned endpoints",
+        "minimum_edits_in_measured_assay": 2,
+        "single_edit_assay_coverage": {
+          "measured": 75,
+          "possible": 76
+        }
+      },
+      "model_edit_regret": 0,
+      "model_edit_regret_bounds": [
+        0,
+        0
+      ],
+      "model_all_edits_necessary": true,
+      "assay_all_edits_necessary": true,
+      "highest_order_interaction": {
+        "order": 2,
+        "model_log1p": 0.27510789036750793,
+        "assay_raw_fitness": 0.858892829,
+        "assay_log1p": 0.5205186406007829
+      },
+      "interventions": [
+        {
+          "mask": [
+            0,
+            0
+          ],
+          "sequence": "MTYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNGGMMEWTYDDATKTFTMTE",
+          "prediction_log1p": -0.07634314894676208,
+          "assay_fitness": 0.001631448,
+          "head_training_member": false
+        },
+        {
+          "mask": [
+            0,
+            1
+          ],
+          "sequence": "MTYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNGGMGEWTYDDATKTFTMTE",
+          "prediction_log1p": 0.2547392249107361,
+          "assay_fitness": 0.204597419,
+          "head_training_member": false
+        },
+        {
+          "mask": [
+            1,
+            0
+          ],
+          "sequence": "MTYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNGLMMEWTYDDATKTFTMTE",
+          "prediction_log1p": 0.16399431228637695,
+          "assay_fitness": 0.037057186,
+          "head_training_member": false
+        },
+        {
+          "mask": [
+            1,
+            1
+          ],
+          "sequence": "MTYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNGLMGEWTYDDATKTFTMTE",
+          "prediction_log1p": 0.7701845765113831,
+          "assay_fitness": 1.098915986,
+          "head_training_member": true
+        }
+      ]
+    },
+    {
+      "method": "alm_h_rollout",
+      "source_index": 60900,
+      "seed": 0,
+      "edits": 2,
+      "model_optimum": {
+        "lower": 2,
+        "upper": 2,
+        "certified_optimum": 2,
+        "certification": "source plus all 76 single substitutions; known feasible returned endpoints",
+        "minimum_edits_in_measured_assay": 2,
+        "single_edit_assay_coverage": {
+          "measured": 75,
+          "possible": 76
+        }
+      },
+      "model_edit_regret": 0,
+      "model_edit_regret_bounds": [
+        0,
+        0
+      ],
+      "model_all_edits_necessary": true,
+      "assay_all_edits_necessary": true,
+      "highest_order_interaction": {
+        "order": 2,
+        "model_log1p": 0.27510789036750793,
+        "assay_raw_fitness": 0.858892829,
+        "assay_log1p": 0.5205186406007829
+      },
+      "interventions": [
+        {
+          "mask": [
+            0,
+            0
+          ],
+          "sequence": "MTYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNGGMMEWTYDDATKTFTMTE",
+          "prediction_log1p": -0.07634314894676208,
+          "assay_fitness": 0.001631448,
+          "head_training_member": false
+        },
+        {
+          "mask": [
+            0,
+            1
+          ],
+          "sequence": "MTYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNGGMGEWTYDDATKTFTMTE",
+          "prediction_log1p": 0.2547392249107361,
+          "assay_fitness": 0.204597419,
+          "head_training_member": false
+        },
+        {
+          "mask": [
+            1,
+            0
+          ],
+          "sequence": "MTYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNGLMMEWTYDDATKTFTMTE",
+          "prediction_log1p": 0.16399431228637695,
+          "assay_fitness": 0.037057186,
+          "head_training_member": false
+        },
+        {
+          "mask": [
+            1,
+            1
+          ],
+          "sequence": "MTYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNGLMGEWTYDDATKTFTMTE",
+          "prediction_log1p": 0.7701845765113831,
+          "assay_fitness": 1.098915986,
+          "head_training_member": true
+        }
+      ]
+    }
+  ],
+  "additional_audit_work": {
+    "forward_sequences": 315,
+    "backward_sequences": 0,
+    "seconds": 55.951533461000054,
+    "precision": "float32"
+  },
+  "scope": "Finite GB1 four-site domain; assay regret and model regret are different quantities",
+  "interaction_warning": "Contrasts depend on measurement scale; an AND threshold alone does not establish non-additivity"
+}

@@ -1,0 +1,62 @@
+{
+  "alm_h_myopic": {
+    "runs": 4,
+    "model_feasible": 4,
+    "assay_measured": 4,
+    "assay_feasible": 2,
+    "assay_feasible_not_in_head_train": 1,
+    "mean_edits_model_feasible": 1.5,
+    "mean_assay_edit_regret_when_valid": 0.5,
+    "mean_forward_sequences": 254.0,
+    "mean_backward_sequences": 0.0,
+    "mean_seconds": 22.618520638499945
+  },
+  "alm_h_rollout": {
+    "runs": 4,
+    "model_feasible": 4,
+    "assay_measured": 4,
+    "assay_feasible": 2,
+    "assay_feasible_not_in_head_train": 1,
+    "mean_edits_model_feasible": 1.5,
+    "mean_assay_edit_regret_when_valid": 0.5,
+    "mean_forward_sequences": 246.25,
+    "mean_backward_sequences": 0.0,
+    "mean_seconds": 18.78095421550006
+  },
+  "alm_h_rollout_control": {
+    "runs": 4,
+    "model_feasible": 4,
+    "assay_measured": 4,
+    "assay_feasible": 3,
+    "assay_feasible_not_in_head_train": 2,
+    "mean_edits_model_feasible": 1.5,
+    "mean_assay_edit_regret_when_valid": 0.3333333333333333,
+    "mean_forward_sequences": 246.5,
+    "mean_backward_sequences": 0.0,
+    "mean_seconds": 19.210851292499996
+  },
+  "alm_st_gumbel": {
+    "runs": 4,
+    "model_feasible": 2,
+    "assay_measured": 2,
+    "assay_feasible": 1,
+    "assay_feasible_not_in_head_train": 0,
+    "mean_edits_model_feasible": 2.0,
+    "mean_assay_edit_regret_when_valid": 0.0,
+    "mean_forward_sequences": 250.75,
+    "mean_backward_sequences": 248.0,
+    "mean_seconds": 46.771958718249834
+  },
+  "ledidi_hinge": {
+    "runs": 4,
+    "model_feasible": 2,
+    "assay_measured": 2,
+    "assay_feasible": 1,
+    "assay_feasible_not_in_head_train": 0,
+    "mean_edits_model_feasible": 1.5,
+    "mean_assay_edit_regret_when_valid": 0.0,
+    "mean_forward_sequences": 249.0,
+    "mean_backward_sequences": 248.0,
+    "mean_seconds": 46.06351314350036
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "status": "verified_test_window",
+  "fold": 0,
+  "experiment": "ENCSR865RXA",
+  "archive_accession": "ENCFF277YRG",
+  "archive_sha256": "2a3d65f4939e2b77a161342be54d3f011bf0d6010eb7bc933b56d13e503c0db7",
+  "archive_url": "https://www.encodeproject.org/files/ENCFF277YRG/",
+  "chromosome_split": {
+    "CV_type": "chr_holdout",
+    "test": [
+      "chr1",
+      "chr3",
+      "chr6"
+    ],
+    "valid": [
+      "chr8",
+      "chr20"
+    ],
+    "train": [
+      "chr2",
+      "chr4",
+      "chr5",
+      "chr7",
+      "chr9",
+      "chr10",
+      "chr11",
+      "chr12",
+      "chr13",
+      "chr14",
+      "chr15",
+      "chr16",
+      "chr17",
+      "chr18",
+      "chr19",
+      "chr21",
+      "chr22",
+      "chrX",
+      "chrY"
+    ]
+  },
+  "window": {
+    "genome": "hg38",
+    "chrom": "chr1",
+    "start": 1005512,
+    "end": 1007626
+  },
+  "overlap_counts": {
+    "peaks_training": 0,
+    "nonpeaks_training": 0,
+    "peaks_validation": 0,
+    "nonpeaks_validation": 0,
+    "peaks_test": 1,
+    "nonpeaks_test": 0
+  },
+  "members": {
+    "peaks_training": {
+      "member": "./fold_0/peaks.trainingset.fold_0.ENCSR865RXA.bed",
+      "rows": 23264
+    },
+    "nonpeaks_training": {
+      "member": "./fold_0/nonpeaks.trainingset.fold_0.ENCSR865RXA.bed",
+      "rows": 93056
+    },
+    "peaks_validation": {
+      "member": "./fold_0/peaks.validationset.fold_0.ENCSR865RXA.bed",
+      "rows": 2942
+    },
+    "nonpeaks_validation": {
+      "member": "./fold_0/nonpeaks.validationset.fold_0.ENCSR865RXA.bed",
+      "rows": 11768
+    },
+    "peaks_test": {
+      "member": "./fold_0/peaks.testset.fold_0.ENCSR865RXA.bed",
+      "rows": 7125
+    },
+    "nonpeaks_test": {
+      "member": "./fold_0/nonpeaks.testset.fold_0.ENCSR865RXA.bed",
+      "rows": 28500
+    }
+  },
+  "matching_test_peak": [
+    "chr1",
+    "1006427",
+    "1006711",
+    ".",
+    "1.0",
+    ".",
+    "43.77589",
+    "-1.0",
+    "4.90044",
+    "142"
+  ],
+  "scope": "Reference window is out of fold; mutant occupancy remains unmeasured"
+}

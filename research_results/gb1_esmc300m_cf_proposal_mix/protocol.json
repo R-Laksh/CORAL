@@ -1,0 +1,62 @@
+{
+  "args": {
+    "data": "../tmp/gb1_source/dataset.csv",
+    "checkpoint": "../tmp/esmc_300m",
+    "head_dir": "research_results/gb1_esmc300m",
+    "output": "research_results/gb1_esmc300m_cf_proposal_mix",
+    "cases": 4,
+    "seeds": 1,
+    "budget": 256,
+    "target_fitness": 0.5,
+    "constraint_scale": 0.25,
+    "threads": 4,
+    "device": "cpu",
+    "methods": [
+      "alm_h_rollout_control",
+      "alm_h_myopic",
+      "alm_h_rollout"
+    ],
+    "validation_cases": 2
+  },
+  "head_sha256": "b0d15555493daac5adf55e70ed904c620014752f0b91bd759e8db8a1481df569",
+  "guide_defense": "normalised proposal mixture with exact extended-space importance correction",
+  "model_revision": "a59b831785f907e96e6a246b1d142bfb76df31ee",
+  "test_indices": [
+    115108,
+    37973,
+    98204,
+    60900
+  ],
+  "validation_indices": [
+    9440,
+    7124
+  ],
+  "ledidi_edit_weight": 0.1,
+  "ledidi_commit": "beeee38f81bc00f902d41cc02695cec485b41cb9",
+  "selection": "first hash-ordered origins with prediction below target; assay values not used",
+  "budget_meaning": "forward sequences, not equal FLOPs or wall time; backward reported separately",
+  "archive": "best jointly model-feasible discrete sequence across all queries, including rollout leaves",
+  "endpoint_domain": "all 20^4 sequences at experimental sites; no hard edit budget",
+  "model_validation": {
+    "features": "esm_mean_and_sites",
+    "alpha": 100.0,
+    "validation": {
+      "n": 512,
+      "r2": 0.672154245282178,
+      "spearman": 0.6030630299760243,
+      "rmse_log1p": 0.13517148333114787
+    },
+    "test": {
+      "n": 512,
+      "r2": 0.12143034943655695,
+      "spearman": 0.3265543123008001,
+      "rmse_log1p": 0.1524642205350628
+    },
+    "train": {
+      "n": 6264,
+      "r2": 0.8944351044645039,
+      "spearman": 0.6970028993969586,
+      "rmse_log1p": 0.09514752969707671
+    }
+  }
+}

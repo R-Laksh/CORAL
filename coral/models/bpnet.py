@@ -6,6 +6,7 @@ from torch import nn
 
 MODEL_ID = "kundajelab/encode-bpnet-FOXA1-ChIP-seq-HepG2-ENCSR865RXA-ENCSR337KST"
 MODEL_REVISION = "adde8fa27ceb7647e35aebe456620ea6b40d4ec3"
+MODEL_SHA256 = "c347f6885eec87076df3669dc22a75239f2391982d0ec5dba9f9dd0d48833f3b"
 BPNET_LITE_REVISION = "b37e766bd7a2bef1614cf18d8bac38167e6f6ff5"
 
 

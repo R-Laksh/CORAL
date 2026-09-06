@@ -59,6 +59,8 @@ def main():
     out.mkdir(parents=True, exist_ok=True)
     data = load_gb1(args.data)
     metadata = json.loads((head_dir / "model_validation.json").read_text())
+    if hashlib.sha256((Path(args.checkpoint) / "model.safetensors").read_bytes()).hexdigest() != metadata["checkpoint_sha256"]:
+        raise ValueError("Checkpoint weights differ from the validated functional-head backbone")
     with np.load(head_dir / "split_predictions.npz") as predictions:
         indices, scores = predictions["indices"], predictions["prediction"]
         n, v = int(predictions["n_train"]), int(predictions["n_validation"])

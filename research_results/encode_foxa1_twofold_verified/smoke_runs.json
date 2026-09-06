@@ -1,0 +1,1154 @@
+[
+  {
+    "method": "alm_st_gumbel",
+    "status": "budget_exhausted",
+    "best": null,
+    "work": {
+      "forward_batches": 151,
+      "forward_sequences": 1019,
+      "backward_batches": 124,
+      "backward_sequences": 992,
+      "cached_sequences": 98
+    },
+    "seconds": 11.261537289999978,
+    "improvements": [],
+    "history": [
+      {
+        "step": 16,
+        "tau": 0.9743693638340111,
+        "rho": 10.0,
+        "multipliers": [
+          0.0
+        ],
+        "mean_residual": [
+          1.7803120613098145
+        ]
+      },
+      {
+        "step": 32,
+        "tau": 0.8941240140171373,
+        "rho": 20.0,
+        "multipliers": [
+          17.803119659423828
+        ],
+        "mean_residual": [
+          1.2316389083862305
+        ]
+      },
+      {
+        "step": 48,
+        "tau": 0.77014574268948,
+        "rho": 40.0,
+        "multipliers": [
+          42.43589782714844
+        ],
+        "mean_residual": [
+          1.0862878561019897
+        ]
+      },
+      {
+        "step": 64,
+        "tau": 0.6194245968887527,
+        "rho": 80.0,
+        "multipliers": [
+          85.88741302490234
+        ],
+        "mean_residual": [
+          1.0266950130462646
+        ]
+      },
+      {
+        "step": 80,
+        "tau": 0.46261548113418904,
+        "rho": 160.0,
+        "multipliers": [
+          168.02301025390625
+        ],
+        "mean_residual": [
+          0.940284788608551
+        ]
+      },
+      {
+        "step": 96,
+        "tau": 0.321207598526316,
+        "rho": 320.0,
+        "multipliers": [
+          318.46856689453125
+        ],
+        "mean_residual": [
+          0.8272164463996887
+        ]
+      },
+      {
+        "step": 112,
+        "tau": 0.21457955913351895,
+        "rho": 640.0,
+        "multipliers": [
+          583.1778564453125
+        ],
+        "mean_residual": [
+          0.8028555512428284
+        ]
+      }
+    ],
+    "seed": 0,
+    "model_edit_regret": null,
+    "biological_validation": "mutant occupancy unmeasured"
+  },
+  {
+    "method": "alm_h_rollout_control",
+    "status": "budget_exhausted",
+    "best": null,
+    "work": {
+      "forward_batches": 47,
+      "forward_sequences": 1012,
+      "backward_batches": 0,
+      "backward_sequences": 0,
+      "cached_sequences": 194
+    },
+    "seconds": 7.442511534999994,
+    "improvements": [],
+    "history": [
+      {
+        "episode": 0,
+        "rho": 10.0,
+        "multipliers": [
+          0.0
+        ],
+        "weighted_residual": [
+          1.884234866061058
+        ],
+        "ess": [
+          7.9999999999999964,
+          7.9999999999999964,
+          7.9999999999999964,
+          7.9999999999999964,
+          7.9999999999999964,
+          7.9999999999999964,
+          7.9999999999999964,
+          1.1593966288468298
+        ],
+        "log_normalizer_estimate": -30.203017279840303
+      },
+      {
+        "episode": 1,
+        "rho": 20.0,
+        "multipliers": [
+          18.84234866061058
+        ],
+        "weighted_residual": [
+          2.0140509087051313
+        ],
+        "ess": [
+          7.9999999999999964,
+          7.9999999999999964,
+          7.9999999999999964,
+          7.9999999999999964,
+          7.9999999999999964,
+          7.9999999999999964,
+          7.9999999999999964,
+          1.0374085160639175
+        ],
+        "log_normalizer_estimate": -124.91095558005554
+      },
+      {
+        "episode": 2,
+        "rho": 40.0,
+        "multipliers": [
+          59.12336683471321
+        ],
+        "weighted_residual": [
+          2.265519611480399
+        ],
+        "ess": [
+          7.9999999999999964,
+          7.9999999999999964,
+          7.9999999999999964,
+          7.9999999999999964,
+          7.9999999999999964,
+          7.9999999999999964,
+          7.9999999999999964,
+          1.0000000023336497
+        ],
+        "log_normalizer_estimate": -384.886478232337
+      }
+    ],
+    "seed": 0,
+    "model_edit_regret": null,
+    "biological_validation": "mutant occupancy unmeasured"
+  },
+  {
+    "method": "alm_h_myopic",
+    "status": "budget_exhausted",
+    "best": null,
+    "work": {
+      "forward_batches": 109,
+      "forward_sequences": 1018,
+      "backward_batches": 0,
+      "backward_sequences": 0,
+      "cached_sequences": 1691
+    },
+    "seconds": 7.552296669000043,
+    "improvements": [],
+    "history": [
+      {
+        "episode": 0,
+        "rho": 10.0,
+        "multipliers": [
+          0.0
+        ],
+        "weighted_residual": [
+          1.8988558467333494
+        ],
+        "ess": [
+          1.8160259326783084,
+          1.3960796915155915,
+          1.0003043328393164,
+          7.284624419967044,
+          7.855573386462993,
+          6.656197305643797,
+          6.291944436671708,
+          1.7900523783304694
+        ],
+        "log_normalizer_estimate": -36.24106742975755
+      },
+      {
+        "episode": 1,
+        "rho": 20.0,
+        "multipliers": [
+          18.988558467333494
+        ],
+        "weighted_residual": [
+          1.653996888540906
+        ],
+        "ess": [
+          1.0,
+          1.5983006280867986,
+          1.413814873640909,
+          2.910630098637307,
+          1.813110349493225,
+          7.637137422296848,
+          4.449969824159973,
+          3.294380709324146
+        ],
+        "log_normalizer_estimate": -111.86050054366379
+      },
+      {
+        "episode": 2,
+        "rho": 40.0,
+        "multipliers": [
+          52.06849623815161
+        ],
+        "weighted_residual": [
+          1.656010299277502
+        ],
+        "ess": [
+          1.4315267588303664,
+          6.539237124454833,
+          1.0534319909365228,
+          1.0,
+          1.0120545611633975,
+          1.0008029811951427,
+          2.8171652063137587,
+          7.340171611676447
+        ],
+        "log_normalizer_estimate": -254.8795382906696
+      },
+      {
+        "episode": 3,
+        "rho": 80.0,
+        "multipliers": [
+          118.3089082092517
+        ],
+        "weighted_residual": [
+          1.4961353692691015
+        ],
+        "ess": [
+          1.0,
+          1.0000000284002797,
+          1.000010303259707,
+          1.0000000000041425,
+          1.0000000001281677,
+          1.2620611139069795,
+          1.0000000247688876,
+          1.0005676613886632
+        ],
+        "log_normalizer_estimate": -511.89077542395785
+      },
+      {
+        "episode": 4,
+        "rho": 160.0,
+        "multipliers": [
+          237.99973775077981
+        ],
+        "weighted_residual": [
+          1.497296802531535
+        ],
+        "ess": [
+          1.0,
+          1.0000000000039222,
+          1.000005009760763,
+          1.0,
+          1.0,
+          1.0000786187444166,
+          1.1146938557787582,
+          1.000000000000071
+        ],
+        "log_normalizer_estimate": -988.8879601687661
+      },
+      {
+        "episode": 5,
+        "rho": 320.0,
+        "multipliers": [
+          477.56722615582544
+        ],
+        "weighted_residual": [
+          1.6477033917817152
+        ],
+        "ess": [
+          1.0,
+          1.000000025926511,
+          1.0,
+          1.0,
+          1.0000000052851306,
+          1.0000000000088676,
+          1.0,
+          1.0011053302432542
+        ],
+        "log_normalizer_estimate": -2142.162300948342
+      },
+      {
+        "episode": 6,
+        "rho": 640.0,
+        "multipliers": [
+          1004.8323115259743
+        ],
+        "weighted_residual": [
+          1.4656195564377847
+        ],
+        "ess": [
+          1.0,
+          1.0,
+          1.0,
+          1.000000000008427,
+          1.0,
+          1.0021989624002972,
+          1.0,
+          1.0
+        ],
+        "log_normalizer_estimate": -3967.84079503171
+      },
+      {
+        "episode": 7,
+        "rho": 1280.0,
+        "multipliers": [
+          1942.8288276461567
+        ],
+        "weighted_residual": [
+          1.4460952205765731
+        ],
+        "ess": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "log_normalizer_estimate": -7533.750096490016
+      },
+      {
+        "episode": 8,
+        "rho": 2560.0,
+        "multipliers": [
+          3793.8307099841704
+        ],
+        "weighted_residual": [
+          1.5943591518509872
+        ],
+        "ess": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          7.378028976219799,
+          1.0,
+          1.0
+        ],
+        "log_normalizer_estimate": -16189.65497741247
+      },
+      {
+        "episode": 9,
+        "rho": 5120.0,
+        "multipliers": [
+          7875.390138722698
+        ],
+        "weighted_residual": [
+          1.525240890513707
+        ],
+        "ess": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0001332661967637,
+          1.0
+        ],
+        "log_normalizer_estimate": -32069.532380735895
+      },
+      {
+        "episode": 10,
+        "rho": 10240.0,
+        "multipliers": [
+          15684.623498152878
+        ],
+        "weighted_residual": [
+          1.653147451411534
+        ],
+        "ess": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "log_normalizer_estimate": -69281.99197678501
+      },
+      {
+        "episode": 11,
+        "rho": 20480.0,
+        "multipliers": [
+          32612.85340060699
+        ],
+        "weighted_residual": [
+          1.547453395854283
+        ],
+        "ess": [
+          1.0,
+          1.0,
+          2.0000000000006897,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "log_normalizer_estimate": -134643.8916973035
+      },
+      {
+        "episode": 12,
+        "rho": 40960.0,
+        "multipliers": [
+          64304.69894770271
+        ],
+        "weighted_residual": [
+          1.5254444999802597
+        ],
+        "ess": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "log_normalizer_estimate": -261673.37577997497
+      }
+    ],
+    "seed": 0,
+    "model_edit_regret": null,
+    "biological_validation": "mutant occupancy unmeasured"
+  },
+  {
+    "method": "alm_h_rollout",
+    "status": "budget_exhausted",
+    "best": null,
+    "work": {
+      "forward_batches": 48,
+      "forward_sequences": 1022,
+      "backward_batches": 0,
+      "backward_sequences": 0,
+      "cached_sequences": 215
+    },
+    "seconds": 7.481045445000063,
+    "improvements": [],
+    "history": [
+      {
+        "episode": 0,
+        "rho": 10.0,
+        "multipliers": [
+          0.0
+        ],
+        "weighted_residual": [
+          1.922191136747562
+        ],
+        "ess": [
+          1.5547763329867006,
+          2.649103903706409,
+          1.0205121038553948,
+          2.859991484378182,
+          5.010305489305442,
+          5.180063808504543,
+          4.622306653732061,
+          4.280362127857489
+        ],
+        "log_normalizer_estimate": -40.1245523236567
+      },
+      {
+        "episode": 1,
+        "rho": 20.0,
+        "multipliers": [
+          19.22191136747562
+        ],
+        "weighted_residual": [
+          1.7539476466740673
+        ],
+        "ess": [
+          1.0000048157634487,
+          1.5711374908019602,
+          2.131915736333039,
+          1.0089951583583776,
+          1.7767191080286984,
+          1.7634759277020597,
+          1.0316962442473179,
+          1.0009842276936722
+        ],
+        "log_normalizer_estimate": -126.10039157893969
+      },
+      {
+        "episode": 2,
+        "rho": 40.0,
+        "multipliers": [
+          54.30086430095697
+        ],
+        "weighted_residual": [
+          1.5121145758643013
+        ],
+        "ess": [
+          1.0000001309966864,
+          1.0,
+          1.7911649930259441,
+          1.0030735503022576,
+          1.000353559274697,
+          1.2995293818553035,
+          1.0417725689245796,
+          1.000000876169231
+        ],
+        "log_normalizer_estimate": -250.9724325474914
+      }
+    ],
+    "seed": 0,
+    "model_edit_regret": null,
+    "biological_validation": "mutant occupancy unmeasured"
+  },
+  {
+    "method": "ledidi_hinge",
+    "status": "budget_exhausted",
+    "best": null,
+    "work": {
+      "forward_batches": 128,
+      "forward_sequences": 1017,
+      "backward_batches": 127,
+      "backward_sequences": 1016,
+      "cached_sequences": 0
+    },
+    "seconds": 11.766380565999953,
+    "improvements": [],
+    "history": [
+      {
+        "edit_weight": 0.1,
+        "tau": 1.0,
+        "lr": 1.0
+      }
+    ],
+    "seed": 0,
+    "model_edit_regret": null,
+    "biological_validation": "mutant occupancy unmeasured"
+  },
+  {
+    "method": "alm_st_gumbel",
+    "status": "budget_exhausted",
+    "best": null,
+    "work": {
+      "forward_batches": 149,
+      "forward_sequences": 1017,
+      "backward_batches": 124,
+      "backward_sequences": 992,
+      "cached_sequences": 100
+    },
+    "seconds": 11.400705516000016,
+    "improvements": [],
+    "history": [
+      {
+        "step": 16,
+        "tau": 0.9743693638340111,
+        "rho": 10.0,
+        "multipliers": [
+          0.0
+        ],
+        "mean_residual": [
+          1.7909554243087769
+        ]
+      },
+      {
+        "step": 32,
+        "tau": 0.8941240140171373,
+        "rho": 20.0,
+        "multipliers": [
+          17.90955352783203
+        ],
+        "mean_residual": [
+          1.265505075454712
+        ]
+      },
+      {
+        "step": 48,
+        "tau": 0.77014574268948,
+        "rho": 40.0,
+        "multipliers": [
+          43.21965408325195
+        ],
+        "mean_residual": [
+          1.1359230279922485
+        ]
+      },
+      {
+        "step": 64,
+        "tau": 0.6194245968887527,
+        "rho": 80.0,
+        "multipliers": [
+          88.65657043457031
+        ],
+        "mean_residual": [
+          1.0906472206115723
+        ]
+      },
+      {
+        "step": 80,
+        "tau": 0.46261548113418904,
+        "rho": 160.0,
+        "multipliers": [
+          175.90835571289062
+        ],
+        "mean_residual": [
+          1.0582839250564575
+        ]
+      },
+      {
+        "step": 96,
+        "tau": 0.321207598526316,
+        "rho": 320.0,
+        "multipliers": [
+          345.2337646484375
+        ],
+        "mean_residual": [
+          0.9513545632362366
+        ]
+      },
+      {
+        "step": 112,
+        "tau": 0.21457955913351895,
+        "rho": 640.0,
+        "multipliers": [
+          649.667236328125
+        ],
+        "mean_residual": [
+          0.8615856170654297
+        ]
+      }
+    ],
+    "seed": 1,
+    "model_edit_regret": null,
+    "biological_validation": "mutant occupancy unmeasured"
+  },
+  {
+    "method": "alm_h_rollout_control",
+    "status": "budget_exhausted",
+    "best": null,
+    "work": {
+      "forward_batches": 46,
+      "forward_sequences": 1003,
+      "backward_batches": 0,
+      "backward_sequences": 0,
+      "cached_sequences": 199
+    },
+    "seconds": 7.396861940999997,
+    "improvements": [],
+    "history": [
+      {
+        "episode": 0,
+        "rho": 10.0,
+        "multipliers": [
+          0.0
+        ],
+        "weighted_residual": [
+          2.3250429392090637
+        ],
+        "ess": [
+          7.9999999999999964,
+          7.9999999999999964,
+          7.9999999999999964,
+          7.9999999999999964,
+          7.9999999999999964,
+          7.9999999999999964,
+          7.9999999999999964,
+          1.2357442669705903
+        ],
+        "log_normalizer_estimate": -39.83239576068037
+      },
+      {
+        "episode": 1,
+        "rho": 20.0,
+        "multipliers": [
+          23.250429392090638
+        ],
+        "weighted_residual": [
+          2.207801572810461
+        ],
+        "ess": [
+          7.9999999999999964,
+          7.9999999999999964,
+          7.9999999999999964,
+          7.9999999999999964,
+          7.9999999999999964,
+          7.9999999999999964,
+          7.9999999999999964,
+          1.0
+        ],
+        "log_normalizer_estimate": -162.6189962797951
+      },
+      {
+        "episode": 2,
+        "rho": 40.0,
+        "multipliers": [
+          67.40646084829986
+        ],
+        "weighted_residual": [
+          2.241569034587198
+        ],
+        "ess": [
+          7.9999999999999964,
+          7.9999999999999964,
+          7.9999999999999964,
+          7.9999999999999964,
+          7.9999999999999964,
+          7.9999999999999964,
+          7.9999999999999964,
+          1.0
+        ],
+        "log_normalizer_estimate": -422.34364035103846
+      }
+    ],
+    "seed": 1,
+    "model_edit_regret": null,
+    "biological_validation": "mutant occupancy unmeasured"
+  },
+  {
+    "method": "alm_h_myopic",
+    "status": "budget_exhausted",
+    "best": null,
+    "work": {
+      "forward_batches": 110,
+      "forward_sequences": 1022,
+      "backward_batches": 0,
+      "backward_sequences": 0,
+      "cached_sequences": 1715
+    },
+    "seconds": 7.302136350999945,
+    "improvements": [],
+    "history": [
+      {
+        "episode": 0,
+        "rho": 10.0,
+        "multipliers": [
+          0.0
+        ],
+        "weighted_residual": [
+          1.8602454217001376
+        ],
+        "ess": [
+          4.8277809473605195,
+          1.0020508468190563,
+          6.885225666552554,
+          2.9831141940159895,
+          6.672013347071302,
+          6.229996257017422,
+          6.414272532424243,
+          6.20264388356422
+        ],
+        "log_normalizer_estimate": -33.71969724571188
+      },
+      {
+        "episode": 1,
+        "rho": 20.0,
+        "multipliers": [
+          18.602454217001377
+        ],
+        "weighted_residual": [
+          1.6239265891565142
+        ],
+        "ess": [
+          1.000001060634301,
+          4.851756714895693,
+          1.002711774950016,
+          1.098643208359704,
+          2.932519785414363,
+          3.6475276621080432,
+          7.403116980054634,
+          3.798643890428603
+        ],
+        "log_normalizer_estimate": -110.96317752507908
+      },
+      {
+        "episode": 2,
+        "rho": 40.0,
+        "multipliers": [
+          51.08098600013166
+        ],
+        "weighted_residual": [
+          1.5789290680645414
+        ],
+        "ess": [
+          1.0,
+          1.00006056766656,
+          1.0010659191740299,
+          1.1284641369705999,
+          1.0202170088805886,
+          7.069392109559912,
+          1.0141866376598234,
+          1.004246817627724
+        ],
+        "log_normalizer_estimate": -240.31693320275028
+      },
+      {
+        "episode": 3,
+        "rho": 80.0,
+        "multipliers": [
+          114.2381487227133
+        ],
+        "weighted_residual": [
+          1.5471289677935285
+        ],
+        "ess": [
+          1.0,
+          1.0,
+          1.0,
+          7.38103509439086,
+          1.0000000000002558,
+          1.0000055110415706,
+          1.0331485226228532,
+          1.0186705516310866
+        ],
+        "log_normalizer_estimate": -505.1504571999546
+      },
+      {
+        "episode": 4,
+        "rho": 160.0,
+        "multipliers": [
+          238.0084661461956
+        ],
+        "weighted_residual": [
+          1.566024633888057
+        ],
+        "ess": [
+          1.000000000842192,
+          1.0,
+          1.0,
+          1.0006690703726,
+          1.0000004628458101,
+          1.9650801106110922,
+          1.0000061770407518,
+          1.0002808290890273
+        ],
+        "log_normalizer_estimate": -1035.3708264405905
+      },
+      {
+        "episode": 5,
+        "rho": 320.0,
+        "multipliers": [
+          488.5724075682847
+        ],
+        "weighted_residual": [
+          1.413978569042133
+        ],
+        "ess": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          7.3780289762236135,
+          1.0000225568144687,
+          1.0000000000528146
+        ],
+        "log_normalizer_estimate": -1879.4818607989037
+      },
+      {
+        "episode": 6,
+        "rho": 640.0,
+        "multipliers": [
+          941.0455496617672
+        ],
+        "weighted_residual": [
+          1.472009174357701
+        ],
+        "ess": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "log_normalizer_estimate": -3731.2586607526937
+      },
+      {
+        "episode": 7,
+        "rho": 1280.0,
+        "multipliers": [
+          1883.131421250696
+        ],
+        "weighted_residual": [
+          1.6206397934067733
+        ],
+        "ess": [
+          1.0,
+          1.0,
+          1.0000000000011369,
+          1.0,
+          1.0,
+          1.0000000000349019,
+          1.000003387240118,
+          1.0
+        ],
+        "log_normalizer_estimate": -8194.715392024902
+      },
+      {
+        "episode": 8,
+        "rho": 2560.0,
+        "multipliers": [
+          3957.550356811366
+        ],
+        "weighted_residual": [
+          1.7454595489609726
+        ],
+        "ess": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "log_normalizer_estimate": -18524.588524400493
+      },
+      {
+        "episode": 9,
+        "rho": 5120.0,
+        "multipliers": [
+          8425.926802151456
+        ],
+        "weighted_residual": [
+          1.5478300972092636
+        ],
+        "ess": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "log_normalizer_estimate": -34849.74586065224
+      },
+      {
+        "episode": 10,
+        "rho": 10240.0,
+        "multipliers": [
+          16350.816899862886
+        ],
+        "weighted_residual": [
+          1.3966665191758163
+        ],
+        "ess": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          7.545151886171098
+        ],
+        "log_normalizer_estimate": -61207.04034953731
+      },
+      {
+        "episode": 11,
+        "rho": 20480.0,
+        "multipliers": [
+          30652.682056223246
+        ],
+        "weighted_residual": [
+          1.5736057682145126
+        ],
+        "ess": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "log_normalizer_estimate": -128748.00848845048
+      },
+      {
+        "episode": 12,
+        "rho": 40960.0,
+        "multipliers": [
+          62880.128189256466
+        ],
+        "weighted_residual": [
+          1.501988880168248
+        ],
+        "ess": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "log_normalizer_estimate": -251924.03761139882
+      }
+    ],
+    "seed": 1,
+    "model_edit_regret": null,
+    "biological_validation": "mutant occupancy unmeasured"
+  },
+  {
+    "method": "alm_h_rollout",
+    "status": "budget_exhausted",
+    "best": null,
+    "work": {
+      "forward_batches": 48,
+      "forward_sequences": 1023,
+      "backward_batches": 0,
+      "backward_sequences": 0,
+      "cached_sequences": 230
+    },
+    "seconds": 7.4148933839999245,
+    "improvements": [],
+    "history": [
+      {
+        "episode": 0,
+        "rho": 10.0,
+        "multipliers": [
+          0.0
+        ],
+        "weighted_residual": [
+          1.8374336397591746
+        ],
+        "ess": [
+          1.8184155739029895,
+          1.9313034505649584,
+          1.1501152621454929,
+          1.0031970487848252,
+          3.1602122037023537,
+          2.271574838424212,
+          2.7395380621522376,
+          2.822856641567195
+        ],
+        "log_normalizer_estimate": -39.24168723087205
+      },
+      {
+        "episode": 1,
+        "rho": 20.0,
+        "multipliers": [
+          18.374336397591748
+        ],
+        "weighted_residual": [
+          1.8556086406138608
+        ],
+        "ess": [
+          2.360788687893318,
+          1.8756569318832401,
+          1.0000019102852598,
+          1.933353330160215,
+          1.0299616566020517,
+          2.3877228458053463,
+          2.290992642895723,
+          5.622886741552439
+        ],
+        "log_normalizer_estimate": -127.06667708107456
+      },
+      {
+        "episode": 2,
+        "rho": 40.0,
+        "multipliers": [
+          55.48650920986896
+        ],
+        "weighted_residual": [
+          1.7022140744239174
+        ],
+        "ess": [
+          1.0000000000012506,
+          1.0652005872285772,
+          1.4519048906851302,
+          1.8757285477272683,
+          1.1349729902308479,
+          1.2469284055692529,
+          1.000488675361678,
+          1.206139414757533
+        ],
+        "log_normalizer_estimate": -284.2300894408694
+      }
+    ],
+    "seed": 1,
+    "model_edit_regret": null,
+    "biological_validation": "mutant occupancy unmeasured"
+  },
+  {
+    "method": "ledidi_hinge",
+    "status": "budget_exhausted",
+    "best": null,
+    "work": {
+      "forward_batches": 128,
+      "forward_sequences": 1017,
+      "backward_batches": 127,
+      "backward_sequences": 1016,
+      "cached_sequences": 0
+    },
+    "seconds": 12.152303542000027,
+    "improvements": [],
+    "history": [
+      {
+        "edit_weight": 0.1,
+        "tau": 1.0,
+        "lr": 1.0
+      }
+    ],
+    "seed": 1,
+    "model_edit_regret": null,
+    "biological_validation": "mutant occupancy unmeasured"
+  }
+]

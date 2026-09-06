@@ -1,7 +1,11 @@
 # Next benchmarks: measured combinatorics, then genomic transfer
 
-This document records inspected candidates and proposed experiments. Neither
-ENCODE-BPNet inference nor Proto protein inference was executed in this pilot.
+This document records the planning stage after the MPRA pilot. The subsequent
+[biological-model implementation and findings](biological_optimizer.md) now
+include native ESMC-300M, GB1 assay audits and verified out-of-fold BPNet
+inference. Proto inference remains unexecuted. Read the newer report for the
+implemented protocol and evidence; the proposals below preserve that earlier
+planning context.
 
 ## What the MPRA pilot leaves unresolved
 

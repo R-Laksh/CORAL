@@ -1,0 +1,217 @@
+{
+  "gb1": {
+    "alm_h_myopic": {
+      "runs": 4,
+      "model_feasible": 4,
+      "assay_measured": 4,
+      "assay_feasible": 2,
+      "assay_feasible_not_in_head_train": 1,
+      "mean_edits_model_feasible": 1.5,
+      "mean_assay_edit_regret_when_valid": 0.5,
+      "mean_forward_sequences": 254.0,
+      "mean_backward_sequences": 0.0,
+      "mean_seconds": 22.618520638499945,
+      "mean_certified_model_regret_when_feasible": 0.0
+    },
+    "alm_h_rollout": {
+      "runs": 4,
+      "model_feasible": 4,
+      "assay_measured": 4,
+      "assay_feasible": 2,
+      "assay_feasible_not_in_head_train": 1,
+      "mean_edits_model_feasible": 1.5,
+      "mean_assay_edit_regret_when_valid": 0.5,
+      "mean_forward_sequences": 246.25,
+      "mean_backward_sequences": 0.0,
+      "mean_seconds": 18.78095421550006,
+      "mean_certified_model_regret_when_feasible": 0.0
+    },
+    "alm_h_rollout_control": {
+      "runs": 4,
+      "model_feasible": 4,
+      "assay_measured": 4,
+      "assay_feasible": 3,
+      "assay_feasible_not_in_head_train": 2,
+      "mean_edits_model_feasible": 1.5,
+      "mean_assay_edit_regret_when_valid": 0.3333333333333333,
+      "mean_forward_sequences": 246.5,
+      "mean_backward_sequences": 0.0,
+      "mean_seconds": 19.210851292499996,
+      "mean_certified_model_regret_when_feasible": 0.0
+    },
+    "alm_st_gumbel": {
+      "runs": 4,
+      "model_feasible": 2,
+      "assay_measured": 2,
+      "assay_feasible": 1,
+      "assay_feasible_not_in_head_train": 0,
+      "mean_edits_model_feasible": 2.0,
+      "mean_assay_edit_regret_when_valid": 0.0,
+      "mean_forward_sequences": 250.75,
+      "mean_backward_sequences": 248.0,
+      "mean_seconds": 46.771958718249834,
+      "mean_certified_model_regret_when_feasible": 0.5
+    },
+    "ledidi_hinge": {
+      "runs": 4,
+      "model_feasible": 2,
+      "assay_measured": 2,
+      "assay_feasible": 1,
+      "assay_feasible_not_in_head_train": 0,
+      "mean_edits_model_feasible": 1.5,
+      "mean_assay_edit_regret_when_valid": 0.0,
+      "mean_forward_sequences": 249.0,
+      "mean_backward_sequences": 248.0,
+      "mean_seconds": 46.06351314350036,
+      "mean_certified_model_regret_when_feasible": 0.0
+    }
+  },
+  "gb1_model_optima": {
+    "37973": {
+      "lower": 1,
+      "upper": 1,
+      "certified_optimum": 1,
+      "certification": "source plus all 76 single substitutions; known feasible returned endpoints",
+      "minimum_edits_in_measured_assay": 1,
+      "single_edit_assay_coverage": {
+        "measured": 76,
+        "possible": 76
+      }
+    },
+    "60900": {
+      "lower": 2,
+      "upper": 2,
+      "certified_optimum": 2,
+      "certification": "source plus all 76 single substitutions; known feasible returned endpoints",
+      "minimum_edits_in_measured_assay": 2,
+      "single_edit_assay_coverage": {
+        "measured": 75,
+        "possible": 76
+      }
+    },
+    "98204": {
+      "lower": 1,
+      "upper": 1,
+      "certified_optimum": 1,
+      "certification": "source plus all 76 single substitutions; known feasible returned endpoints",
+      "minimum_edits_in_measured_assay": 2,
+      "single_edit_assay_coverage": {
+        "measured": 73,
+        "possible": 76
+      }
+    },
+    "115108": {
+      "lower": 2,
+      "upper": 2,
+      "certified_optimum": 2,
+      "certification": "source plus all 76 single substitutions; known feasible returned endpoints",
+      "minimum_edits_in_measured_assay": 1,
+      "single_edit_assay_coverage": {
+        "measured": 75,
+        "possible": 76
+      }
+    }
+  },
+  "encode": {
+    "control": {
+      "alm_st_gumbel": {
+        "runs": 2,
+        "model_feasible": 2,
+        "edits_when_feasible": [
+          1,
+          1
+        ],
+        "mean_model_regret_when_feasible": 0.0,
+        "mean_seconds": 12.913362302999985,
+        "assay_status": "unmeasured mutants"
+      },
+      "ledidi_hinge": {
+        "runs": 2,
+        "model_feasible": 2,
+        "edits_when_feasible": [
+          1,
+          1
+        ],
+        "mean_model_regret_when_feasible": 0.0,
+        "mean_seconds": 11.94027949949998,
+        "assay_status": "unmeasured mutants"
+      },
+      "alm_h_rollout_control": {
+        "runs": 2,
+        "model_feasible": 2,
+        "edits_when_feasible": [
+          2,
+          1
+        ],
+        "mean_model_regret_when_feasible": 0.5,
+        "mean_seconds": 8.478806626500045,
+        "assay_status": "unmeasured mutants"
+      },
+      "alm_h_myopic": {
+        "runs": 2,
+        "model_feasible": 2,
+        "edits_when_feasible": [
+          1,
+          1
+        ],
+        "mean_model_regret_when_feasible": 0.0,
+        "mean_seconds": 7.657575743000052,
+        "assay_status": "unmeasured mutants"
+      },
+      "alm_h_rollout": {
+        "runs": 2,
+        "model_feasible": 2,
+        "edits_when_feasible": [
+          1,
+          1
+        ],
+        "mean_model_regret_when_feasible": 0.0,
+        "mean_seconds": 7.981855396500009,
+        "assay_status": "unmeasured mutants"
+      }
+    },
+    "twofold_verified": {
+      "alm_st_gumbel": {
+        "runs": 2,
+        "model_feasible": 0,
+        "edits_when_feasible": [],
+        "mean_model_regret_when_feasible": null,
+        "mean_seconds": 11.331121402999997,
+        "assay_status": "unmeasured mutants"
+      },
+      "ledidi_hinge": {
+        "runs": 2,
+        "model_feasible": 0,
+        "edits_when_feasible": [],
+        "mean_model_regret_when_feasible": null,
+        "mean_seconds": 11.95934205399999,
+        "assay_status": "unmeasured mutants"
+      },
+      "alm_h_rollout_control": {
+        "runs": 2,
+        "model_feasible": 0,
+        "edits_when_feasible": [],
+        "mean_model_regret_when_feasible": null,
+        "mean_seconds": 7.419686737999996,
+        "assay_status": "unmeasured mutants"
+      },
+      "alm_h_myopic": {
+        "runs": 2,
+        "model_feasible": 0,
+        "edits_when_feasible": [],
+        "mean_model_regret_when_feasible": null,
+        "mean_seconds": 7.427216509999994,
+        "assay_status": "unmeasured mutants"
+      },
+      "alm_h_rollout": {
+        "runs": 2,
+        "model_feasible": 0,
+        "edits_when_feasible": [],
+        "mean_model_regret_when_feasible": null,
+        "mean_seconds": 7.447969414499994,
+        "assay_status": "unmeasured mutants"
+      }
+    }
+  },
+  "scope": "Exploratory CPU pilot: four GB1 origins x one seed; one ENCODE window x two seeds"
+}

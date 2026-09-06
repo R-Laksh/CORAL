@@ -1,0 +1,20 @@
+{
+  "baseline_records": "research_results/gb1_esmc300m_cf/runs.jsonl",
+  "guide_records": "research_results/gb1_esmc300m_cf_proposal_mix/runs.jsonl",
+  "input_sha256": {
+    "research_results/gb1_esmc300m_cf/runs.jsonl": "97001ed4375be00eabbef093a156186e6f6775b02355a7e8a77e5921345533e4",
+    "research_results/gb1_esmc300m_cf_proposal_mix/runs.jsonl": "16713975c6f0ee91cef9334cad81ec2aff7e97301d1d95cfbe773d2ab6db3aaf"
+  },
+  "head_sha256": "b0d15555493daac5adf55e70ed904c620014752f0b91bd759e8db8a1481df569",
+  "model_revision": "a59b831785f907e96e6a246b1d142bfb76df31ee",
+  "test_indices": [
+    115108,
+    37973,
+    98204,
+    60900
+  ],
+  "forward_budget": 256,
+  "ledidi_edit_weight": 1.0,
+  "amendment": "Post-hoc correction: replace absolute h floor with normalized defensive proposal mixture; retain unchanged ST-ALM and Ledidi runs. The same four origins were reused; this is exploratory, not a confirmatory holdout.",
+  "runtime": "CPU search seconds exclude final FP32 acceptance checks; not equal FLOPs or a GPU scaling benchmark."
+}

@@ -5,6 +5,7 @@ The exact assay optimum is over measured variants; the exact *model* optimum
 is reported only if all smaller Hamming shells are certified infeasible.
 """
 import argparse
+import hashlib
 import itertools
 import json
 from pathlib import Path
@@ -42,6 +43,8 @@ def main():
     data, head_dir, directory = load_gb1(args.data), Path(args.head_dir), Path(args.runs_dir)
     records = [json.loads(line) for line in (directory / "runs.jsonl").read_text().splitlines()]
     metadata = json.loads((head_dir / "model_validation.json").read_text())
+    if hashlib.sha256((Path(args.checkpoint) / "model.safetensors").read_bytes()).hexdigest() != metadata["checkpoint_sha256"]:
+        raise ValueError("Audit checkpoint differs from the validated functional-head backbone")
     model = ESMFunctionalPredictor(load_backbone(metadata.get("family", "esm2"),
                                   args.checkpoint, sites=SITES, device=args.device), head_dir / "head.npz")
     queries, shells = {}, {}
@@ -85,6 +88,9 @@ def main():
             upper = min(known) if known else None
         bounds[row] = {"lower": lower, "upper": upper,
                        "certified_optimum": lower if upper == lower else None,
+                       "minimum_edits_in_measured_assay": group[0]["assay_measured_minimum_edits"],
+                       "single_edit_assay_coverage": {"measured": sum(s in assay_map for s in decode(shell[1:])),
+                                                      "possible": len(shell) - 1},
                        "certification": "source plus all 76 single substitutions; known feasible returned endpoints"}
     for result in records:
         if result["best"] is None:

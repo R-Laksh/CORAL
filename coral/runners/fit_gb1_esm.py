@@ -1,4 +1,4 @@
-"""Fit and audit a frozen ESM-2 linear head on a mutation-order split."""
+"""Fit and audit a frozen ESM-family linear head on a mutation-order split."""
 import argparse
 import hashlib
 import json

@@ -1,0 +1,1936 @@
+{
+  "task_construction": "threshold halfway between source and best single-edit logcount",
+  "certified_model_minimum_edits": 1,
+  "initial_logcount": 0.8648695945739746,
+  "best_single_edit_logcount": 0.6810212135314941,
+  "threshold_logcount": 0.7729454040527344,
+  "feasible_single_edits": 21,
+  "additional_work": {
+    "forward_sequences": 384,
+    "backward_sequences": 0,
+    "seconds": 4.419991997000125
+  },
+  "oracle_separation": "Only the scalar threshold is passed to search; no candidates, scores, caches or gradients",
+  "single_edits": [
+    {
+      "position_zero_based": 993,
+      "base": "A",
+      "logcount": 0.8375492095947266
+    },
+    {
+      "position_zero_based": 993,
+      "base": "G",
+      "logcount": 0.8591163158416748
+    },
+    {
+      "position_zero_based": 993,
+      "base": "T",
+      "logcount": 0.8706531524658203
+    },
+    {
+      "position_zero_based": 994,
+      "base": "A",
+      "logcount": 0.8044949769973755
+    },
+    {
+      "position_zero_based": 994,
+      "base": "G",
+      "logcount": 0.9057471752166748
+    },
+    {
+      "position_zero_based": 994,
+      "base": "T",
+      "logcount": 0.8532103300094604
+    },
+    {
+      "position_zero_based": 995,
+      "base": "A",
+      "logcount": 0.8151017427444458
+    },
+    {
+      "position_zero_based": 995,
+      "base": "G",
+      "logcount": 0.8646304607391357
+    },
+    {
+      "position_zero_based": 995,
+      "base": "T",
+      "logcount": 0.8262712955474854
+    },
+    {
+      "position_zero_based": 996,
+      "base": "C",
+      "logcount": 0.8959454298019409
+    },
+    {
+      "position_zero_based": 996,
+      "base": "G",
+      "logcount": 0.9069187641143799
+    },
+    {
+      "position_zero_based": 996,
+      "base": "T",
+      "logcount": 0.8328995704650879
+    },
+    {
+      "position_zero_based": 997,
+      "base": "A",
+      "logcount": 0.8257951736450195
+    },
+    {
+      "position_zero_based": 997,
+      "base": "C",
+      "logcount": 0.9064420461654663
+    },
+    {
+      "position_zero_based": 997,
+      "base": "T",
+      "logcount": 0.8308712244033813
+    },
+    {
+      "position_zero_based": 998,
+      "base": "A",
+      "logcount": 0.8016295433044434
+    },
+    {
+      "position_zero_based": 998,
+      "base": "G",
+      "logcount": 0.8636932373046875
+    },
+    {
+      "position_zero_based": 998,
+      "base": "T",
+      "logcount": 0.8240773677825928
+    },
+    {
+      "position_zero_based": 999,
+      "base": "A",
+      "logcount": 0.8454090356826782
+    },
+    {
+      "position_zero_based": 999,
+      "base": "G",
+      "logcount": 0.8612489700317383
+    },
+    {
+      "position_zero_based": 999,
+      "base": "T",
+      "logcount": 0.8254514932632446
+    },
+    {
+      "position_zero_based": 1000,
+      "base": "A",
+      "logcount": 0.8505020141601562
+    },
+    {
+      "position_zero_based": 1000,
+      "base": "C",
+      "logcount": 0.9221394062042236
+    },
+    {
+      "position_zero_based": 1000,
+      "base": "G",
+      "logcount": 0.945898175239563
+    },
+    {
+      "position_zero_based": 1001,
+      "base": "A",
+      "logcount": 0.7719043493270874
+    },
+    {
+      "position_zero_based": 1001,
+      "base": "G",
+      "logcount": 0.8225455284118652
+    },
+    {
+      "position_zero_based": 1001,
+      "base": "T",
+      "logcount": 0.7906670570373535
+    },
+    {
+      "position_zero_based": 1002,
+      "base": "A",
+      "logcount": 0.8808281421661377
+    },
+    {
+      "position_zero_based": 1002,
+      "base": "C",
+      "logcount": 0.9001028537750244
+    },
+    {
+      "position_zero_based": 1002,
+      "base": "T",
+      "logcount": 0.8134958744049072
+    },
+    {
+      "position_zero_based": 1003,
+      "base": "A",
+      "logcount": 1.0895781517028809
+    },
+    {
+      "position_zero_based": 1003,
+      "base": "C",
+      "logcount": 0.826724648475647
+    },
+    {
+      "position_zero_based": 1003,
+      "base": "T",
+      "logcount": 1.0168671607971191
+    },
+    {
+      "position_zero_based": 1004,
+      "base": "C",
+      "logcount": 0.8544120788574219
+    },
+    {
+      "position_zero_based": 1004,
+      "base": "G",
+      "logcount": 0.8331718444824219
+    },
+    {
+      "position_zero_based": 1004,
+      "base": "T",
+      "logcount": 0.844069242477417
+    },
+    {
+      "position_zero_based": 1005,
+      "base": "A",
+      "logcount": 1.1903644800186157
+    },
+    {
+      "position_zero_based": 1005,
+      "base": "G",
+      "logcount": 1.1179158687591553
+    },
+    {
+      "position_zero_based": 1005,
+      "base": "T",
+      "logcount": 1.0982470512390137
+    },
+    {
+      "position_zero_based": 1006,
+      "base": "A",
+      "logcount": 0.7028129696846008
+    },
+    {
+      "position_zero_based": 1006,
+      "base": "C",
+      "logcount": 0.6901875734329224
+    },
+    {
+      "position_zero_based": 1006,
+      "base": "T",
+      "logcount": 0.7029932737350464
+    },
+    {
+      "position_zero_based": 1007,
+      "base": "A",
+      "logcount": 0.760692834854126
+    },
+    {
+      "position_zero_based": 1007,
+      "base": "C",
+      "logcount": 0.7351040840148926
+    },
+    {
+      "position_zero_based": 1007,
+      "base": "G",
+      "logcount": 0.7340242266654968
+    },
+    {
+      "position_zero_based": 1008,
+      "base": "A",
+      "logcount": 0.9730671644210815
+    },
+    {
+      "position_zero_based": 1008,
+      "base": "G",
+      "logcount": 0.7041372060775757
+    },
+    {
+      "position_zero_based": 1008,
+      "base": "T",
+      "logcount": 0.7429554462432861
+    },
+    {
+      "position_zero_based": 1009,
+      "base": "C",
+      "logcount": 0.7017170190811157
+    },
+    {
+      "position_zero_based": 1009,
+      "base": "G",
+      "logcount": 0.701221227645874
+    },
+    {
+      "position_zero_based": 1009,
+      "base": "T",
+      "logcount": 0.6830272674560547
+    },
+    {
+      "position_zero_based": 1010,
+      "base": "C",
+      "logcount": 0.7316559553146362
+    },
+    {
+      "position_zero_based": 1010,
+      "base": "G",
+      "logcount": 0.7187396883964539
+    },
+    {
+      "position_zero_based": 1010,
+      "base": "T",
+      "logcount": 0.71180260181427
+    },
+    {
+      "position_zero_based": 1011,
+      "base": "A",
+      "logcount": 0.7544591426849365
+    },
+    {
+      "position_zero_based": 1011,
+      "base": "G",
+      "logcount": 0.681140661239624
+    },
+    {
+      "position_zero_based": 1011,
+      "base": "T",
+      "logcount": 0.7809629440307617
+    },
+    {
+      "position_zero_based": 1012,
+      "base": "C",
+      "logcount": 0.701863706111908
+    },
+    {
+      "position_zero_based": 1012,
+      "base": "G",
+      "logcount": 0.7680885791778564
+    },
+    {
+      "position_zero_based": 1012,
+      "base": "T",
+      "logcount": 0.6810212135314941
+    },
+    {
+      "position_zero_based": 1013,
+      "base": "C",
+      "logcount": 0.8023849725723267
+    },
+    {
+      "position_zero_based": 1013,
+      "base": "G",
+      "logcount": 0.9250214099884033
+    },
+    {
+      "position_zero_based": 1013,
+      "base": "T",
+      "logcount": 0.8630801439285278
+    },
+    {
+      "position_zero_based": 1014,
+      "base": "A",
+      "logcount": 0.9366254806518555
+    },
+    {
+      "position_zero_based": 1014,
+      "base": "C",
+      "logcount": 0.9131069183349609
+    },
+    {
+      "position_zero_based": 1014,
+      "base": "G",
+      "logcount": 1.183624505996704
+    },
+    {
+      "position_zero_based": 1015,
+      "base": "A",
+      "logcount": 0.9079294204711914
+    },
+    {
+      "position_zero_based": 1015,
+      "base": "G",
+      "logcount": 1.02432382106781
+    },
+    {
+      "position_zero_based": 1015,
+      "base": "T",
+      "logcount": 0.8424043655395508
+    },
+    {
+      "position_zero_based": 1016,
+      "base": "A",
+      "logcount": 0.9300036430358887
+    },
+    {
+      "position_zero_based": 1016,
+      "base": "G",
+      "logcount": 0.8937852382659912
+    },
+    {
+      "position_zero_based": 1016,
+      "base": "T",
+      "logcount": 0.8201704025268555
+    },
+    {
+      "position_zero_based": 1017,
+      "base": "C",
+      "logcount": 0.8627686500549316
+    },
+    {
+      "position_zero_based": 1017,
+      "base": "G",
+      "logcount": 0.880937933921814
+    },
+    {
+      "position_zero_based": 1017,
+      "base": "T",
+      "logcount": 0.9097099304199219
+    },
+    {
+      "position_zero_based": 1018,
+      "base": "A",
+      "logcount": 0.8015584945678711
+    },
+    {
+      "position_zero_based": 1018,
+      "base": "C",
+      "logcount": 0.8331897258758545
+    },
+    {
+      "position_zero_based": 1018,
+      "base": "G",
+      "logcount": 0.8383599519729614
+    },
+    {
+      "position_zero_based": 1019,
+      "base": "A",
+      "logcount": 0.77105712890625
+    },
+    {
+      "position_zero_based": 1019,
+      "base": "C",
+      "logcount": 0.8549703359603882
+    },
+    {
+      "position_zero_based": 1019,
+      "base": "T",
+      "logcount": 0.9305522441864014
+    },
+    {
+      "position_zero_based": 1020,
+      "base": "A",
+      "logcount": 0.8725645542144775
+    },
+    {
+      "position_zero_based": 1020,
+      "base": "C",
+      "logcount": 0.9114189147949219
+    },
+    {
+      "position_zero_based": 1020,
+      "base": "G",
+      "logcount": 0.9391529560089111
+    },
+    {
+      "position_zero_based": 1021,
+      "base": "A",
+      "logcount": 0.862933874130249
+    },
+    {
+      "position_zero_based": 1021,
+      "base": "C",
+      "logcount": 0.8717734813690186
+    },
+    {
+      "position_zero_based": 1021,
+      "base": "G",
+      "logcount": 0.868262529373169
+    },
+    {
+      "position_zero_based": 1022,
+      "base": "A",
+      "logcount": 0.8305796384811401
+    },
+    {
+      "position_zero_based": 1022,
+      "base": "C",
+      "logcount": 0.7880131006240845
+    },
+    {
+      "position_zero_based": 1022,
+      "base": "G",
+      "logcount": 0.8888931274414062
+    },
+    {
+      "position_zero_based": 1023,
+      "base": "A",
+      "logcount": 0.881210446357727
+    },
+    {
+      "position_zero_based": 1023,
+      "base": "G",
+      "logcount": 1.0167865753173828
+    },
+    {
+      "position_zero_based": 1023,
+      "base": "T",
+      "logcount": 0.8308963775634766
+    },
+    {
+      "position_zero_based": 1024,
+      "base": "A",
+      "logcount": 0.9239376783370972
+    },
+    {
+      "position_zero_based": 1024,
+      "base": "C",
+      "logcount": 0.8930841684341431
+    },
+    {
+      "position_zero_based": 1024,
+      "base": "G",
+      "logcount": 0.8666419982910156
+    },
+    {
+      "position_zero_based": 1025,
+      "base": "A",
+      "logcount": 0.8263376951217651
+    },
+    {
+      "position_zero_based": 1025,
+      "base": "C",
+      "logcount": 0.8613979816436768
+    },
+    {
+      "position_zero_based": 1025,
+      "base": "G",
+      "logcount": 0.8611564636230469
+    },
+    {
+      "position_zero_based": 1026,
+      "base": "C",
+      "logcount": 0.8968011140823364
+    },
+    {
+      "position_zero_based": 1026,
+      "base": "G",
+      "logcount": 0.8425337076187134
+    },
+    {
+      "position_zero_based": 1026,
+      "base": "T",
+      "logcount": 0.8689886331558228
+    },
+    {
+      "position_zero_based": 1027,
+      "base": "A",
+      "logcount": 0.8281289339065552
+    },
+    {
+      "position_zero_based": 1027,
+      "base": "C",
+      "logcount": 1.04952073097229
+    },
+    {
+      "position_zero_based": 1027,
+      "base": "T",
+      "logcount": 0.9270820617675781
+    },
+    {
+      "position_zero_based": 1028,
+      "base": "A",
+      "logcount": 0.828038215637207
+    },
+    {
+      "position_zero_based": 1028,
+      "base": "C",
+      "logcount": 0.8489704132080078
+    },
+    {
+      "position_zero_based": 1028,
+      "base": "T",
+      "logcount": 0.8027317523956299
+    },
+    {
+      "position_zero_based": 1029,
+      "base": "C",
+      "logcount": 0.9287540912628174
+    },
+    {
+      "position_zero_based": 1029,
+      "base": "G",
+      "logcount": 0.8778631687164307
+    },
+    {
+      "position_zero_based": 1029,
+      "base": "T",
+      "logcount": 0.9692580699920654
+    },
+    {
+      "position_zero_based": 1030,
+      "base": "C",
+      "logcount": 0.8954899311065674
+    },
+    {
+      "position_zero_based": 1030,
+      "base": "G",
+      "logcount": 0.8519415855407715
+    },
+    {
+      "position_zero_based": 1030,
+      "base": "T",
+      "logcount": 0.8359909057617188
+    },
+    {
+      "position_zero_based": 1031,
+      "base": "C",
+      "logcount": 0.9047778844833374
+    },
+    {
+      "position_zero_based": 1031,
+      "base": "G",
+      "logcount": 0.8656175136566162
+    },
+    {
+      "position_zero_based": 1031,
+      "base": "T",
+      "logcount": 0.8686233758926392
+    },
+    {
+      "position_zero_based": 1032,
+      "base": "A",
+      "logcount": 0.813766598701477
+    },
+    {
+      "position_zero_based": 1032,
+      "base": "C",
+      "logcount": 0.927943229675293
+    },
+    {
+      "position_zero_based": 1032,
+      "base": "T",
+      "logcount": 0.9082372188568115
+    },
+    {
+      "position_zero_based": 1033,
+      "base": "A",
+      "logcount": 0.8712717294692993
+    },
+    {
+      "position_zero_based": 1033,
+      "base": "C",
+      "logcount": 0.9310073852539062
+    },
+    {
+      "position_zero_based": 1033,
+      "base": "T",
+      "logcount": 0.8569035530090332
+    },
+    {
+      "position_zero_based": 1034,
+      "base": "A",
+      "logcount": 0.8226466178894043
+    },
+    {
+      "position_zero_based": 1034,
+      "base": "G",
+      "logcount": 0.8548264503479004
+    },
+    {
+      "position_zero_based": 1034,
+      "base": "T",
+      "logcount": 0.8034137487411499
+    },
+    {
+      "position_zero_based": 1035,
+      "base": "A",
+      "logcount": 0.8568865060806274
+    },
+    {
+      "position_zero_based": 1035,
+      "base": "C",
+      "logcount": 0.8824349641799927
+    },
+    {
+      "position_zero_based": 1035,
+      "base": "T",
+      "logcount": 0.836239218711853
+    },
+    {
+      "position_zero_based": 1036,
+      "base": "A",
+      "logcount": 0.8571047782897949
+    },
+    {
+      "position_zero_based": 1036,
+      "base": "C",
+      "logcount": 0.8950463533401489
+    },
+    {
+      "position_zero_based": 1036,
+      "base": "T",
+      "logcount": 0.8548197746276855
+    },
+    {
+      "position_zero_based": 1037,
+      "base": "A",
+      "logcount": 0.8927397727966309
+    },
+    {
+      "position_zero_based": 1037,
+      "base": "G",
+      "logcount": 0.9301749467849731
+    },
+    {
+      "position_zero_based": 1037,
+      "base": "T",
+      "logcount": 0.9042487144470215
+    },
+    {
+      "position_zero_based": 1038,
+      "base": "A",
+      "logcount": 0.86571204662323
+    },
+    {
+      "position_zero_based": 1038,
+      "base": "G",
+      "logcount": 0.8819770812988281
+    },
+    {
+      "position_zero_based": 1038,
+      "base": "T",
+      "logcount": 0.8848514556884766
+    },
+    {
+      "position_zero_based": 1039,
+      "base": "C",
+      "logcount": 0.8717900514602661
+    },
+    {
+      "position_zero_based": 1039,
+      "base": "G",
+      "logcount": 0.895012378692627
+    },
+    {
+      "position_zero_based": 1039,
+      "base": "T",
+      "logcount": 0.859184980392456
+    },
+    {
+      "position_zero_based": 1040,
+      "base": "C",
+      "logcount": 0.8303124904632568
+    },
+    {
+      "position_zero_based": 1040,
+      "base": "G",
+      "logcount": 0.8796901702880859
+    },
+    {
+      "position_zero_based": 1040,
+      "base": "T",
+      "logcount": 0.8568482398986816
+    },
+    {
+      "position_zero_based": 1041,
+      "base": "A",
+      "logcount": 0.9068930149078369
+    },
+    {
+      "position_zero_based": 1041,
+      "base": "G",
+      "logcount": 0.8665810823440552
+    },
+    {
+      "position_zero_based": 1041,
+      "base": "T",
+      "logcount": 0.8891580104827881
+    },
+    {
+      "position_zero_based": 1042,
+      "base": "A",
+      "logcount": 0.9497332572937012
+    },
+    {
+      "position_zero_based": 1042,
+      "base": "G",
+      "logcount": 0.9219917058944702
+    },
+    {
+      "position_zero_based": 1042,
+      "base": "T",
+      "logcount": 0.8631720542907715
+    },
+    {
+      "position_zero_based": 1043,
+      "base": "A",
+      "logcount": 0.8761701583862305
+    },
+    {
+      "position_zero_based": 1043,
+      "base": "G",
+      "logcount": 0.8779474496841431
+    },
+    {
+      "position_zero_based": 1043,
+      "base": "T",
+      "logcount": 0.8551102876663208
+    },
+    {
+      "position_zero_based": 1044,
+      "base": "C",
+      "logcount": 0.8763632774353027
+    },
+    {
+      "position_zero_based": 1044,
+      "base": "G",
+      "logcount": 0.8595280647277832
+    },
+    {
+      "position_zero_based": 1044,
+      "base": "T",
+      "logcount": 0.8628721237182617
+    },
+    {
+      "position_zero_based": 1045,
+      "base": "A",
+      "logcount": 0.8935999870300293
+    },
+    {
+      "position_zero_based": 1045,
+      "base": "C",
+      "logcount": 0.8645260334014893
+    },
+    {
+      "position_zero_based": 1045,
+      "base": "T",
+      "logcount": 0.8569679260253906
+    },
+    {
+      "position_zero_based": 1046,
+      "base": "A",
+      "logcount": 0.8578490018844604
+    },
+    {
+      "position_zero_based": 1046,
+      "base": "C",
+      "logcount": 0.8846960067749023
+    },
+    {
+      "position_zero_based": 1046,
+      "base": "T",
+      "logcount": 0.8996498584747314
+    },
+    {
+      "position_zero_based": 1047,
+      "base": "A",
+      "logcount": 0.8674346208572388
+    },
+    {
+      "position_zero_based": 1047,
+      "base": "C",
+      "logcount": 0.8907932043075562
+    },
+    {
+      "position_zero_based": 1047,
+      "base": "T",
+      "logcount": 0.8430725336074829
+    },
+    {
+      "position_zero_based": 1048,
+      "base": "A",
+      "logcount": 0.8809762001037598
+    },
+    {
+      "position_zero_based": 1048,
+      "base": "C",
+      "logcount": 0.8904136419296265
+    },
+    {
+      "position_zero_based": 1048,
+      "base": "G",
+      "logcount": 0.8962633609771729
+    },
+    {
+      "position_zero_based": 1049,
+      "base": "A",
+      "logcount": 0.8682715892791748
+    },
+    {
+      "position_zero_based": 1049,
+      "base": "G",
+      "logcount": 0.914996862411499
+    },
+    {
+      "position_zero_based": 1049,
+      "base": "T",
+      "logcount": 0.8869657516479492
+    },
+    {
+      "position_zero_based": 1050,
+      "base": "A",
+      "logcount": 0.9667967557907104
+    },
+    {
+      "position_zero_based": 1050,
+      "base": "C",
+      "logcount": 0.8737002611160278
+    },
+    {
+      "position_zero_based": 1050,
+      "base": "G",
+      "logcount": 0.964726448059082
+    },
+    {
+      "position_zero_based": 1051,
+      "base": "A",
+      "logcount": 0.9340813159942627
+    },
+    {
+      "position_zero_based": 1051,
+      "base": "G",
+      "logcount": 0.8985713720321655
+    },
+    {
+      "position_zero_based": 1051,
+      "base": "T",
+      "logcount": 0.8749444484710693
+    },
+    {
+      "position_zero_based": 1052,
+      "base": "A",
+      "logcount": 0.9057106971740723
+    },
+    {
+      "position_zero_based": 1052,
+      "base": "G",
+      "logcount": 0.8920884132385254
+    },
+    {
+      "position_zero_based": 1052,
+      "base": "T",
+      "logcount": 0.8737943172454834
+    },
+    {
+      "position_zero_based": 1053,
+      "base": "C",
+      "logcount": 0.9016090631484985
+    },
+    {
+      "position_zero_based": 1053,
+      "base": "G",
+      "logcount": 0.8939049243927002
+    },
+    {
+      "position_zero_based": 1053,
+      "base": "T",
+      "logcount": 0.8941965103149414
+    },
+    {
+      "position_zero_based": 1054,
+      "base": "A",
+      "logcount": 0.8375324010848999
+    },
+    {
+      "position_zero_based": 1054,
+      "base": "C",
+      "logcount": 0.8310375213623047
+    },
+    {
+      "position_zero_based": 1054,
+      "base": "T",
+      "logcount": 0.8250277042388916
+    },
+    {
+      "position_zero_based": 1055,
+      "base": "A",
+      "logcount": 0.843573808670044
+    },
+    {
+      "position_zero_based": 1055,
+      "base": "C",
+      "logcount": 0.8754132986068726
+    },
+    {
+      "position_zero_based": 1055,
+      "base": "G",
+      "logcount": 0.8733196258544922
+    },
+    {
+      "position_zero_based": 1056,
+      "base": "A",
+      "logcount": 0.8644778728485107
+    },
+    {
+      "position_zero_based": 1056,
+      "base": "C",
+      "logcount": 0.872124195098877
+    },
+    {
+      "position_zero_based": 1056,
+      "base": "T",
+      "logcount": 0.896773099899292
+    },
+    {
+      "position_zero_based": 1057,
+      "base": "C",
+      "logcount": 0.8324213027954102
+    },
+    {
+      "position_zero_based": 1057,
+      "base": "G",
+      "logcount": 0.8587143421173096
+    },
+    {
+      "position_zero_based": 1057,
+      "base": "T",
+      "logcount": 0.8646011352539062
+    },
+    {
+      "position_zero_based": 1058,
+      "base": "A",
+      "logcount": 0.8565644025802612
+    },
+    {
+      "position_zero_based": 1058,
+      "base": "G",
+      "logcount": 0.8585165739059448
+    },
+    {
+      "position_zero_based": 1058,
+      "base": "T",
+      "logcount": 0.8549182415008545
+    },
+    {
+      "position_zero_based": 1059,
+      "base": "C",
+      "logcount": 0.8575923442840576
+    },
+    {
+      "position_zero_based": 1059,
+      "base": "G",
+      "logcount": 0.8662334680557251
+    },
+    {
+      "position_zero_based": 1059,
+      "base": "T",
+      "logcount": 0.8524556159973145
+    },
+    {
+      "position_zero_based": 1060,
+      "base": "A",
+      "logcount": 0.8830058574676514
+    },
+    {
+      "position_zero_based": 1060,
+      "base": "G",
+      "logcount": 0.8931229114532471
+    },
+    {
+      "position_zero_based": 1060,
+      "base": "T",
+      "logcount": 0.9324601888656616
+    },
+    {
+      "position_zero_based": 1061,
+      "base": "A",
+      "logcount": 0.855290412902832
+    },
+    {
+      "position_zero_based": 1061,
+      "base": "C",
+      "logcount": 0.8061325550079346
+    },
+    {
+      "position_zero_based": 1061,
+      "base": "T",
+      "logcount": 0.8372412919998169
+    },
+    {
+      "position_zero_based": 1062,
+      "base": "A",
+      "logcount": 0.8096557855606079
+    },
+    {
+      "position_zero_based": 1062,
+      "base": "C",
+      "logcount": 0.8328220844268799
+    },
+    {
+      "position_zero_based": 1062,
+      "base": "G",
+      "logcount": 0.8226320743560791
+    },
+    {
+      "position_zero_based": 1063,
+      "base": "A",
+      "logcount": 0.8096576929092407
+    },
+    {
+      "position_zero_based": 1063,
+      "base": "C",
+      "logcount": 0.8022325038909912
+    },
+    {
+      "position_zero_based": 1063,
+      "base": "G",
+      "logcount": 0.8076547384262085
+    },
+    {
+      "position_zero_based": 1064,
+      "base": "A",
+      "logcount": 0.8606610298156738
+    },
+    {
+      "position_zero_based": 1064,
+      "base": "C",
+      "logcount": 0.828575611114502
+    },
+    {
+      "position_zero_based": 1064,
+      "base": "G",
+      "logcount": 0.8260420560836792
+    },
+    {
+      "position_zero_based": 1065,
+      "base": "A",
+      "logcount": 0.8226854801177979
+    },
+    {
+      "position_zero_based": 1065,
+      "base": "G",
+      "logcount": 0.8277863264083862
+    },
+    {
+      "position_zero_based": 1065,
+      "base": "T",
+      "logcount": 0.7939609289169312
+    },
+    {
+      "position_zero_based": 1066,
+      "base": "A",
+      "logcount": 0.836937427520752
+    },
+    {
+      "position_zero_based": 1066,
+      "base": "G",
+      "logcount": 0.7871524095535278
+    },
+    {
+      "position_zero_based": 1066,
+      "base": "T",
+      "logcount": 0.8431293964385986
+    },
+    {
+      "position_zero_based": 1067,
+      "base": "A",
+      "logcount": 0.8107324838638306
+    },
+    {
+      "position_zero_based": 1067,
+      "base": "C",
+      "logcount": 0.820288896560669
+    },
+    {
+      "position_zero_based": 1067,
+      "base": "T",
+      "logcount": 0.8219248056411743
+    },
+    {
+      "position_zero_based": 1068,
+      "base": "A",
+      "logcount": 0.8141137361526489
+    },
+    {
+      "position_zero_based": 1068,
+      "base": "C",
+      "logcount": 0.8620933294296265
+    },
+    {
+      "position_zero_based": 1068,
+      "base": "T",
+      "logcount": 0.8368141651153564
+    },
+    {
+      "position_zero_based": 1069,
+      "base": "A",
+      "logcount": 0.8698033094406128
+    },
+    {
+      "position_zero_based": 1069,
+      "base": "C",
+      "logcount": 0.87861168384552
+    },
+    {
+      "position_zero_based": 1069,
+      "base": "T",
+      "logcount": 0.9457170963287354
+    },
+    {
+      "position_zero_based": 1070,
+      "base": "A",
+      "logcount": 0.874587893486023
+    },
+    {
+      "position_zero_based": 1070,
+      "base": "C",
+      "logcount": 0.8665339946746826
+    },
+    {
+      "position_zero_based": 1070,
+      "base": "G",
+      "logcount": 0.8535112142562866
+    },
+    {
+      "position_zero_based": 1071,
+      "base": "A",
+      "logcount": 0.9136817455291748
+    },
+    {
+      "position_zero_based": 1071,
+      "base": "G",
+      "logcount": 0.8686650991439819
+    },
+    {
+      "position_zero_based": 1071,
+      "base": "T",
+      "logcount": 0.9170012474060059
+    },
+    {
+      "position_zero_based": 1072,
+      "base": "C",
+      "logcount": 0.8452258110046387
+    },
+    {
+      "position_zero_based": 1072,
+      "base": "G",
+      "logcount": 0.9163708686828613
+    },
+    {
+      "position_zero_based": 1072,
+      "base": "T",
+      "logcount": 0.8266185522079468
+    },
+    {
+      "position_zero_based": 1073,
+      "base": "A",
+      "logcount": 0.9558053016662598
+    },
+    {
+      "position_zero_based": 1073,
+      "base": "C",
+      "logcount": 0.8621780872344971
+    },
+    {
+      "position_zero_based": 1073,
+      "base": "G",
+      "logcount": 0.8583794832229614
+    },
+    {
+      "position_zero_based": 1074,
+      "base": "A",
+      "logcount": 0.8310990333557129
+    },
+    {
+      "position_zero_based": 1074,
+      "base": "G",
+      "logcount": 0.812073826789856
+    },
+    {
+      "position_zero_based": 1074,
+      "base": "T",
+      "logcount": 0.8840591907501221
+    },
+    {
+      "position_zero_based": 1075,
+      "base": "C",
+      "logcount": 0.848021388053894
+    },
+    {
+      "position_zero_based": 1075,
+      "base": "G",
+      "logcount": 0.8690412044525146
+    },
+    {
+      "position_zero_based": 1075,
+      "base": "T",
+      "logcount": 0.8477413654327393
+    },
+    {
+      "position_zero_based": 1076,
+      "base": "A",
+      "logcount": 0.8505544662475586
+    },
+    {
+      "position_zero_based": 1076,
+      "base": "C",
+      "logcount": 0.8654483556747437
+    },
+    {
+      "position_zero_based": 1076,
+      "base": "G",
+      "logcount": 0.8942669630050659
+    },
+    {
+      "position_zero_based": 1077,
+      "base": "A",
+      "logcount": 0.8235594034194946
+    },
+    {
+      "position_zero_based": 1077,
+      "base": "G",
+      "logcount": 0.8276002407073975
+    },
+    {
+      "position_zero_based": 1077,
+      "base": "T",
+      "logcount": 0.8289179801940918
+    },
+    {
+      "position_zero_based": 1078,
+      "base": "A",
+      "logcount": 0.8497788906097412
+    },
+    {
+      "position_zero_based": 1078,
+      "base": "G",
+      "logcount": 0.8356568813323975
+    },
+    {
+      "position_zero_based": 1078,
+      "base": "T",
+      "logcount": 0.8534030914306641
+    },
+    {
+      "position_zero_based": 1079,
+      "base": "A",
+      "logcount": 0.8603407144546509
+    },
+    {
+      "position_zero_based": 1079,
+      "base": "C",
+      "logcount": 0.822925329208374
+    },
+    {
+      "position_zero_based": 1079,
+      "base": "T",
+      "logcount": 0.8180379867553711
+    },
+    {
+      "position_zero_based": 1080,
+      "base": "A",
+      "logcount": 0.8249784708023071
+    },
+    {
+      "position_zero_based": 1080,
+      "base": "C",
+      "logcount": 0.8700326681137085
+    },
+    {
+      "position_zero_based": 1080,
+      "base": "T",
+      "logcount": 0.8544712066650391
+    },
+    {
+      "position_zero_based": 1081,
+      "base": "A",
+      "logcount": 0.8658921718597412
+    },
+    {
+      "position_zero_based": 1081,
+      "base": "C",
+      "logcount": 0.8926353454589844
+    },
+    {
+      "position_zero_based": 1081,
+      "base": "G",
+      "logcount": 0.8226795196533203
+    },
+    {
+      "position_zero_based": 1082,
+      "base": "A",
+      "logcount": 0.8510363101959229
+    },
+    {
+      "position_zero_based": 1082,
+      "base": "C",
+      "logcount": 0.870546817779541
+    },
+    {
+      "position_zero_based": 1082,
+      "base": "T",
+      "logcount": 0.8466980457305908
+    },
+    {
+      "position_zero_based": 1083,
+      "base": "A",
+      "logcount": 0.8729093074798584
+    },
+    {
+      "position_zero_based": 1083,
+      "base": "C",
+      "logcount": 0.8425540924072266
+    },
+    {
+      "position_zero_based": 1083,
+      "base": "T",
+      "logcount": 0.8144925832748413
+    },
+    {
+      "position_zero_based": 1084,
+      "base": "A",
+      "logcount": 0.8678569793701172
+    },
+    {
+      "position_zero_based": 1084,
+      "base": "G",
+      "logcount": 0.8231016397476196
+    },
+    {
+      "position_zero_based": 1084,
+      "base": "T",
+      "logcount": 0.884645938873291
+    },
+    {
+      "position_zero_based": 1085,
+      "base": "A",
+      "logcount": 0.8722326755523682
+    },
+    {
+      "position_zero_based": 1085,
+      "base": "G",
+      "logcount": 0.9019647836685181
+    },
+    {
+      "position_zero_based": 1085,
+      "base": "T",
+      "logcount": 0.8552852869033813
+    },
+    {
+      "position_zero_based": 1086,
+      "base": "C",
+      "logcount": 0.8936061859130859
+    },
+    {
+      "position_zero_based": 1086,
+      "base": "G",
+      "logcount": 0.9159767627716064
+    },
+    {
+      "position_zero_based": 1086,
+      "base": "T",
+      "logcount": 0.8575077056884766
+    },
+    {
+      "position_zero_based": 1087,
+      "base": "A",
+      "logcount": 0.923081636428833
+    },
+    {
+      "position_zero_based": 1087,
+      "base": "G",
+      "logcount": 0.8822615146636963
+    },
+    {
+      "position_zero_based": 1087,
+      "base": "T",
+      "logcount": 0.8350726366043091
+    },
+    {
+      "position_zero_based": 1088,
+      "base": "C",
+      "logcount": 0.8829516172409058
+    },
+    {
+      "position_zero_based": 1088,
+      "base": "G",
+      "logcount": 0.890960693359375
+    },
+    {
+      "position_zero_based": 1088,
+      "base": "T",
+      "logcount": 0.8291040658950806
+    },
+    {
+      "position_zero_based": 1089,
+      "base": "A",
+      "logcount": 0.864619255065918
+    },
+    {
+      "position_zero_based": 1089,
+      "base": "C",
+      "logcount": 0.8563947677612305
+    },
+    {
+      "position_zero_based": 1089,
+      "base": "T",
+      "logcount": 0.8329708576202393
+    },
+    {
+      "position_zero_based": 1090,
+      "base": "A",
+      "logcount": 0.8732922077178955
+    },
+    {
+      "position_zero_based": 1090,
+      "base": "C",
+      "logcount": 0.8626217842102051
+    },
+    {
+      "position_zero_based": 1090,
+      "base": "T",
+      "logcount": 0.8702142238616943
+    },
+    {
+      "position_zero_based": 1091,
+      "base": "A",
+      "logcount": 0.873123049736023
+    },
+    {
+      "position_zero_based": 1091,
+      "base": "C",
+      "logcount": 0.8537861108779907
+    },
+    {
+      "position_zero_based": 1091,
+      "base": "T",
+      "logcount": 0.8396790027618408
+    },
+    {
+      "position_zero_based": 1092,
+      "base": "C",
+      "logcount": 0.8638565540313721
+    },
+    {
+      "position_zero_based": 1092,
+      "base": "G",
+      "logcount": 0.8663642406463623
+    },
+    {
+      "position_zero_based": 1092,
+      "base": "T",
+      "logcount": 0.8306981325149536
+    },
+    {
+      "position_zero_based": 1093,
+      "base": "C",
+      "logcount": 0.8711917400360107
+    },
+    {
+      "position_zero_based": 1093,
+      "base": "G",
+      "logcount": 0.9121174812316895
+    },
+    {
+      "position_zero_based": 1093,
+      "base": "T",
+      "logcount": 0.8677195310592651
+    },
+    {
+      "position_zero_based": 1094,
+      "base": "A",
+      "logcount": 0.8671054840087891
+    },
+    {
+      "position_zero_based": 1094,
+      "base": "C",
+      "logcount": 0.8644301891326904
+    },
+    {
+      "position_zero_based": 1094,
+      "base": "G",
+      "logcount": 0.8704370260238647
+    },
+    {
+      "position_zero_based": 1095,
+      "base": "A",
+      "logcount": 0.8871618509292603
+    },
+    {
+      "position_zero_based": 1095,
+      "base": "G",
+      "logcount": 0.8636058568954468
+    },
+    {
+      "position_zero_based": 1095,
+      "base": "T",
+      "logcount": 0.8612102270126343
+    },
+    {
+      "position_zero_based": 1096,
+      "base": "C",
+      "logcount": 0.8509681224822998
+    },
+    {
+      "position_zero_based": 1096,
+      "base": "G",
+      "logcount": 0.8650127649307251
+    },
+    {
+      "position_zero_based": 1096,
+      "base": "T",
+      "logcount": 0.8432493209838867
+    },
+    {
+      "position_zero_based": 1097,
+      "base": "A",
+      "logcount": 0.9054510593414307
+    },
+    {
+      "position_zero_based": 1097,
+      "base": "G",
+      "logcount": 0.854080080986023
+    },
+    {
+      "position_zero_based": 1097,
+      "base": "T",
+      "logcount": 0.8529685735702515
+    },
+    {
+      "position_zero_based": 1098,
+      "base": "C",
+      "logcount": 0.8846578598022461
+    },
+    {
+      "position_zero_based": 1098,
+      "base": "G",
+      "logcount": 0.8766344785690308
+    },
+    {
+      "position_zero_based": 1098,
+      "base": "T",
+      "logcount": 0.8543276786804199
+    },
+    {
+      "position_zero_based": 1099,
+      "base": "A",
+      "logcount": 0.8728377819061279
+    },
+    {
+      "position_zero_based": 1099,
+      "base": "C",
+      "logcount": 0.8624941110610962
+    },
+    {
+      "position_zero_based": 1099,
+      "base": "T",
+      "logcount": 0.8692634105682373
+    },
+    {
+      "position_zero_based": 1100,
+      "base": "A",
+      "logcount": 0.8520352840423584
+    },
+    {
+      "position_zero_based": 1100,
+      "base": "C",
+      "logcount": 0.8596723079681396
+    },
+    {
+      "position_zero_based": 1100,
+      "base": "T",
+      "logcount": 0.8591934442520142
+    },
+    {
+      "position_zero_based": 1101,
+      "base": "A",
+      "logcount": 0.8593556880950928
+    },
+    {
+      "position_zero_based": 1101,
+      "base": "G",
+      "logcount": 0.858525276184082
+    },
+    {
+      "position_zero_based": 1101,
+      "base": "T",
+      "logcount": 0.8473618030548096
+    },
+    {
+      "position_zero_based": 1102,
+      "base": "A",
+      "logcount": 0.8634927272796631
+    },
+    {
+      "position_zero_based": 1102,
+      "base": "C",
+      "logcount": 0.8926856517791748
+    },
+    {
+      "position_zero_based": 1102,
+      "base": "G",
+      "logcount": 0.9045497179031372
+    },
+    {
+      "position_zero_based": 1103,
+      "base": "A",
+      "logcount": 0.8591066598892212
+    },
+    {
+      "position_zero_based": 1103,
+      "base": "G",
+      "logcount": 0.8600285053253174
+    },
+    {
+      "position_zero_based": 1103,
+      "base": "T",
+      "logcount": 0.8563783168792725
+    },
+    {
+      "position_zero_based": 1104,
+      "base": "A",
+      "logcount": 0.8592123985290527
+    },
+    {
+      "position_zero_based": 1104,
+      "base": "C",
+      "logcount": 0.8794268369674683
+    },
+    {
+      "position_zero_based": 1104,
+      "base": "T",
+      "logcount": 0.9004486799240112
+    },
+    {
+      "position_zero_based": 1105,
+      "base": "A",
+      "logcount": 0.8476252555847168
+    },
+    {
+      "position_zero_based": 1105,
+      "base": "C",
+      "logcount": 0.878146767616272
+    },
+    {
+      "position_zero_based": 1105,
+      "base": "T",
+      "logcount": 0.8629984855651855
+    },
+    {
+      "position_zero_based": 1106,
+      "base": "A",
+      "logcount": 0.8724514245986938
+    },
+    {
+      "position_zero_based": 1106,
+      "base": "C",
+      "logcount": 0.9068996906280518
+    },
+    {
+      "position_zero_based": 1106,
+      "base": "G",
+      "logcount": 0.8692634105682373
+    },
+    {
+      "position_zero_based": 1107,
+      "base": "A",
+      "logcount": 0.8792392015457153
+    },
+    {
+      "position_zero_based": 1107,
+      "base": "C",
+      "logcount": 0.8854408264160156
+    },
+    {
+      "position_zero_based": 1107,
+      "base": "T",
+      "logcount": 0.9015504121780396
+    },
+    {
+      "position_zero_based": 1108,
+      "base": "A",
+      "logcount": 0.8759267330169678
+    },
+    {
+      "position_zero_based": 1108,
+      "base": "C",
+      "logcount": 0.8778126239776611
+    },
+    {
+      "position_zero_based": 1108,
+      "base": "G",
+      "logcount": 0.8730143308639526
+    },
+    {
+      "position_zero_based": 1109,
+      "base": "A",
+      "logcount": 0.8861508369445801
+    },
+    {
+      "position_zero_based": 1109,
+      "base": "C",
+      "logcount": 0.8593255281448364
+    },
+    {
+      "position_zero_based": 1109,
+      "base": "T",
+      "logcount": 0.8943564891815186
+    },
+    {
+      "position_zero_based": 1110,
+      "base": "C",
+      "logcount": 0.8472455739974976
+    },
+    {
+      "position_zero_based": 1110,
+      "base": "G",
+      "logcount": 0.8543474674224854
+    },
+    {
+      "position_zero_based": 1110,
+      "base": "T",
+      "logcount": 0.8487818241119385
+    },
+    {
+      "position_zero_based": 1111,
+      "base": "A",
+      "logcount": 0.8698837757110596
+    },
+    {
+      "position_zero_based": 1111,
+      "base": "G",
+      "logcount": 0.8617063760757446
+    },
+    {
+      "position_zero_based": 1111,
+      "base": "T",
+      "logcount": 0.8834863901138306
+    },
+    {
+      "position_zero_based": 1112,
+      "base": "A",
+      "logcount": 0.8633370399475098
+    },
+    {
+      "position_zero_based": 1112,
+      "base": "C",
+      "logcount": 0.8848685026168823
+    },
+    {
+      "position_zero_based": 1112,
+      "base": "G",
+      "logcount": 0.8631563186645508
+    },
+    {
+      "position_zero_based": 1113,
+      "base": "A",
+      "logcount": 0.8557476997375488
+    },
+    {
+      "position_zero_based": 1113,
+      "base": "C",
+      "logcount": 0.8575234413146973
+    },
+    {
+      "position_zero_based": 1113,
+      "base": "G",
+      "logcount": 0.8679059743881226
+    },
+    {
+      "position_zero_based": 1114,
+      "base": "A",
+      "logcount": 0.869342565536499
+    },
+    {
+      "position_zero_based": 1114,
+      "base": "C",
+      "logcount": 0.8527069091796875
+    },
+    {
+      "position_zero_based": 1114,
+      "base": "G",
+      "logcount": 0.8590841293334961
+    },
+    {
+      "position_zero_based": 1115,
+      "base": "A",
+      "logcount": 0.876407265663147
+    },
+    {
+      "position_zero_based": 1115,
+      "base": "G",
+      "logcount": 0.8666179180145264
+    },
+    {
+      "position_zero_based": 1115,
+      "base": "T",
+      "logcount": 0.8749791383743286
+    },
+    {
+      "position_zero_based": 1116,
+      "base": "A",
+      "logcount": 0.8799278736114502
+    },
+    {
+      "position_zero_based": 1116,
+      "base": "C",
+      "logcount": 0.8653347492218018
+    },
+    {
+      "position_zero_based": 1116,
+      "base": "G",
+      "logcount": 0.8632526397705078
+    },
+    {
+      "position_zero_based": 1117,
+      "base": "A",
+      "logcount": 0.8752985000610352
+    },
+    {
+      "position_zero_based": 1117,
+      "base": "G",
+      "logcount": 0.8805056810379028
+    },
+    {
+      "position_zero_based": 1117,
+      "base": "T",
+      "logcount": 0.8617880344390869
+    },
+    {
+      "position_zero_based": 1118,
+      "base": "C",
+      "logcount": 0.8718831539154053
+    },
+    {
+      "position_zero_based": 1118,
+      "base": "G",
+      "logcount": 0.8882372379302979
+    },
+    {
+      "position_zero_based": 1118,
+      "base": "T",
+      "logcount": 0.8615624904632568
+    },
+    {
+      "position_zero_based": 1119,
+      "base": "A",
+      "logcount": 0.8630261421203613
+    },
+    {
+      "position_zero_based": 1119,
+      "base": "C",
+      "logcount": 0.8630414009094238
+    },
+    {
+      "position_zero_based": 1119,
+      "base": "T",
+      "logcount": 0.8594462871551514
+    },
+    {
+      "position_zero_based": 1120,
+      "base": "C",
+      "logcount": 0.9066225290298462
+    },
+    {
+      "position_zero_based": 1120,
+      "base": "G",
+      "logcount": 0.8807053565979004
+    },
+    {
+      "position_zero_based": 1120,
+      "base": "T",
+      "logcount": 0.8713901042938232
+    }
+  ]
+}

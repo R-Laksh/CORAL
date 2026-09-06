@@ -5,6 +5,7 @@ from pathlib import Path
 import urllib.request
 
 from coral.datasets.gb1 import URL, SHA256
+from coral.datasets.encode import REGION_ARCHIVE_SHA256
 
 
 def main():
@@ -28,6 +29,11 @@ def main():
         snapshot_download("kundajelab/encode-bpnet-FOXA1-ChIP-seq-HepG2-ENCSR865RXA-ENCSR337KST",
                           revision="adde8fa27ceb7647e35aebe456620ea6b40d4ec3", local_dir=root / "foxa1_bpnet",
                           allow_patterns=["README.md", "config.json", "fold_0/model.h5", "fold_0/saved_model/*"])
+        archive = root / "ENCFF277YRG.tar.gz"
+        if not archive.exists():
+            urllib.request.urlretrieve("https://www.encodeproject.org/files/ENCFF277YRG/@@download/ENCFF277YRG.tar.gz", archive)
+        if hashlib.sha256(archive.read_bytes()).hexdigest() != REGION_ARCHIVE_SHA256:
+            raise ValueError("ENCODE split archive checksum mismatch")
 
 
 if __name__ == "__main__":
