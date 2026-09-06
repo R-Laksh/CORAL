@@ -38,11 +38,9 @@ class BPNetCountScore(torch.nn.Module):
 
 
 class ThresholdConstraint(torch.nn.Module):
-    """Convert any scalar score model into ``g(x) <= 0`` functional constraints."""
+    """Convert a scalar score model into ``g(x) <= 0`` constraints."""
 
-    def __init__(
-        self, score_model: torch.nn.Module, target: float, direction: str = "increase"
-    ):
+    def __init__(self, score_model: torch.nn.Module, target: float, direction: str = "increase"):
         super().__init__()
         if direction not in {"increase", "decrease"}:
             raise ValueError("direction must be 'increase' or 'decrease'")
@@ -52,13 +50,11 @@ class ThresholdConstraint(torch.nn.Module):
 
     def forward(self, x: Tensor) -> Tensor:
         score = self.score_model(x).reshape(x.shape[0])
-        if self.direction == "increase":
-            return self.target - score
-        return score - self.target
+        return self.target - score if self.direction == "increase" else score - self.target
 
 
 class ConjunctiveConstraint(torch.nn.Module):
-    """Conjunction of inequality constraints using ``max_i g_i(x)``."""
+    """Conjunction of inequality constraints via ``max_i g_i(x)``."""
 
     def __init__(self, constraints: Sequence[torch.nn.Module]):
         super().__init__()
@@ -73,7 +69,7 @@ class ConjunctiveConstraint(torch.nn.Module):
 
 @dataclass(frozen=True)
 class ESMAlphabet:
-    """Token IDs needed to turn relaxed amino-acid probabilities into ESM inputs."""
+    """ESM vocabulary entries corresponding to the 20 amino acids and boundaries."""
 
     aa_token_ids: tuple[int, ...]
     cls_token_id: int
@@ -97,12 +93,12 @@ class ESMAlphabet:
 
 
 class ESMSoftSequenceRegressor(torch.nn.Module):
-    """Frozen ESM representation plus a differentiable scalar head.
+    """Frozen ESM backbone plus a differentiable scalar task head.
 
-    ``x`` is a relaxed amino-acid distribution of shape ``(N, L, 20)``. The model
-    mixes the backbone's input embedding table using those probabilities and calls
-    a HuggingFace-style backbone through ``inputs_embeds``. This gives CORAL input
-    gradients without changing the frozen protein language model.
+    ``x`` has shape ``(N, L, 20)``. Amino-acid probabilities mix the backbone's
+    input embedding vectors; ``inputs_embeds`` is then passed through the frozen
+    transformer. This is not discrete token sampling, but it provides the soft/ST
+    path needed by CORAL while preserving the frozen backbone parameters.
     """
 
     def __init__(
@@ -123,26 +119,20 @@ class ESMSoftSequenceRegressor(torch.nn.Module):
     def forward(self, x: Tensor) -> Tensor:
         if x.ndim != 3 or x.shape[-1] != len(self.alphabet.aa_token_ids):
             raise ValueError("ESMSoftSequenceRegressor expects (N, L, alphabet_size)")
-        emb_layer = self.backbone.get_input_embeddings()
-        weight = emb_layer.weight
+        weight = self.backbone.get_input_embeddings().weight
         aa_ids = torch.as_tensor(self.alphabet.aa_token_ids, device=x.device)
         aa_weight = weight.index_select(0, aa_ids).to(dtype=x.dtype)
         residues = x @ aa_weight
-
-        cls = weight[self.alphabet.cls_token_id].to(dtype=x.dtype).view(1, 1, -1)
-        eos = weight[self.alphabet.eos_token_id].to(dtype=x.dtype).view(1, 1, -1)
-        cls = cls.expand(x.shape[0], -1, -1)
-        eos = eos.expand(x.shape[0], -1, -1)
-        inputs_embeds = torch.cat([cls, residues, eos], dim=1)
-        attention_mask = torch.ones(
-            inputs_embeds.shape[:2], dtype=torch.long, device=x.device
+        cls = weight[self.alphabet.cls_token_id].to(dtype=x.dtype)[None, None, :]
+        eos = weight[self.alphabet.eos_token_id].to(dtype=x.dtype)[None, None, :]
+        inputs_embeds = torch.cat(
+            [cls.expand(x.shape[0], -1, -1), residues, eos.expand(x.shape[0], -1, -1)], dim=1
         )
-
+        attention_mask = torch.ones(inputs_embeds.shape[:2], dtype=torch.long, device=x.device)
         out = self.backbone(
             inputs_embeds=inputs_embeds,
             attention_mask=attention_mask,
             return_dict=True,
         )
-        hidden = out.last_hidden_state[:, 1:-1]
-        pooled = hidden.mean(dim=1)
+        pooled = out.last_hidden_state[:, 1:-1].mean(dim=1)
         return self.head(pooled).reshape(x.shape[0])
