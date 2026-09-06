@@ -1,16 +1,19 @@
-from .gc_model import GenomicGCModel, train_head
-from .seqgra_models import CNN1D, DeepSTARR
-from .biological import (
-    BPNetCountScore,
-    ConjunctiveConstraint,
-    ESMAlphabet,
-    ESMSoftSequenceRegressor,
-    FairESMSoftSequenceRegressor,
-    ThresholdConstraint,
-)
+"""Model adapters with optional heavy dependencies loaded lazily."""
+from importlib import import_module
 
-__all__ = [
-    "GenomicGCModel", "train_head", "CNN1D", "DeepSTARR",
-    "BPNetCountScore", "ConjunctiveConstraint", "ESMAlphabet",
-    "ESMSoftSequenceRegressor", "FairESMSoftSequenceRegressor", "ThresholdConstraint",
-]
+_EXPORTS = {
+    "GenomicGCModel": ".gc_model", "train_head": ".gc_model",
+    "CNN1D": ".seqgra_models", "DeepSTARR": ".seqgra_models",
+    "BPNetCountScore": ".biological", "ConjunctiveConstraint": ".biological",
+    "ESMAlphabet": ".biological", "ESMSoftSequenceRegressor": ".biological",
+    "FairESMSoftSequenceRegressor": ".biological", "ThresholdConstraint": ".biological",
+}
+__all__ = list(_EXPORTS)
+
+
+def __getattr__(name):
+    if name not in _EXPORTS:
+        raise AttributeError(name)
+    value = getattr(import_module(_EXPORTS[name], __name__), name)
+    globals()[name] = value
+    return value
