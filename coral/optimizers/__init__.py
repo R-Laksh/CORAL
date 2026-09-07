@@ -10,6 +10,12 @@ _EXPORTS = {
     "ALMHTwistedSearch": ".alm_h", "ALMState": ".alm_h", "SearchConfig": ".alm_h",
     "SearchResult": ".alm_h", "augmented_penalty": ".alm_h",
     "STGumbelALMSearch": ".st_alm", "STALMConfig": ".st_alm",
+    "FutureAwarePopulationSearch": ".future_population",
+    "PopulationSearchConfig": ".future_population", "TeacherConfig": ".future_population",
+    "PopulationSearchResult": ".future_population", "EpisodeStats": ".future_population",
+    "GradientMultiEditProposal": ".future_proposal",
+    "MultiEditProposalConfig": ".future_proposal", "ProposalBatch": ".future_proposal",
+    "SequenceExperienceGraph": ".future_experience",
 }
 __all__ = list(_EXPORTS)
 
