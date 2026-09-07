@@ -4,6 +4,19 @@ on:
   push:
     branches:
       - research/alm-h-biological-models
+    paths:
+      - '.github/workflows/research-gb1-esm.yml'
+      - 'coral/datasets/gb1.py'
+      - 'coral/models/biological.py'
+      - 'coral/optimizers/alm_h.py'
+      - 'coral/optimizers/st_alm.py'
+      - 'coral/optimizers/future_*.py'
+      - 'coral/runners/run_gb1_esm.py'
+      - 'tests/test_alm_h.py'
+      - 'tests/test_biological_models.py'
+      - 'tests/test_gb1.py'
+      - 'tests/test_distributional.py'
+      - 'tests/test_future_population.py'
   workflow_dispatch:
 
 jobs:
@@ -27,7 +40,7 @@ jobs:
         env:
           PYTHONPATH: .
         run: |
-          pytest -q tests/test_alm_h.py tests/test_biological_models.py tests/test_gb1.py tests/test_distributional.py
+          pytest -q tests/test_alm_h.py tests/test_biological_models.py tests/test_gb1.py tests/test_distributional.py tests/test_future_population.py
 
       - name: Download measured GB1 landscape
         run: |
