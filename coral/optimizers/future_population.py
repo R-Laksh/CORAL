@@ -31,11 +31,26 @@ ConstraintFn = Callable[[Tensor], Tensor]
 class TeacherConfig:
     rollout_depth: int = 2
     rollout_width: int = 4
-    roots_per_parent: int = 2
+    rollout_max_children: int = 12
+    rollout_add_per_revisit: int = 2
+    roots_per_parent: int = 3
+    random_roots_per_parent: int = 1
     beta_violation: float = 4.0
     beta_edit: float = 0.0
     feasibility_bonus: float = 4.0
     violation_scale: Optional[float] = None
+
+    def __post_init__(self) -> None:
+        if self.rollout_depth < 0 or self.rollout_width < 0:
+            raise ValueError("rollout_depth/rollout_width must be non-negative")
+        if self.rollout_max_children < self.rollout_width:
+            raise ValueError("rollout_max_children must be >= rollout_width")
+        if self.rollout_add_per_revisit < 0:
+            raise ValueError("rollout_add_per_revisit must be non-negative")
+        if self.roots_per_parent < 0:
+            raise ValueError("roots_per_parent must be non-negative")
+        if not 0 <= self.random_roots_per_parent <= self.roots_per_parent:
+            raise ValueError("random_roots_per_parent must be in [0, roots_per_parent]")
 
 
 @dataclass
@@ -46,6 +61,7 @@ class PopulationSearchConfig:
     guidance_strength: float = 1.5
     energy_temperature: float = 1.0
     resample_ess_fraction: float = 0.50
+    retain_parents: bool = True
     dual_every: int = 1
     rho_growth: float = 1.15
     rho_decay: float = 0.90
@@ -187,11 +203,29 @@ class FutureAwarePopulationSearch:
     def _log_merit(self, ids: Tensor) -> Tensor:
         return self._log_merit_from_g(ids, self._evaluate_hard(ids))
 
-    def _ensure_children(self, row: Tensor, generator: torch.Generator) -> None:
+    def _ensure_children(self, row: Tensor, generator: torch.Generator,
+                         expanded: set[tuple[int, ...]]) -> None:
+        """Grow, rather than replace, the Monte Carlo support cached at a state.
+
+        The first visit draws ``rollout_width`` samples. Later top-level teacher
+        calls add a small number of fresh q0 samples up to ``rollout_max_children``.
+        ``expanded`` prevents repeated recursive visits in one backup from consuming
+        the entire growth budget immediately.
+        """
         assert self.graph is not None
+        key = self.graph.key(row)
+        if key in expanded:
+            return
+        expanded.add(key)
         node = self.graph.get_or_add(row)
-        need = max(0, self.config.teacher.rollout_width - len(node.children))
-        if not need: return
+        c = self.config.teacher
+        if len(node.children) == 0:
+            need = min(c.rollout_width, c.rollout_max_children)
+        else:
+            need = min(c.rollout_add_per_revisit,
+                       max(0, c.rollout_max_children - len(node.children)))
+        if need <= 0:
+            return
         _, grad = self._evaluate_gradient(row[None, :])
         batch = self.proposal.sample(row[None, :], grad, self.graph.edit_costs,
                                      generator, candidates_per_parent=need)
@@ -199,36 +233,67 @@ class FutureAwarePopulationSearch:
         self.graph.add_edges(row, batch)
 
     def _log_h_single(self, ids: Tensor, depth: int, generator: torch.Generator,
-                      memo: dict[tuple[tuple[int, ...], int, int], float]) -> float:
+                      memo: dict[tuple[tuple[int, ...], int, int], float],
+                      expanded: set[tuple[int, ...]]) -> float:
         assert self.graph is not None
         node = self.graph.get_or_add(ids)
         base = float(self._log_merit(ids[None, :])[0])
-        if depth <= 0 or (node.g is not None and node.g <= 0): return base
-        self._ensure_children(ids, generator)
-        edges = node.children[:self.config.teacher.rollout_width]
-        if not edges: return base
+        if depth <= 0 or (node.g is not None and node.g <= 0):
+            return base
+        self._ensure_children(ids, generator, expanded)
+        edges = node.children[:self.config.teacher.rollout_max_children]
+        if not edges:
+            return base
         key = (self.graph.key(ids), depth, len(edges))
-        if key in memo: return memo[key]
+        if key in memo:
+            return memo[key]
         vals = [self._log_h_single(self.graph.nodes[e.child].ids.to(ids.device), depth - 1,
-                                   generator, memo) for e in edges]
+                                   generator, memo, expanded) for e in edges]
         future = torch.logsumexp(torch.tensor(vals), 0).item() - math.log(len(vals))
+        # Explicit no-op/current-state branch makes the backup conservative when
+        # all sampled futures are poor.
         value = torch.logsumexp(torch.tensor([future, base]), 0).item() - math.log(2.0)
         memo[key] = float(value)
         return float(value)
 
     def _candidate_log_h(self, candidates: Tensor, owner: Tensor, immediate: Tensor,
                          generator: torch.Generator) -> Tensor:
+        """Refine a small mixture of greedy and exploratory roots per parent.
+
+        Greedy roots exploit the shaped feasibility signal. Random roots protect
+        against exactly the epistatic valley case where the useful first macro-edit
+        looks neutral or deleterious before a later coordinated completion.
+        """
         c = self.config.teacher
-        if c.rollout_depth <= 0 or c.roots_per_parent <= 0: return immediate
-        out = immediate.clone(); n = int(owner.max()) + 1; m = candidates.shape[0] // n
-        roots = min(c.roots_per_parent, m)
-        top = torch.topk(immediate.reshape(n, m), roots, dim=1).indices
+        if c.rollout_depth <= 0 or c.roots_per_parent <= 0:
+            return immediate
+        out = immediate.clone()
+        n = int(owner.max()) + 1
         memo: dict[tuple[tuple[int, ...], int, int], float] = {}
+        expanded: set[tuple[int, ...]] = set()
         for p in range(n):
-            for j in top[p].tolist():
-                idx = p * m + int(j)
+            group = torch.where(owner == p)[0]
+            if not len(group):
+                continue
+            roots = min(c.roots_per_parent, len(group))
+            n_random = min(c.random_roots_per_parent, roots)
+            n_top = roots - n_random
+            chosen_global: list[int] = []
+            if n_top:
+                local_top = torch.topk(immediate[group], n_top).indices
+                chosen_global.extend(group[local_top].tolist())
+            if n_random:
+                chosen_set = set(chosen_global)
+                remaining = torch.tensor([int(j) for j in group.tolist() if int(j) not in chosen_set],
+                                         dtype=torch.long, device=candidates.device)
+                if len(remaining):
+                    perm = torch.randperm(len(remaining), generator=generator,
+                                          device=candidates.device)
+                    chosen_global.extend(remaining[perm[:min(n_random, len(remaining))]].tolist())
+            for idx in chosen_global:
+                idx = int(idx)
                 out[idx] = self._log_h_single(candidates[idx], c.rollout_depth,
-                                              generator, memo)
+                                              generator, memo, expanded)
         return out
 
     def _energy(self, ids: Tensor, g: Tensor, state: ALMState) -> Tensor:
@@ -289,15 +354,19 @@ class FutureAwarePopulationSearch:
 
         for ep in range(c.episodes):
             lam0, rho0 = state.lam, state.rho; esss = []; changes = []; selected_h = []
-            for _ in range(c.rounds_per_episode):
+            for _ in range(c.rounds_per_episode):  # dual state frozen in this block
                 _, grad = self._evaluate_gradient(particles)
                 batch = self.proposal.sample(particles, grad, self.graph.edit_costs, proposal_rng)
                 candidates, owner = batch.ids, batch.owner
+                if c.retain_parents:
+                    candidates = torch.cat([candidates, particles], dim=0)
+                    owner = torch.cat([owner, torch.arange(c.particles, device=device)], dim=0)
                 g = self._evaluate_hard(candidates); self._archive(candidates, g, archive)
-                immediate = self._log_merit_from_g(candidates, g)
-                logh = self._candidate_log_h(candidates, owner, immediate, teacher_rng)
                 logw = -self._energy(candidates, g, state) / max(c.energy_temperature, 1e-8)
-                if c.guidance_strength: logw = logw + c.guidance_strength * logh
+                if c.guidance_strength:
+                    immediate = self._log_merit_from_g(candidates, g)
+                    logh = self._candidate_log_h(candidates, owner, immediate, teacher_rng)
+                    logw = logw + c.guidance_strength * logh
                 changes.append((candidates != particles[owner]).sum(-1).float().cpu())
                 particles, ess = self._select(candidates, logw, select_rng); esss.append(ess)
                 selected_h.append((particles != x0).sum(-1).float().cpu())
