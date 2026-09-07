@@ -1,0 +1,34 @@
+name: research-future-search
+
+on:
+  push:
+    branches:
+      - research/alm-h-biological-models
+    paths:
+      - '.github/workflows/research-future-search.yml'
+      - 'coral/optimizers/future_*.py'
+      - 'coral/optimizers/alm_h.py'
+      - 'coral/optimizers/__init__.py'
+      - 'tests/test_future_population.py'
+  workflow_dispatch:
+
+jobs:
+  future-search-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install minimal test dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install --index-url https://download.pytorch.org/whl/cpu torch
+          python -m pip install pytest
+      - name: Compile and run focused tests
+        env:
+          PYTHONPATH: .
+        run: |
+          python -m compileall -q coral/optimizers/future_proposal.py coral/optimizers/future_experience.py coral/optimizers/future_population.py
+          pytest -q tests/test_future_population.py
